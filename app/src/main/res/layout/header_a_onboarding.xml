@@ -1,0 +1,66 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="295dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_head_branco02"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                style="@style/imgTips"
+                android:id="@+id/iv_onboard"
+                android:src="@drawable/img_tips_bg06"
+                android:contentDescription="@string/tips_txt" />
+
+            <LinearLayout
+                android:id="@+id/tipsDown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_buttom_bar"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:layout_marginTop="-5dp"
+            android:background="@color/textBranco01">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_header"
+                    android:text="@string/tips06"
+                    style="@style/tips_title"/>
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:text="@string/tips_desc06"
+                    style="@style/tips_txt"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+</LinearLayout>

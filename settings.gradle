@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "LCP - Lista de Compras Personalizadas"

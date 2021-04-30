@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/textBranco01"
+    tools:context=".A_A_MainActivity"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/includeMainTop"
+        layout="@layout/header_a_main"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:scrollbars="vertical">
+
+        <LinearLayout style="@style/main_btnV">
+
+            <LinearLayout
+                android:id="@+id/main_menu01"
+                style="@style/main_btnH"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="main_menu01">
+
+                <ImageView
+                    style="@style/main_btnIMag"
+                    android:contentDescription="@string/main_menu01"
+                    app:srcCompat="@drawable/ic_main_menu01" />
+
+                <LinearLayout style="@style/main_btnV">
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/main_menu01" />
+
+                    <TextView
+                        style="@style/main_btnTxt2"
+                        android:text="@string/main_desc_menu01" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_menu02"
+                style="@style/main_btnH"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="main_menu02">
+
+                <ImageView
+                    style="@style/main_btnIMag"
+                    android:contentDescription="@string/main_menu02"
+                    app:srcCompat="@drawable/ic_main_menu02" />
+
+                <LinearLayout style="@style/main_btnV">
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/main_menu02" />
+
+                    <TextView
+                        style="@style/main_btnTxt2"
+                        android:text="@string/main_desc_menu02" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_menu03"
+                style="@style/main_btnH"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="main_menu03">
+
+                <ImageView
+                    style="@style/main_btnIMag"
+                    android:contentDescription="@string/main_menu03"
+                    app:srcCompat="@drawable/ic_main_menu03" />
+
+                <LinearLayout style="@style/main_btnV">
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/main_menu03" />
+
+                    <TextView
+                        style="@style/main_btnTxt2"
+                        android:text="@string/main_desc_menu03" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_menu04"
+                style="@style/main_btnH"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="main_menu04">
+
+                <ImageView
+                    style="@style/main_btnIMag"
+                    android:contentDescription="@string/main_menu04"
+                    app:srcCompat="@drawable/ic_main_menu04" />
+
+                <LinearLayout style="@style/main_btnV">
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/main_menu04" />
+
+                    <TextView
+                        style="@style/main_btnTxt2"
+                        android:text="@string/main_desc_menu04" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_menu05"
+                style="@style/main_btnH"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="main_menu05">
+
+                <ImageView
+                    style="@style/main_btnIMag"
+                    android:contentDescription="@string/main_menu05"
+                    app:srcCompat="@drawable/ic_main_menu05" />
+
+                <LinearLayout style="@style/main_btnV">
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/main_menu05" />
+
+                    <TextView
+                        style="@style/main_btnTxt2"
+                        android:text="@string/main_desc_menu05" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_menu06"
+                style="@style/main_btnH"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="main_menu06">
+
+                <ImageView
+                    style="@style/main_btnIMag"
+                    android:contentDescription="@string/main_menu06"
+                    app:srcCompat="@drawable/ic_main_menu06" />
+
+                <LinearLayout style="@style/main_btnV">
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/main_menu06" />
+
+                    <TextView
+                        style="@style/main_btnTxt2"
+                        android:text="@string/main_desc_menu06" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_menu07"
+                style="@style/main_btnH"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="main_menu07">
+
+                <ImageView
+                    style="@style/main_btnIMag"
+                    android:contentDescription="@string/main_menu07"
+                    app:srcCompat="@drawable/ic_main_menu07" />
+
+                <LinearLayout style="@style/main_btnV">
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/main_menu07" />
+
+                    <TextView
+                        style="@style/main_btnTxt2"
+                        android:text="@string/main_desc_menu07" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_menu08"
+                style="@style/main_btnH"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="main_menu08">
+
+                <ImageView
+                    style="@style/main_btnIMag"
+                    android:contentDescription="@string/main_menu08"
+                    app:srcCompat="@drawable/ic_main_menu08" />
+
+                <LinearLayout style="@style/main_btnV">
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/main_menu08" />
+
+                    <TextView
+                        style="@style/main_btnTxt2"
+                        android:text="@string/main_desc_menu08" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_menu09"
+                style="@style/main_btnH"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="main_menu09">
+
+                <ImageView
+                    style="@style/main_btnIMag"
+                    android:contentDescription="@string/main_menu09"
+                    app:srcCompat="@drawable/ic_main_menu09" />
+
+                <LinearLayout style="@style/main_btnV">
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/main_menu09" />
+
+                    <TextView
+                        style="@style/main_btnTxt2"
+                        android:text="@string/main_desc_menu09" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/textPreto04">
+
+        <TextView
+            style="@style/main_btnTxt1"
+            android:layout_height="match_parent"
+            android:text="@string/AdView"
+            android:textAlignment="center"
+            android:textColor="@color/textBranco01" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:cardBackgroundColor="@color/transparent"
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="false"
+    app:contentPadding="0dp">
+
+    <LinearLayout
+        android:id="@+id/main_menu03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingEnd="2dp"
+        android:paddingStart="2dp"
+        android:paddingTop="5dp"
+        android:background="@drawable/stl_main_btn"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                android:id="@+id/idProductITEM03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/num1"
+                android:textColor="@color/textPreto05"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:singleLine="true"/>
+
+            <ImageView
+                android:id="@+id/tipoProductITEM03_img"
+                android:layout_width="@dimen/img_listcreat_tipo"
+                android:layout_height="@dimen/img_listcreat_tipo"
+                android:contentDescription="@string/tipoProduct"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                app:srcCompat="@drawable/ic_item_09" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:background="@drawable/stl_tire_text_border_l"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/nomeProductITEM03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_bold"
+                android:text="@string/nomeProduct"
+                android:textColor="@color/textPreto05"
+                android:textSize="16sp"
+                android:ellipsize="end"
+                android:singleLine="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/quantProductITEM03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:textStyle="bold"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="0dp"
+                    android:text="@string/num0"
+                    android:textColor="@color/textPreto05"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/medidaProductITEM03"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:textStyle="bold"
+                    android:text="@string/medidaProduct"
+                    android:textColor="@color/textPreto05"
+                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    android:singleLine="true"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:textStyle="bold"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="0dp"
+                    android:text="@string/valor"
+                    android:textColor="@color/textPreto05"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/valorProductITEM03"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:textStyle="bold"
+                    android:text="@string/num2"
+                    android:textColor="@color/textPreto05"
+                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    android:singleLine="true"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tipoProductITEM03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/tipoProduct"
+                android:textColor="@color/textPreto05"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:singleLine="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/textValorOptionA03"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:background="@drawable/stl_tire_text_border_l">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/product_valor_vazio"
+                android:textColor="@color/textVermelho02"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/textValorOptionB03"
+            android:visibility="visible"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:background="@drawable/stl_tire_text_border_l">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:textStyle="bold"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="0dp"
+                    android:text="@string/valorTotal"
+                    android:textColor="@color/textPreto05"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/totalProductITEM03"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto_light"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="@string/num2"
+                    android:textColor="@color/textPreto05"
+                    android:textSize="24sp"
+                    android:ellipsize="end"
+                    android:singleLine="true"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

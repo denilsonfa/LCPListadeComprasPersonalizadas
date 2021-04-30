@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- OnBoard. -->
+    <dimen name="pager_dot_size">10dp</dimen>
+    <dimen name="img_listcreat_tipo">50dp</dimen>
+    <dimen name="img_listcreat_btn">40dp</dimen>
+
+</resources>

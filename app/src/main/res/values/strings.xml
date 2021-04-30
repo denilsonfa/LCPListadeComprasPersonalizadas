@@ -1,0 +1,173 @@
+<resources>
+
+    <!--  Strings Padrão  -->
+    <string name="app_name">LCP - Lista de Compras Personalizadas</string>
+    <string name="app_name1">LCP</string>
+    <string name="app_name2">Lista de Compras Personalizadas</string>
+    <string name="name_pt01">Lista de Compras</string>
+    <string name="name_pt02">Personalizadas</string>
+
+    <!--  Strings Main Menu  -->
+    <string name="main_menu01">Criar e Editar Lista</string>
+    <string name="main_desc_menu01">Crie e Edite suas listas de compras.</string>
+    <string name="main_menu02">Consultar Lista</string>
+    <string name="main_desc_menu02">Faça a consulta de todas as listas já criadas.</string>
+    <string name="main_menu03">Conferir Extrato</string>
+    <string name="main_desc_menu03">Veja o extratos e valores de suas compras.</string>
+    <string name="main_menu04">Ajuda e Ajustes</string>
+    <string name="main_desc_menu04">Informações e configurações de seu aplicativo.</string>
+    <string name="main_menu05">Grafico de Consumo</string>
+    <string name="main_desc_menu05">Consulte o consumo de todas suas compras.</string>
+    <string name="main_menu06">Sobre</string>
+    <string name="main_desc_menu06">Informações gerais sobre o app e desenvolvedores.</string>
+
+    <string name="main_menu07">Splash Screen</string>
+    <string name="main_desc_menu07">Tela de controle gráfico que consiste em um carregamento inicial.</string>
+    <string name="main_menu08">Onboarding</string>
+    <string name="main_desc_menu08">Tela que ajuda os usuários a entender como o aplicativo funcionava.</string>
+
+    <string name="main_menu09">Temporaria</string>
+    <string name="main_desc_menu09">Tela elaborada para teste de viabilidade de funções da aplicação.</string>
+
+    <!--  Strings Tips  -->
+    <string name="tips_txt">Dica de Uso!</string>
+
+    <string name="tips01">Seja bem-vindo!</string>
+    <string name="tips_desc01">Este é um app personalizado para elaboração de listas de compras, simples, prático e rápido. O Lista de Compras Personalizadas, é um aplicativo mobile para Android, e tem como principal e única função lhe auxiliar no processo de elaboração de sua lista de compras em cada mês.</string>
+    <string name="tips02">Crie sua Lista de Compras!</string>
+    <string name="tips_desc02">Crie listas de compras facilmente adicionando os produtos que deseja, podendo remover, aumentar ou diminuir a quantidade, como você quiser, tudo simples e de modo organizado.</string>
+    <string name="tips03">Consulte-as, onde você estiver!</string>
+    <string name="tips_desc03">O aplicativo não necessita de conexão a internet para você poder ter acesso as suas listas de compras, podendo assim cria-las e sair de casa despreocupado/a com ou sem internet disponível.</string>
+    <string name="tips04">Tenha controle sobre seu consumo!</string>
+    <string name="tips_desc04">Nosso aplicativo conta com um comparador de preços que irá lhe informar se está pagando mais caro ou mais barato no total de sua compra, tendo base em suas compras anteriores, mostrando para você ao final de sua compra, quanto economizou ou não!</string>
+    <string name="tips05">Facilite sua vida!</string>
+    <string name="tips_desc05">Com o aplicativo, você poderá melhorar algo que parece simples e rotineiro na vida de nossos usuários. Onde, o tem como objetivo, facilitar e ter mais rapidez na hora de fazer as suas compras, sendo uma lista inteligente, organizada e comparadora o valor total das compras.</string>
+    <string name="tips06">Lista de Compras Personalizadas</string>
+    <string name="tips_desc06">Ut in imperdiet odio. In dapibus hendrerit tempus. In dapibus velit ante, eu vestibulum risus facilisis tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ornare purus nec aliquam.</string>
+
+    <!--  List_creater  -->
+    <string name="idProduct">ID Produto</string>
+    <string name="idListP">ID Lista (Produto)</string>
+    <string name="checkProduct">Checar Produto</string>
+    <string name="nomeProduct">Nome do Produto</string>
+    <string name="quantProduct">Quantidade</string>
+    <string name="medidaProduct">Tipo de Medida</string>
+    <string name="tipoProduct">Categoria</string>
+    <string name="valorProduct">Valor do Produto</string>
+    <string name="totalProduct">Valor Total</string>
+
+    <string name="idListL">ID Lista (Lista)</string>
+    <string name="nomeList">Nome da Lista</string>
+    <string name="dataList">Data de Criação da Lista</string>
+    <string name="checkList">Checar Lista</string>
+
+    <string name="idListC">ID Lista (Consulta)</string>
+
+    <string name="editList">Editar Lista</string>
+    <string name="add">Adicionar</string>
+    <string name="addProduct">Adicionar Produto</string>
+    <string name="editProduct">Editar Produto</string>
+    <string name="editedProduct">Produto editado com sucesso!</string>
+    <string name="editedProduct_addValor">Valor do produto adicionado com sucesso!</string>
+    <string name="erro_product">Erro ao editar o produto!</string>
+    <string name="deletedProduct">Produto apagado com sucesso!</string>
+    <string name="remProduct">Remover Produto</string>
+    <string name="deletProduct">Apagar Produto</string>
+    <string name="addList">Adicionar Lista</string>
+    <string name="addList1">Criar nova Lista</string>
+    <string name="valor">Valor:</string>
+    <string name="total">Total:</string>
+    <string name="valorTotal">Valor Total:</string>
+    <string name="valorTotalList">Valor total de todos os produtos desta Lista:</string>
+
+    <string name="sltList_alert01">Selecione uma lista ou crie uma nova:</string>
+    <string name="sltList_alert02">Selecione uma lista para consultar:</string>
+    <string name="sltList_alert03">Selecione uma lista para ver o extrato:</string>
+    <string name="sltList_obs01">* Só podem ser editadas listas não consultadas.</string>
+    <string name="sltList_obs02">* Faça a consulta das listas aqui.</string>
+    <string name="sltList_obs02_new">Deseja criar uma lista nova?</string>
+    <string name="sltList_obs02_cart">O produto foi adicionado ao carrinho?</string>
+    <string name="sltList_obs02_obs">Adicionado todos os produtos ao carrinho, a lista será concluida.</string>
+    <string name="sltList_obs03">* Só serãm exibidas lista consultadas.</string>
+    <string name="sltProduct01_deletObs">Apagar produto selecionado:</string>
+    <string name="sltProduct02_editObs">Editar produto selecionado:</string>
+    <string name="sltProduct03_editObs">Adicionar valor do produto:</string>
+    <string name="sltProduct03_reEdit">Editar Lista?</string>
+    <string name="sltProduct03_reEditObs">Você poderá editar os produtos com a opção (Criar e Editar Lista) ou editar os valores com a opção (Consultar Lista)? \n ***Assim a lista será editaval até que seja concluida novamente.</string>
+
+
+    <string name="addedProduct">Produto Adicionado!</string>
+    <string name="noaddedProduct">Erro ao adicionar Produto!</string>
+    <string name="isCheckProduct">Produto OK!</string>
+    <string name="isCheckList">Lista OK!</string>
+    <string name="remove">Remover</string>
+    <string name="save">Salvar</string>
+    <string name="menu">Acessar Menu</string>
+
+    <string name="AdView">AdView</string>
+    <string name="voltar">Voltar</string>
+    <string name="doubleExit">Pressione o voltar duas vezes seguidas para sair.</string>
+
+    <!--  String Outros  -->
+    <string name="continuar">Continuar</string>
+    <string name="proximo">Proximo</string>
+    <string name="anterio">Anterior</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="cancel">Operação cancelada!</string>
+
+    <!--  MENUS  -->
+    <string name="inicio">Iniciar</string>
+    <string name="sair">Sair</string>
+    <string name="menu_inicio">Inicio</string>
+    <string name="sim">SIM</string>
+    <string name="nao">NÃO</string>
+    <string name="nada"> </string>
+    <string name="aces_fast">Acesso Rapido</string>
+    <string name="ico_dw_open">Abrir Menu de Navegação</string>
+    <string name="ico_dw_close">Fechar Menu de Navegação</string>
+
+    <!--  ERROS E AVISOS -->
+    <string name="num0">00</string>
+    <string name="num1">ID: 1</string>
+    <string name="num2">R$ 0.00</string>
+    <string name="num3">00 x R$ 0.00</string>
+    <string name="trace">-</string>
+    <string name="Erro">ERRO!</string>
+    <string name="Atencao">ATENÇÃO!</string>
+    <string name="reload">Reload</string>
+    <string name="list_vazia_p">A lista está vazia. Por favor, adicione os itens.</string>
+    <string name="list_vazia_l">Nenhuma Lista foi encontrada. Crie uma nova lista.</string>
+    <string name="product_valor_vazio">Adicione o valor do Produto.</string>
+    <string name="erro_noText01">Não se esqueça de preencher todos os campos!</string>
+    <string name="erro_noText02">Não se esqueça de adicionar o Valor do Produto!</string>
+    <string name="list_clear_delet">Lista vazia apagada automaticamente!</string>
+    <string name="list_save">Lista salva com sucesso!</string>
+    <string name="list_concluida">Lista concluida!</string>
+    <string name="list_editing">Voltando para edição da Lista!</string>
+
+    <!-- STRINGS List Create -->
+    <string-array name="medidaProductARY">
+        <item>Unidade(s)</item>
+        <item>kg</item>
+        <item>Litro(s)</item>
+        <item>Caixa(s)</item>
+        <item>Embalagem(s)</item>
+        <item>Galão(es)</item>
+        <item>Garrafa(s)</item>
+        <item>Lata(s)</item>
+        <item>Pacote(s)</item>
+    </string-array>
+
+    <string-array name="tipoProductARY">
+        <item>Alimentos</item>
+        <item>Carnes e Ovos</item>
+        <item>Verduras, Legumes e Frutas</item>
+        <item>Bebidas</item>
+        <item>Leite e Derivados</item>
+        <item>Padaria e Sobremesa</item>
+        <item>Saúde e Beleza</item>
+        <item>Higiene e Limpeza</item>
+        <item>Outros</item>
+    </string-array>
+
+</resources>

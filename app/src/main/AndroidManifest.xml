@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.dla.lcp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".A_M09_Tmp"/>
+        <activity
+            android:name=".A_A_SplashScreenActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".A_A_OnBoardingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".A_A_MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".A_M01_ListCreate"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".A_M01_ListCreate_SetList"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".A_M01_ListCreate_Edit"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".A_M01_ListCreate_Delet"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".A_M02_ListConsult"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".A_M02_ListConsult_SetList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".A_M02_ListConsult_EditUni"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".A_M03_ListExtract"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".A_M03_ListExtrato_SetList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".A_M04_ConfigActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".A_M05_ProductGrafic"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".A_M06_InfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".A_H_MainTop01"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

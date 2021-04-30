@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!-- tools:context=".A_M01_ListCreate_Delet"-->
+
+    <LinearLayout
+        android:id="@+id/listCreateScreen_Edit01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/cor_gradient_branco"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sltProduct01_deletObs"
+            android:fontFamily="@font/bebasneue"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:paddingTop="60dp"
+            android:paddingBottom="35dp"
+            android:background="@color/textVermelho02"
+            android:textColor="@color/textBranco01"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            style="@style/list_form"
+            android:baselineAligned="false"
+            android:gravity="top"
+            android:paddingTop="80dp">
+
+            <ImageView
+                android:id="@+id/tipoProductDELET_IMG"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_item_09"
+                android:contentDescription="@string/tipoProduct"
+                app:tint="@color/textPreto05" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:visibility="visible"
+                        android:id="@+id/idProductDELET_TXT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/num1"
+                        android:paddingTop="15dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:textColor="@color/textPreto05"
+                        android:textSize="18sp"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:visibility="visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/trace"
+                        android:paddingTop="15dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:textColor="@color/textPreto05"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"/>
+
+                    <TextView
+                        android:id="@+id/nomeProductDELET_TXT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nomeProduct"
+                        android:paddingTop="15dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:textColor="@color/textPreto05"
+                        android:textSize="22sp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/quantProductDELET_TXT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="15dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="8dp"
+                        android:text="@string/num0"
+                        android:fontFamily="@font/roboto_light"
+                        android:textColor="@color/textPreto05"
+                        android:textSize="22sp"
+                        android:ellipsize="end"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:id="@+id/medidaProductDELET_TXT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="15dp"
+                        android:text="@string/medidaProduct"
+                        android:fontFamily="@font/roboto_light"
+                        android:textColor="@color/textPreto05"
+                        android:textSize="22sp"
+                        android:ellipsize="end"
+                        android:singleLine="true"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tipoProductDELET_TXT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:text="@string/tipoProduct"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/textPreto05"
+                    android:textSize="22sp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <Button
+                android:id="@+id/cancelDEL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nao"
+                style="?android:attr/borderlessButtonStyle"
+                android:fontFamily="@font/bebasneue"
+                android:background="@drawable/stl_btn_cinza"
+                android:textColor="@color/textBranco02"
+                android:textSize="18sp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="10dp"/>
+
+            <Button
+                android:id="@+id/confirmDEL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim"
+                style="?android:attr/borderlessButtonStyle"
+                android:fontFamily="@font/bebasneue"
+                android:background="@drawable/stl_btn_vermelho"
+                android:textColor="@color/textBranco01"
+                android:textSize="18sp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

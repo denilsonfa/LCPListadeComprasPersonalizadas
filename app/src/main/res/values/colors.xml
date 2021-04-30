@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cor Sistema -->
+    <color name="colorPrimary">#FFF</color>
+    <color name="colorPrimaryDark">#222</color>
+    <color name="textColorPrimary">#676767</color>
+    <color name="colorAccent">#2288ff</color>
+    <color name="windowBackground">#ffffff</color>
+    <color name="statusBar">#1144AA</color>
+    <color name="NavigationBarColor">#222</color>
+
+    <!-- Cor Tema - Azul -->
+    <color name="textAzul01">#0064ff</color>
+    <color name="textAzul02">#2187ff</color>
+    <color name="textAzul03">#1144AA</color>
+    <color name="textAzul01_t">#990064ff</color>
+    <color name="textAzul02_t">#882187ff</color>
+
+    <color name="textAzul08">#4199FF</color>
+
+    <!-- Cor Tema - Azul Degrade -->
+    <color name="textAzul04">#2187ff</color>
+    <color name="textAzul04_t">#882187ff</color>
+    <color name="textAzul05">#951095</color>
+    <color name="textAzul06">#750A75</color>
+    <color name="textAzul05_t">#88951095</color>
+
+    <!-- Cor Tema - Preto -->
+    <color name="textPreto01">#000</color>
+    <color name="textPreto01_t">#9000</color>
+    <color name="textPreto02">#222</color>
+    <color name="textPreto02_t">#9222</color>
+    <color name="textPreto03">#444</color>
+    <color name="textPreto04">#676767</color>
+    <color name="textPreto05">#888</color>
+    <color name="textPreto05_t">#9888</color>
+    <color name="textPreto06">#AAA</color>
+    <color name="textPreto07">#CCC</color>
+    <color name="textPreto08">#DDD</color>
+    <color name="textPreto09">#FFF</color>
+
+    <color name="textPreto10">#2000</color>
+    <color name="textPreto11">#4000</color>
+    <color name="textPreto12">#6000</color>
+    <color name="textPreto13">#8000</color>
+    <color name="textPreto14">#A000</color>
+    <color name="textPreto15">#C000</color>
+    <color name="textPreto16">#D000</color>
+
+    <!-- Cor Tema - Branco -->
+    <color name="textBranco01">#fff</color>
+    <color name="textBranco01_t">#9fff</color>
+    <color name="textBranco02">#ddd</color>
+    <color name="textBranco02_t">#8ddd</color>
+    <color name="textBranco03">#bbb</color>
+    <color name="textBranco04">#eee</color>
+    <color name="textBranco05">#2fff</color>
+    <color name="textBranco06">#f0f0f0</color>
+
+    <color name="textBranco10">#2fff</color>
+    <color name="textBranco11">#4fff</color>
+    <color name="textBranco12">#6fff</color>
+    <color name="textBranco13">#8fff</color>
+    <color name="textBranco14">#Afff</color>
+    <color name="textBranco15">#Cfff</color>
+    <color name="textBranco16">#Dfff</color>
+
+    <color name="transparent">#0000</color>
+
+    <color name="textVermelho01">#FF0000</color>
+    <color name="textVermelho02">#FF2121</color>
+    <color name="textVermelho03">#AA1111</color>
+    <color name="textVermelho04">#FF2121</color>
+    <color name="textVermelho05">#951010</color>
+    <color name="textVermelho01_t">#99FF0000</color>
+    <color name="textVermelho02_t">#88FF2121</color>
+
+</resources>
