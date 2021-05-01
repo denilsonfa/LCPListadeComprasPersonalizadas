@@ -16,7 +16,7 @@
         android:layout_gravity="start"
         android:layout_height="match_parent"
         android:layout_width="wrap_content"
-        app:headerLayout="@layout/header_m05_product_grafic"
+        app:headerLayout="@layout/header_m05_productgrafic"
         app:menu="@menu/menu05_options"/>
 
     <LinearLayout

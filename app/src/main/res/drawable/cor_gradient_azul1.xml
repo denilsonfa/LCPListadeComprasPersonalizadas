@@ -15,12 +15,12 @@
             <aapt:attr name="android:fillColor">
                 <gradient
                     android:startY="800.8022"
-                    android:startX="801.4051"
+                    android:startX="0.8018"
                     android:endY="0.1989"
-                    android:endX="0.8018"
+                    android:endX="801.4051"
                     android:type="linear">
-                    <item android:offset="0" android:color="#14F" tools:ignore="VectorRaster" />
-                    <item android:offset="0.8" android:color="#2187ff" tools:ignore="VectorRaster" />
+                    <item android:offset="0" android:color="#2187ff"/>
+                    <item android:offset="0.8" android:color="#1144ff"/>
                 </gradient>
             </aapt:attr>
         </path>

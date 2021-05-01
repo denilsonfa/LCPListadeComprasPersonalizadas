@@ -28,7 +28,7 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
         super.onCreate(savedInstanceState);
         //requestWindowFeature(1);
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        getWindow().setStatusBarColor(Color.rgb(33,135,255));
+        getWindow().setStatusBarColor(Color.rgb(0,100,255));
         setContentView(R.layout.activity_m06_info);
 
         //Activity = Menu

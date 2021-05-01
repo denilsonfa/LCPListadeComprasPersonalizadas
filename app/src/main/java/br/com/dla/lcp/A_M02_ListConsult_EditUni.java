@@ -39,7 +39,7 @@ public class A_M02_ListConsult_EditUni extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //requestWindowFeature(1);
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        getWindow().setStatusBarColor(Color.rgb(149,16,149));
+        getWindow().setStatusBarColor(Color.rgb(14,91,182));
         setContentView(R.layout.activity_m02_listconsult_edituni);
 
         //ImageView
@@ -101,6 +101,7 @@ public class A_M02_ListConsult_EditUni extends AppCompatActivity {
                     Toast.makeText(A_M02_ListConsult_EditUni.this, R.string.erro_noText02,Toast.LENGTH_LONG).show();
                 } else {
                     //S_Dados = Guardando S_Dados em variavies
+                    valorProductEdTx_EDIT_U.setText("0");
                     dados.setValorProduct( Double.parseDouble( valorProductEdTx_EDIT_U.getText().toString() ) );
                     dados.setCheckProduct(false);
 
@@ -250,6 +251,7 @@ public class A_M02_ListConsult_EditUni extends AppCompatActivity {
 
     public void definiValor() {
 
+        //definindo valor
         double valor = Double.parseDouble( String.valueOf(valorProductEdTx_EDIT_U.getText()) );
         valor = (Math.rint (valor * 100.0) / 100.0);
 

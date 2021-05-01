@@ -28,7 +28,7 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         super.onCreate(savedInstanceState);
         //requestWindowFeature(1);
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        getWindow().setStatusBarColor(Color.rgb(33,135,255));
+        getWindow().setStatusBarColor(Color.rgb(149,16,149));
         setContentView(R.layout.activity_m05_product_grafic);
 
         //Activity = Menu

@@ -8,7 +8,8 @@
     app:cardBackgroundColor="@color/transparent"
     app:cardElevation="0dp"
     app:cardUseCompatPadding="false"
-    app:contentPadding="0dp">
+    app:contentPadding="0dp"
+    app:cardCornerRadius="0dp">
 
     <LinearLayout
         android:id="@+id/main_menu02"

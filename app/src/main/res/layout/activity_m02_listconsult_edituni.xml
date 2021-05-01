@@ -28,7 +28,7 @@
             android:textSize="20sp"
             android:paddingTop="60dp"
             android:paddingBottom="35dp"
-            android:background="@color/textAzul05"
+            android:background="@color/textAzul03"
             android:textColor="@color/textBranco01"/>
 
         <LinearLayout
@@ -193,7 +193,7 @@
                 android:gravity="center"
                 android:padding="20dp"
                 android:text="@string/product_valor_vazio"
-                android:textColor="@color/textAzul05_t"
+                android:textColor="@color/textAzul03_t"
                 android:textSize="16sp"
                 android:visibility="gone" />
 
@@ -324,7 +324,7 @@
                 android:text="@string/sim"
                 style="?android:attr/borderlessButtonStyle"
                 android:fontFamily="@font/bebasneue"
-                android:background="@drawable/stl_btn_color2"
+                android:background="@drawable/stl_btn_color3"
                 android:textColor="@color/textBranco01"
                 android:textSize="18sp"
                 android:clickable="true"

@@ -2,6 +2,7 @@ package br.com.dla.lcp;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -20,7 +22,7 @@ public class A_M01_ListCreate_SetList extends AppCompatActivity {
     //RecyclerView == Creditos:  Stevdza-San (YOUTUBE)
     //Lista Listas
     RecyclerView recyclerView_ListCreate;
-    TextView no_data_ListCreate;
+    TextView no_data_ListCreate, tmp;
     S_ConexaoDAO conexaoDAO_ListLista01;
     ArrayList<String> selectionList01, idListL01, nomeList01, dataList01, checkList01;
     S_M01_ListLista_Adapter s_m01_list_lista_adapter;
@@ -42,6 +44,8 @@ public class A_M01_ListCreate_SetList extends AppCompatActivity {
         no_data_ListCreate = (TextView) findViewById(R.id.no_data_ListConsult_setList01);
         addNewList01 = (Button) findViewById(R.id.addNewList_setList01);
 
+        tmp = (TextView) findViewById(R.id.tmp);
+
         //Atualizando recyclerView
         resetStoreLists();
 
@@ -50,10 +54,28 @@ public class A_M01_ListCreate_SetList extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Criando nova lista
-                conexaoDAO_ListLista01.createList(conexaoDAO_ListLista01.numList());
+                long numListDia = S_Dados.getDia();
+                long numListMes = S_Dados.getMes();
+
+                conexaoDAO_ListLista01.createList(numListDia, numListMes);
 
                 //Atualizando recyclerView
                 resetStoreLists();
+
+                long idUltimaLista = conexaoDAO_ListLista01.idUltimaList();
+                String readListName = conexaoDAO_ListLista01.readListName(idUltimaLista);
+                String readListData = conexaoDAO_ListLista01.readListData(idUltimaLista);
+                String readListChk = conexaoDAO_ListLista01.readListChk(idUltimaLista);
+
+                Intent intent = new Intent(A_M01_ListCreate_SetList.this, A_M01_ListCreate.class);
+                intent.putExtra("idListLID", String.valueOf(idUltimaLista));
+                intent.putExtra("nomeListID", String.valueOf(readListName));
+                intent.putExtra("dataListID", String.valueOf(readListData));
+                intent.putExtra("checkListID", String.valueOf(readListChk));
+                A_M01_ListCreate_SetList.this.startActivity(intent);
+
+                Toast.makeText(A_M01_ListCreate_SetList.this, R.string.list_save, Toast.LENGTH_SHORT).show();
+                finish();
 
             }
         });
@@ -108,4 +130,5 @@ public class A_M01_ListCreate_SetList extends AppCompatActivity {
         recyclerView_ListCreate.setAdapter(s_m01_list_lista_adapter);
         recyclerView_ListCreate.setLayoutManager(new LinearLayoutManager(A_M01_ListCreate_SetList.this));
     }
+
 }

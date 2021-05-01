@@ -22,7 +22,7 @@
             android:textAlignment="center"
             android:textSize="26sp"
             android:paddingTop="60dp"
-            android:background="@color/textAzul04"
+            android:background="@color/textAzul05"
             android:textColor="@color/textBranco01"/>
 
         <TextView
@@ -33,7 +33,7 @@
             android:textAlignment="center"
             android:textSize="16sp"
             android:paddingBottom="35dp"
-            android:background="@color/textAzul04"
+            android:background="@color/textAzul05"
             android:textColor="@color/textBranco01"/>
 
         <LinearLayout
@@ -73,7 +73,7 @@
                         android:gravity="center"
                         android:padding="20dp"
                         android:text="@string/list_vazia_l"
-                        android:textColor="@color/textAzul04_t"
+                        android:textColor="@color/textAzul05_t"
                         android:textSize="16sp"
                         android:visibility="gone" />
 
@@ -116,7 +116,7 @@
                 android:text="@string/addList1"
                 style="?android:attr/borderlessButtonStyle"
                 android:fontFamily="@font/bebasneue"
-                android:background="@drawable/stl_btn_color"
+                android:background="@drawable/stl_btn_color2"
                 android:textColor="@color/textBranco01"
                 android:textSize="18sp"
                 android:clickable="true"

@@ -47,7 +47,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
     //Criar lista (Adicionar Produto) == Creditos: @Denilson_fa
     S_Dados dados = new S_Dados();
 
-    private TextView nomeListSELECTED03, totalValorListITEM03;
+    private TextView nomeListSELECTED03, nomeListSELECTED03b, totalValorListITEM03;
     private ImageView reloadListExtrato, editListExtrato;
 
     //private String idProductDADOS, idListPDADOS, nomeProductDADOS, quantProductDADOS, medidaProductDADOS, tipoProductDADOS;
@@ -58,7 +58,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
         super.onCreate(savedInstanceState);
         //requestWindowFeature(1);
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        getWindow().setStatusBarColor(Color.rgb(33,135,255));
+        getWindow().setStatusBarColor(Color.rgb(149,16,149));
         setContentView(R.layout.activity_m03_listextract);
 
         //Activity = Menu
@@ -80,6 +80,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
 
         //S_Dados = ID dos Itens
         nomeListSELECTED03 = findViewById(R.id.nomeListSELECTED03);
+        nomeListSELECTED03b = findViewById(R.id.nomeListSELECTED03b);
         totalValorListITEM03 = findViewById(R.id.totalValorListITEM03);
         reloadListExtrato = findViewById(R.id.reloadListExtrato);
         editListExtrato = findViewById(R.id.editListExtrato);
@@ -109,7 +110,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
                 AlertDialog.Builder builder = new AlertDialog.Builder(A_M03_ListExtract.this);
                 builder.setTitle(R.string.sltProduct03_reEdit);
                 builder.setMessage(R.string.sltProduct03_reEditObs);
-                builder.setIcon(R.drawable.ic_item_edit);
+                //builder.setIcon(R.drawable.ic_item_edit);
 
                 //define um botão negativo
                 builder.setPositiveButton(R.string.main_menu01, new DialogInterface.OnClickListener() {
@@ -143,7 +144,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
                         S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M03_ListExtract.this);
 
                         //Metodo para updateListCheck
-                        //conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), false );
+                        conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), false );
 
                         //Enviar dados para outra Activity
                         Intent intent = new Intent(A_M03_ListExtract.this, A_M02_ListConsult.class);
@@ -161,7 +162,9 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
 
                 //define um botão neutro
                 builder.setNeutralButton(R.string.cancelar, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {}
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        //Toast.makeText(A_M03_ListExtract.this, R.string.cancel, Toast.LENGTH_SHORT).show();
+                    }
                 });
 
                 //cria o AlertDialog
@@ -332,11 +335,13 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
             dados.setCheckList(Boolean.parseBoolean(checkListIDDADOS));
 
             //SETTEXT DADOS IN TEXTVIEWS
-            String nomeList = nomeListIDDADOS+" ( "+ dataListIDDADOS +" )";
-            nomeListSELECTED03.setText(nomeList);
+            //String nomeList = nomeListIDDADOS+" ( "+ dataListIDDADOS +" )";
+            nomeListSELECTED03.setText(nomeListIDDADOS);
+            nomeListSELECTED03b.setText(dataListIDDADOS);
 
             S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M03_ListExtract.this);
             double totalValor = conexaoDAO_ListProductCountCheck.numReadProductTotal( dados.getIdListL() );
+            totalValor = (Math.rint (totalValor * 100.0) / 100.0);
             String totVal = "R$ "+totalValor;
 
             totalValorListITEM03.setText(totVal);

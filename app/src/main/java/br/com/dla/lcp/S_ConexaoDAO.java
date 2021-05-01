@@ -41,14 +41,19 @@ public class S_ConexaoDAO {
     protected static final String       TP_ITEM08 = S_Dados.TP_ITEM08;
     protected static final String       TP_FK     = S_Dados.TP_FK;
 
-    protected static final String       PONT_VIRG = S_Dados.PONT_VIRG;
+    protected static final String       PONT_VIRG       = S_Dados.PONT_VIRG;
     protected static final String       WHERE_IDPRODUCT = S_Dados.getWhereIdProduct();
 
     //COMANDOS SQLITE
-    private static final String DATABASE_SELECT_JOIN            = S_Dados.getDatebaseSelectJoin();
-    private static final String DATABASE_SELECT_JOIN01            = S_Dados.getDatebaseSelectJoin01();
-    private static final String DATABASE_SELECT_JOIN02            = S_Dados.getDatebaseSelectJoin02();
-    private static final String DATABASE_SELECT_JOIN03            = S_Dados.getDatebaseSelectJoin03();
+    private static final String DATABASE_SELECT_JOIN                = S_Dados.getDatebaseSelectJoin();
+    private static final String DATABASE_SELECT_JOIN01              = S_Dados.getDatebaseSelectJoin01();
+    private static final String DATABASE_SELECT_JOIN02              = S_Dados.getDatebaseSelectJoin02();
+    private static final String DATABASE_SELECT_JOIN03              = S_Dados.getDatebaseSelectJoin03();
+
+    private static final String DATABASE_SELECT_LIST_MAX            = S_Dados.getDatabaseSelectListMax();
+    private static final String DATABASE_SELECT_LIST_NOME            = S_Dados.getDatabaseSelectListNome();
+    private static final String DATABASE_SELECT_LIST_DATA            = S_Dados.getDatabaseSelectListData();
+    private static final String DATABASE_SELECT_LIST_CHK            = S_Dados.getDatabaseSelectListChk();
 
     private static final String DATABASE_SELECT_PRODUCT             = S_Dados.getDatabaseSelectProduct();
     private static final String DATABASE_SELECT_PRODUCT_TOTAL       = S_Dados.getDatabaseSelectProductTotal();
@@ -69,11 +74,11 @@ public class S_ConexaoDAO {
     //	---------------------		CREATE		---------------------	//
 
     //	-----***-----	Create - table lista	-----***-----	//
-    public void createList(long numList) {
+    public void createList(long numListDia, long numListMes) {
         ContentValues valores;
         long resultado;
         @SuppressLint("DefaultLocale")
-        final String numListFormat = String.format("%02d", numList);
+        final String numListFormat = String.format("%02d", numListDia) +"/"+ String.format("%02d", numListMes);
 
         SQLiteDatabase DATABASE = conexao.getWritableDatabase();
         valores = new ContentValues();
@@ -139,7 +144,6 @@ public class S_ConexaoDAO {
         return cursor;
     }
     //	-------------------------------------------------------------------	//
-
 
     //	-----***-----	Read - table lista	-----***-----	//
     public Cursor readListCheck() {
@@ -212,6 +216,62 @@ public class S_ConexaoDAO {
     public static boolean doesDatabaseExist(ContextWrapper context) {
         File dbFile = context.getDatabasePath(DATABASE_NAME);
         return dbFile.exists();
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read DATABASE - table lista idUltimaList	-----***-----	//
+    public long idUltimaList() {
+
+        long valorTotal = 0;
+        SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
+        String query = DATABASE_SELECT_LIST_MAX;
+
+        Cursor cursor = DATABASEProductTotal.rawQuery(query, null);
+        if(cursor.moveToFirst()) { valorTotal = cursor.getLong(0); }
+
+        return valorTotal;
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read DATABASE - table lista idUltimaList	-----***-----	//
+    public String readListName(long idListL) {
+
+        String valorTotal = "";
+        SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
+        String query = DATABASE_SELECT_LIST_NOME+idListL+PONT_VIRG;
+
+        Cursor cursor = DATABASEProductTotal.rawQuery(query, null);
+        if(cursor.moveToFirst()) { valorTotal = cursor.getString(0); }
+
+        return valorTotal;
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read DATABASE - table lista idUltimaList	-----***-----	//
+    public String readListData(long idListL) {
+
+        String valorTotal = "";
+        SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
+        String query = DATABASE_SELECT_LIST_DATA+idListL+PONT_VIRG;
+
+        Cursor cursor = DATABASEProductTotal.rawQuery(query, null);
+        if(cursor.moveToFirst()) { valorTotal = cursor.getString(0); }
+
+        return valorTotal;
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read DATABASE - table lista idUltimaList	-----***-----	//
+    public String readListChk(long idListL) {
+
+        String valorTotal = "";
+        SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
+        String query = DATABASE_SELECT_LIST_CHK+idListL+PONT_VIRG;
+
+        Cursor cursor = DATABASEProductTotal.rawQuery(query, null);
+        if(cursor.moveToFirst()) { valorTotal = cursor.getString(0); }
+
+        return valorTotal;
     }
     //	-------------------------------------------------------------------	//
 

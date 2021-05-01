@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -34,7 +35,7 @@ public class A_M03_ListExtrato_SetList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //requestWindowFeature(1);
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        getWindow().setStatusBarColor(Color.rgb(33,135,255));
+        getWindow().setStatusBarColor(Color.rgb(149,16,149));
         setContentView(R.layout.activity_m03_listextrato_setlist);
 
         //RecyclerView
@@ -49,9 +50,28 @@ public class A_M03_ListExtrato_SetList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //Redirecioando para
-                Intent intent = new Intent(A_M03_ListExtrato_SetList.this, A_M01_ListCreate_SetList.class);
-                startActivity(intent);
+                //Criando nova lista
+                long numListDia = S_Dados.getDia();
+                long numListMes = S_Dados.getMes();
+
+                conexaoDAO_ListLista03.createList(numListDia, numListMes);
+
+                //Atualizando recyclerView
+                resetStoreLists();
+
+                long idUltimaLista = conexaoDAO_ListLista03.idUltimaList();
+                String readListName = conexaoDAO_ListLista03.readListName(idUltimaLista);
+                String readListData = conexaoDAO_ListLista03.readListData(idUltimaLista);
+                String readListChk = conexaoDAO_ListLista03.readListChk(idUltimaLista);
+
+                Intent intent = new Intent(A_M03_ListExtrato_SetList.this, A_M01_ListCreate.class);
+                intent.putExtra("idListLID", String.valueOf(idUltimaLista));
+                intent.putExtra("nomeListID", String.valueOf(readListName));
+                intent.putExtra("dataListID", String.valueOf(readListData));
+                intent.putExtra("checkListID", String.valueOf(readListChk));
+                A_M03_ListExtrato_SetList.this.startActivity(intent);
+
+                Toast.makeText(A_M03_ListExtrato_SetList.this, R.string.list_save, Toast.LENGTH_SHORT).show();
                 finish();
 
             }

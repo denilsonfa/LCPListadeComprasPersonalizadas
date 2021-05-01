@@ -28,9 +28,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="25dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/cor_gradient_azul4"
             tools:ignore="UselessParent">
 
             <androidx.appcompat.widget.Toolbar
@@ -41,16 +38,52 @@
                 android:background="@color/textBranco01"
                 android:minHeight="?attr/actionBarSize">
 
-                <TextView
-                    android:id="@+id/actN_menu09"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center|start"
-                    android:fontFamily="@font/bebasneue"
-                    android:gravity="center"
-                    android:text="@string/main_menu09"
-                    android:textColor="@color/textPreto05"
-                    android:textSize="22sp" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/actN_menu09"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center|start"
+                            android:fontFamily="@font/bebasneue"
+                            android:gravity="start"
+                            android:text="@string/nomeList"
+                            android:textColor="@color/textPreto05"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/actN_menu09_b"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center|start"
+                            android:fontFamily="@font/roboto_light"
+                            android:gravity="start"
+                            android:text="@string/dataList"
+                            android:textColor="@color/textPreto05"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/editListExtrato"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_item_edit"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:contentDescription="@string/editList"
+                    android:background="@drawable/stl_item_color"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_gravity="center|end"
+                    android:gravity="center"/>
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -72,7 +105,8 @@
                 android:textColor="@color/textBranco01"
                 android:textSize="18sp"
                 android:clickable="true"
-                android:focusable="true"/>
+                android:focusable="true"
+                android:enabled="false"/>
 
         </LinearLayout>
 

@@ -189,4 +189,5 @@ public class S_M02_ListConsult_Adapter extends RecyclerView.Adapter<S_M02_ListCo
             textValorOptionB02 = itemView.findViewById(R.id.textValorOptionB02);
         }
     }
+
 }

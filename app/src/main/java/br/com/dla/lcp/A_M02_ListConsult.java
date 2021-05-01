@@ -3,6 +3,7 @@ package br.com.dla.lcp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -11,10 +12,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -47,7 +50,7 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
     //Criar lista (Adicionar Produto) == Creditos: @Denilson_fa
     S_Dados dados = new S_Dados();
 
-    private TextView nomeListSELECTED02;
+    private TextView nomeListSELECTED02, nomeListSELECTED02b;
     private ImageView reloadListConsult;
 
     //private String idProductDADOS, idListPDADOS, nomeProductDADOS, quantProductDADOS, medidaProductDADOS, tipoProductDADOS;
@@ -58,7 +61,7 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
         super.onCreate(savedInstanceState);
         //requestWindowFeature(1);
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        getWindow().setStatusBarColor(Color.rgb(33,135,255));
+        getWindow().setStatusBarColor(Color.rgb(14,91,182));
         setContentView(R.layout.activity_m02_listconsult);
 
         //Activity = Menu
@@ -80,6 +83,7 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
 
         //S_Dados = ID dos Itens
         nomeListSELECTED02 = findViewById(R.id.nomeListSELECTED02);
+        nomeListSELECTED02b = findViewById(R.id.nomeListSELECTED02b);
         reloadListConsult = findViewById(R.id.reloadListConsult);
         list_concluida = findViewById(R.id.list_concluida);
 
@@ -109,28 +113,68 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
         resetStoreProducts_ListConsult();
     }
 
-    //Função Menu
-    //Ao sair, apaga lista se não houver nenhum item
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
+
         S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M02_ListConsult.this);
         S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M02_ListConsult.this);
         int countItens = conexaoDAO_ListProductCount.numItensListS( dados.getIdListL() );
         int countItensCheck = conexaoDAO_ListProductCountCheck.numItensCheck( dados.getIdListL() );
 
-        if (drawerLayout02.isDrawerOpen(GravityCompat.START)){
-            drawerLayout02.closeDrawer(GravityCompat.START);
-        } else {
-            if( countItensCheck == countItens ) {
-                conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true );
-                Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, R.string.list_save, Toast.LENGTH_SHORT).show();
-            }
+        if( countItensCheck == countItens ) {
+            //se for, ficha a lista
+            conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true );
+            Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
+            finish();
 
-            super.onBackPressed();
+        } else {
+            //se não pergunta se deseja fechar
+            AlertDialog.Builder builder = new AlertDialog.Builder(A_M02_ListConsult.this);
+            builder.setTitle(R.string.sltProduct02_exitList);
+            builder.setMessage(R.string.sltProduct02_exitListObs);
+            //builder.setIcon(R.drawable.ic_item_alert);
+
+            //define um botão negativo
+            builder.setPositiveButton(R.string.nao, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface arg0, int arg1) {
+                    S_ConexaoDAO conexaoDAO_bd = new S_ConexaoDAO(A_M02_ListConsult.this);
+                    conexaoDAO_bd.updateListCheck( String.valueOf(dados.getIdListL()), false );
+                    Toast.makeText(A_M02_ListConsult.this, R.string.list_save, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+            });
+
+            //define um botão positivo
+            builder.setNegativeButton(R.string.sim, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface arg0, int arg1) {
+                    S_ConexaoDAO conexaoDAO_bd = new S_ConexaoDAO(A_M02_ListConsult.this);
+                    conexaoDAO_bd.updateListCheck( String.valueOf(dados.getIdListL()), true );
+                    Toast.makeText(A_M02_ListConsult.this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
+                    finish();
+
+                    Intent intent = new Intent(A_M02_ListConsult.this, A_M03_ListExtract.class);
+                    intent.putExtra("idListLID", String.valueOf(dados.getIdListL()));
+                    intent.putExtra("nomeListID", String.valueOf(dados.getNomeList()));
+                    intent.putExtra("dataListID", String.valueOf(dados.getDataList()));
+                    intent.putExtra("checkListID", String.valueOf(dados.getCheckList()));
+                    A_M02_ListConsult.this.startActivity(intent);
+
+                }
+            });
+
+            //define um botão neutro
+            builder.setNeutralButton(R.string.cancelar, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        //Toast.makeText(A_M02_ListConsult.this, R.string.cancel, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            //cria o AlertDialog
+            AlertDialog  alerta = builder.create();
+            //Exibe
+            alerta.show();
         }
-        finish();
+
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -278,8 +322,9 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
             dados.setCheckList(Boolean.parseBoolean(checkListIDDADOS));
 
             //SETTEXT DADOS IN TEXTVIEWS
-            String nomeList = nomeListIDDADOS+" ( "+ dataListIDDADOS +" )";
-            nomeListSELECTED02.setText(nomeList);
+            //String nomeList = nomeListIDDADOS+" ( "+ dataListIDDADOS +" )";
+            nomeListSELECTED02.setText(nomeListIDDADOS);
+            nomeListSELECTED02b.setText(dataListIDDADOS);
 
         } else {
             //Toast.makeText(this, R.string.erro_product, Toast.LENGTH_SHORT).show();

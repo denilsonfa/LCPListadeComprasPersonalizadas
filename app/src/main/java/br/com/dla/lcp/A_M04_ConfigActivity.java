@@ -28,7 +28,7 @@ public class A_M04_ConfigActivity extends AppCompatActivity implements Navigatio
         super.onCreate(savedInstanceState);
         //requestWindowFeature(1);
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        getWindow().setStatusBarColor(Color.rgb(33,135,255));
+        getWindow().setStatusBarColor(Color.rgb(0,100,255));
         setContentView(R.layout.activity_m04_config);
 
         //Activity = Menu

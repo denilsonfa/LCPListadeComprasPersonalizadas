@@ -57,6 +57,7 @@ public class S_Dados implements Serializable {
     protected static final String       TL_ITEM02 = "nomeList";
     protected static final String       TL_ITEM03 = "dataList";
     protected static final String       TL_ITEM04 = "checkList";
+    protected static final String       TL_ITEM05 = "ultimoIdList";
 
     //TABELA PRODUTOS
     protected static final String       TP_NAME   = "produtos";
@@ -107,6 +108,8 @@ public class S_Dados implements Serializable {
 
     protected static final String WHERE_IDPRODUCT = "where " + TP_ITEM01 + " = ";
 
+    //Consultas Listas
+
     protected static final String DATABASE_SELECT_JOIN = " select * from "
             +TL_NAME+" join "
             +TP_NAME+" on "
@@ -124,6 +127,28 @@ public class S_Dados implements Serializable {
 
     protected static final String DATABASE_SELECT_JOIN03 = "  order by "
             +TP_ITEM01+" desc;";
+
+    protected static final String DATABASE_SELECT_LIST_MAX = " select MAX("
+            +TL_ITEM01+") as "
+            +TL_ITEM05+" from "
+            +TL_NAME+";";
+
+    protected static final String DATABASE_SELECT_LIST_NOME = " select "
+            +TL_ITEM02+" from "
+            +TL_NAME+" where "
+            +TL_ITEM01+" = ";
+
+    protected static final String DATABASE_SELECT_LIST_DATA = " select "
+            +TL_ITEM03+" from "
+            +TL_NAME+" where "
+            +TL_ITEM01+" = ";
+
+    protected static final String DATABASE_SELECT_LIST_CHK = " select "
+            +TL_ITEM04+" from "
+            +TL_NAME+" where "
+            +TL_ITEM01+" = ";
+
+    //Consultas Productos
 
     protected static final String DATABASE_SELECT_PRODUCT = " select * from "
             +TP_NAME+" order by "
@@ -317,6 +342,11 @@ public class S_Dados implements Serializable {
     public static String getDatebaseSelectJoin01() {return DATABASE_SELECT_JOIN01;}
     public static String getDatebaseSelectJoin02() {return DATABASE_SELECT_JOIN02;}
     public static String getDatebaseSelectJoin03() {return DATABASE_SELECT_JOIN03;}
+
+    public static String getDatabaseSelectListMax() {return DATABASE_SELECT_LIST_MAX;}
+    public static String getDatabaseSelectListNome() {return DATABASE_SELECT_LIST_NOME;}
+    public static String getDatabaseSelectListData() {return DATABASE_SELECT_LIST_DATA;}
+    public static String getDatabaseSelectListChk() {return DATABASE_SELECT_LIST_CHK;}
 
     public static String getDatabaseSelectProduct() {return DATABASE_SELECT_PRODUCT;}
     public static String getDatabaseSelectProductTotal() {return DATABASE_SELECT_PRODUCT_TOTAL;}

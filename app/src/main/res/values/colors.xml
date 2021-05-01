@@ -12,9 +12,10 @@
     <!-- Cor Tema - Azul -->
     <color name="textAzul01">#0064ff</color>
     <color name="textAzul02">#2187ff</color>
-    <color name="textAzul03">#1144AA</color>
-    <color name="textAzul01_t">#990064ff</color>
+    <color name="textAzul03">#0E5BB6</color>
+    <color name="textAzul01_t">#880064ff</color>
     <color name="textAzul02_t">#882187ff</color>
+    <color name="textAzul03_t">#880E5BB6</color>
 
     <color name="textAzul08">#4199FF</color>
 
@@ -22,8 +23,9 @@
     <color name="textAzul04">#2187ff</color>
     <color name="textAzul04_t">#882187ff</color>
     <color name="textAzul05">#951095</color>
-    <color name="textAzul06">#750A75</color>
     <color name="textAzul05_t">#88951095</color>
+    <color name="textAzul06">#750A75</color>
+    <color name="textAzul07">#003399</color>
 
     <!-- Cor Tema - Preto -->
     <color name="textPreto01">#000</color>
@@ -72,7 +74,7 @@
     <color name="textVermelho03">#AA1111</color>
     <color name="textVermelho04">#FF2121</color>
     <color name="textVermelho05">#951010</color>
-    <color name="textVermelho01_t">#99FF0000</color>
+    <color name="textVermelho01_t">#88FF0000</color>
     <color name="textVermelho02_t">#88FF2121</color>
 
 </resources>

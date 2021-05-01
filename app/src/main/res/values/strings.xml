@@ -77,7 +77,7 @@
     <string name="addList1">Criar nova Lista</string>
     <string name="valor">Valor:</string>
     <string name="total">Total:</string>
-    <string name="valorTotal">Valor Total:</string>
+    <string name="valorTotal">Total:</string>
     <string name="valorTotalList">Valor total de todos os produtos desta Lista:</string>
 
     <string name="sltList_alert01">Selecione uma lista ou crie uma nova:</string>
@@ -91,9 +91,12 @@
     <string name="sltList_obs03">* Só serãm exibidas lista consultadas.</string>
     <string name="sltProduct01_deletObs">Apagar produto selecionado:</string>
     <string name="sltProduct02_editObs">Editar produto selecionado:</string>
+    <string name="sltProduct02_exitList">A lista já foi concluida?</string>
+    <string name="sltProduct02_exitListObs">Alguns itens não foram adicionado ao carrinho! \nVocê deseja finalizar a lista mesmo assim? Ou não? Para poder edita-la novamente.</string>
+
     <string name="sltProduct03_editObs">Adicionar valor do produto:</string>
     <string name="sltProduct03_reEdit">Editar Lista?</string>
-    <string name="sltProduct03_reEditObs">Você poderá editar os produtos com a opção (Criar e Editar Lista) ou editar os valores com a opção (Consultar Lista)? \n \n Assim a lista será editaval até que seja concluida novamente.</string>
+    <string name="sltProduct03_reEditObs">Você poderá editar os produtos com a opção (Criar e Editar Lista) ou editar os valores com a opção (Consultar Lista)? \n\nAssim a lista será editavel até que seja concluida novamente.</string>
 
 
     <string name="addedProduct">Produto Adicionado!</string>
@@ -138,8 +141,10 @@
     <string name="list_vazia_p">A lista está vazia. Por favor, adicione os itens.</string>
     <string name="list_vazia_l">Nenhuma Lista foi encontrada. Crie uma nova lista.</string>
     <string name="product_valor_vazio">Adicione o valor do Produto.</string>
+    <string name="product_valor_vazio2">Não foi adicionado ao carrinho!</string>
     <string name="erro_noText01">Não se esqueça de preencher todos os campos!</string>
     <string name="erro_noText02">Não se esqueça de adicionar o Valor do Produto!</string>
+    <string name="list_create">Lista criada com sucesso!</string>
     <string name="list_clear_delet">Lista vazia apagada automaticamente!</string>
     <string name="list_save">Lista salva com sucesso!</string>
     <string name="list_concluida">Lista concluida!</string>

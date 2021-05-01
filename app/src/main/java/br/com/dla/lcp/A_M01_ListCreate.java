@@ -58,7 +58,7 @@ public class A_M01_ListCreate extends AppCompatActivity implements NavigationVie
     private Spinner tipoProductID;
     private Button addProductID;
 
-    private TextView nomeListSELECTED01;
+    private TextView nomeListSELECTED01, nomeListSELECTED01b;
     private ImageView reloadListCreate;
     RecyclerView readProductListCreate;
 
@@ -101,6 +101,7 @@ public class A_M01_ListCreate extends AppCompatActivity implements NavigationVie
         addProductID = findViewById(R.id.addProduct);
 
         nomeListSELECTED01 = findViewById(R.id.nomeListSELECTED01);
+        nomeListSELECTED01b = findViewById(R.id.nomeListSELECTED01b);
         reloadListCreate = findViewById(R.id.reloadListCreate);
 
         //Recebendo Dados do Produto selecionado
@@ -379,8 +380,9 @@ public class A_M01_ListCreate extends AppCompatActivity implements NavigationVie
             dados.setCheckList(Boolean.parseBoolean(checkListIDDADOS));
 
             //SETTEXT DADOS IN TEXTVIEWS
-            String nomeList = nomeListIDDADOS+" ( "+ dataListIDDADOS +" )";
-            nomeListSELECTED01.setText(nomeList);
+            //String nomeList = nomeListIDDADOS+" ( "+ dataListIDDADOS +" )";
+            nomeListSELECTED01.setText(nomeListIDDADOS);
+            nomeListSELECTED01b.setText(dataListIDDADOS);
 
         } else {
             //Toast.makeText(this, R.string.erro_product, Toast.LENGTH_SHORT).show();

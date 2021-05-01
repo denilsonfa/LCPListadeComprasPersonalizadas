@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="@drawable/cor_gradient_azul2">
+    android:background="@color/textAzul05">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_head03"
+        android:background="@drawable/bg_head05"
         android:gravity="bottom"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/bebasneue"
-            android:text="@string/main_menu03"
+            android:text="@string/main_menu05"
             android:textAlignment="textStart"
             android:textColor="@color/textBranco15"
             android:textSize="24sp"
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/bebasneue"
-            android:text="@string/main_desc_menu03"
+            android:text="@string/main_desc_menu05"
             android:textAlignment="textStart"
             android:textColor="@color/textBranco13"
             android:textSize="15sp"

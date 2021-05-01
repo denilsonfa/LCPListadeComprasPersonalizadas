@@ -51,13 +51,9 @@ public class S_M01_ListLista_Adapter extends RecyclerView.Adapter<S_M01_ListList
 
         //checkList
         if( (String.valueOf(checkList.get(position)).equals("0")) ){
-
             holder.checkList.setChecked(false);
-
         } else {
-
             holder.checkList.setChecked(true);
-
         }
 
         //Selecionar Lista

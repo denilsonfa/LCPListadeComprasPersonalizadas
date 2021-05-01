@@ -32,7 +32,7 @@ public class A_M09_Tmp extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         //requestWindowFeature(1);
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        getWindow().setStatusBarColor(Color.rgb(33,135,255));
+        getWindow().setStatusBarColor(Color.rgb(0,100,255));
         setContentView(R.layout.activity_m09_tmp);
 
         //Activity = Menu
@@ -58,7 +58,11 @@ public class A_M09_Tmp extends AppCompatActivity implements NavigationView.OnNav
             @Override
             public void onClick(View v) {
                 S_ConexaoDAO crud = new S_ConexaoDAO(getBaseContext());
-                crud.createList(crud.numList());
+                //Criando nova lista
+                long numListDia = S_Dados.getDia();
+                long numListMes = S_Dados.getMes();
+
+                crud.createList(numListDia, numListMes);
             }
         });
 

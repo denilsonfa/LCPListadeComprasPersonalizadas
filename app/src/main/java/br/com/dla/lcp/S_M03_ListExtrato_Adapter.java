@@ -72,6 +72,14 @@ public class S_M03_ListExtrato_Adapter extends RecyclerView.Adapter<S_M03_ListEx
     public void onBindViewHolder(@NonNull HolderListCreate holder, final int position) {
         this.position = position;
 
+        //checkList
+        if( String.valueOf(checkProduct.get(position)).equals("0") ) {
+            //definindo cor da barra
+            holder.checkListITEM03.setBackgroundColor(0x88FF0000);
+        } else {
+            holder.checkListITEM03.setBackgroundColor(0x882187FF);
+        }
+
         //tipoProduct
         if( String.valueOf(tipoProduct.get(position)).equals("Alimentos") ) {
             holder.tipoProduct_img.setImageResource(R.drawable.ic_item_01);
@@ -103,13 +111,18 @@ public class S_M03_ListExtrato_Adapter extends RecyclerView.Adapter<S_M03_ListEx
             holder.valorProductITEM.setText(String.valueOf(R.string.num2));
             holder.totalProductITEM.setText(String.valueOf(R.string.num2));
 
+            holder.valorProductITEM.setText(String.valueOf(R.string.num2));
+
         } else {
             //visibilidade dos itens
             holder.textValorOptionA03.setVisibility(View.GONE);
             holder.textValorOptionB03.setVisibility(View.VISIBLE);
 
-            //definindo valor
+            holder.valorProductITEM.setText(String.valueOf(R.string.num2));
+
             double valor = Double.parseDouble( String.valueOf( valorProduct.get(position) ) );
+            valor = (Math.rint (valor * 100.0) / 100.0);
+
             double quantidade = Double.parseDouble( String.valueOf( quantProduct.get(position) ) );
             double valorTotal;
             String valorStr;
@@ -130,6 +143,7 @@ public class S_M03_ListExtrato_Adapter extends RecyclerView.Adapter<S_M03_ListEx
             }
 
             //definir resultado
+            valorTotal = (Math.rint (valorTotal * 100.0) / 100.0);
             String totalStr = "R$ "+valorTotal;
 
             holder.valorProductITEM.setText(valorStr);
@@ -156,10 +170,12 @@ public class S_M03_ListExtrato_Adapter extends RecyclerView.Adapter<S_M03_ListEx
         //idProduct, nomeProduct, quantProduct, medidaProduct, tipoProduct, editProductITEM, deletProductITEM
         TextView idProduct, nomeProduct, quantProduct, medidaProduct, tipoProduct, valorProductITEM, totalProductITEM;
         ImageView tipoProduct_img;
-        LinearLayout textValorOptionA03, textValorOptionB03;
+        LinearLayout textValorOptionA03, textValorOptionB03, checkListITEM03;
 
         public HolderListCreate(@NonNull View itemView) {
             super(itemView);
+
+            checkListITEM03 = itemView.findViewById(R.id.checkListITEM03);
 
             idProduct = itemView.findViewById(R.id.idProductITEM03);
             nomeProduct = itemView.findViewById(R.id.nomeProductITEM03);
