@@ -74,7 +74,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:paddingTop="0dp"
             android:paddingBottom="5dp">
@@ -115,6 +116,33 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/stl_tire_list_border_tb"
+            android:visibility="gone"
+            android:id="@+id/list_concluida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto_light"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="@string/list_concluida"
+                android:textColor="@color/textAzul04_t"
+                android:textSize="30sp"
+                android:ellipsize="end"
+                android:singleLine="true"/>
 
         </LinearLayout>
 

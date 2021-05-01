@@ -69,6 +69,7 @@ public class S_Dados implements Serializable {
     protected static final String       TP_ITEM06 = "tipoProduct";
     protected static final String       TP_ITEM07 = "valorProduct";
     protected static final String       TP_ITEM08 = "checkProduct";
+    protected static final String       TP_ITEM09 = "totalProduct";
 
     protected static final String       TP_FK     = "fk_Product";
     protected static final String       PONT_VIRG = ";";
@@ -127,6 +128,13 @@ public class S_Dados implements Serializable {
     protected static final String DATABASE_SELECT_PRODUCT = " select * from "
             +TP_NAME+" order by "
             +TP_ITEM01+" desc;";
+
+    protected static final String DATABASE_SELECT_PRODUCT_TOTAL = " select SUM("
+            +TP_ITEM04+"*"
+            +TP_ITEM07+") as "
+            +TP_ITEM09+" from "
+            +TP_NAME+"  where "
+            +TP_ITEM02+" = ";
 
     protected static final String DATABASE_SELECT_LIST_CHECK = " select * from "
             +TL_NAME+" where "
@@ -311,6 +319,7 @@ public class S_Dados implements Serializable {
     public static String getDatebaseSelectJoin03() {return DATABASE_SELECT_JOIN03;}
 
     public static String getDatabaseSelectProduct() {return DATABASE_SELECT_PRODUCT;}
+    public static String getDatabaseSelectProductTotal() {return DATABASE_SELECT_PRODUCT_TOTAL;}
     public static String getDatabaseSelectList() {return DATABASE_SELECT_LIST;}
     public static String getDatabaseSelectListCheck() {return DATABASE_SELECT_LIST_CHECK;}
     public static String getDatabaseSelectListIsCheck() {return DATABASE_SELECT_LIST_ISCHECK;}

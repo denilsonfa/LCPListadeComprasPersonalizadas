@@ -251,34 +251,42 @@ public class A_M01_ListCreate extends AppCompatActivity implements NavigationVie
         switch (menuItem.getItemId()) {
             case R.id.nav_menu01:
                 startActivity(new Intent(getBaseContext(), A_M01_ListCreate_SetList.class));
+                exitAct01();
                 finish();
                 break;
             case R.id.nav_menu02:
                 startActivity(new Intent(getBaseContext(), A_M02_ListConsult_SetList.class));
+                exitAct01();
                 finish();
                 break;
             case R.id.nav_menu03:
                 startActivity(new Intent(getBaseContext(), A_M03_ListExtrato_SetList.class));
+                exitAct01();
                 finish();
                 break;
             case R.id.nav_menu04:
                 startActivity(new Intent(getBaseContext(), A_M04_ConfigActivity.class));
+                exitAct01();
                 finish();
                 break;
             case R.id.nav_menu05:
                 startActivity(new Intent(getBaseContext(), A_M05_ProductGrafic.class));
+                exitAct01();
                 finish();
                 break;
             case R.id.nav_menu06:
                 startActivity(new Intent(getBaseContext(), A_M06_InfoActivity.class));
+                exitAct01();
                 finish();
                 break;
             case R.id.nav_menu07:
                 startActivity(new Intent(getBaseContext(), A_A_SplashScreenActivity.class));
+                exitAct01();
                 finish();
                 break;
             case R.id.nav_menu08:
                 startActivity(new Intent(getBaseContext(), A_A_OnBoardingActivity.class));
+                exitAct01();
                 finish();
                 break;
         }
@@ -376,6 +384,19 @@ public class A_M01_ListCreate extends AppCompatActivity implements NavigationVie
 
         } else {
             //Toast.makeText(this, R.string.erro_product, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //Finalizar Lista ao sair
+    private void exitAct01() {
+        S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M01_ListCreate.this);
+        int countItens = conexaoDAO_ListProductCount.numItensListS( dados.getIdListL() );
+
+        if( countItens == 0 ) {
+            conexaoDAO_ListProductCount.deleteList( String.valueOf(dados.getIdListL()) );
+            Toast.makeText(this, R.string.list_clear_delet, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, R.string.list_save, Toast.LENGTH_SHORT).show();
         }
     }
 

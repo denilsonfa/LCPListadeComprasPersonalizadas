@@ -122,6 +122,7 @@ public class S_M02_ListConsult_Adapter extends RecyclerView.Adapter<S_M02_ListCo
             }
 
             //definir resultado
+            valorTotal = (Math.rint (valorTotal * 100.0) / 100.0);
             String totalStr = "R$ "+valorTotal;
 
             holder.valorProductITEM.setText(valorStr);

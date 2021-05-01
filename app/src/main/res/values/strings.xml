@@ -93,7 +93,7 @@
     <string name="sltProduct02_editObs">Editar produto selecionado:</string>
     <string name="sltProduct03_editObs">Adicionar valor do produto:</string>
     <string name="sltProduct03_reEdit">Editar Lista?</string>
-    <string name="sltProduct03_reEditObs">Você poderá editar os produtos com a opção (Criar e Editar Lista) ou editar os valores com a opção (Consultar Lista)? \n ***Assim a lista será editaval até que seja concluida novamente.</string>
+    <string name="sltProduct03_reEditObs">Você poderá editar os produtos com a opção (Criar e Editar Lista) ou editar os valores com a opção (Consultar Lista)? \n \n Assim a lista será editaval até que seja concluida novamente.</string>
 
 
     <string name="addedProduct">Produto Adicionado!</string>

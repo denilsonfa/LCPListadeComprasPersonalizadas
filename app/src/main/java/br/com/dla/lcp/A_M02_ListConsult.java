@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
     //Lista Produtos
     RecyclerView recyclerView_ListConsult;
     TextView no_data_ListConsult;
+    LinearLayout list_concluida;
     S_ConexaoDAO conexaoDAO_ListConsult;
     S_ConexaoDAO conexaoDAO_ListLista_ListConsult;
     ArrayList<String> idListL, nomeList, dataList, checkList, idProduct, idListP, nomeProduct, quantProduct, medidaProduct, tipoProduct, valorProduct, checkProduct;
@@ -79,6 +81,7 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
         //S_Dados = ID dos Itens
         nomeListSELECTED02 = findViewById(R.id.nomeListSELECTED02);
         reloadListConsult = findViewById(R.id.reloadListConsult);
+        list_concluida = findViewById(R.id.list_concluida);
 
         //Recebendo Dados do Produto selecionado
         getAndSetIntentDataLista_ListConsult();
@@ -136,34 +139,42 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
         switch (menuItem.getItemId()) {
             case R.id.nav_menu01:
                 startActivity(new Intent(getBaseContext(), A_M01_ListCreate_SetList.class));
+                exitAct02();
                 finish();
                 break;
             case R.id.nav_menu02:
                 startActivity(new Intent(getBaseContext(), A_M02_ListConsult_SetList.class));
+                exitAct02();
                 finish();
                 break;
             case R.id.nav_menu03:
                 startActivity(new Intent(getBaseContext(), A_M03_ListExtrato_SetList.class));
+                exitAct02();
                 finish();
                 break;
             case R.id.nav_menu04:
                 startActivity(new Intent(getBaseContext(), A_M04_ConfigActivity.class));
+                exitAct02();
                 finish();
                 break;
             case R.id.nav_menu05:
                 startActivity(new Intent(getBaseContext(), A_M05_ProductGrafic.class));
+                exitAct02();
                 finish();
                 break;
             case R.id.nav_menu06:
                 startActivity(new Intent(getBaseContext(), A_M06_InfoActivity.class));
+                exitAct02();
                 finish();
                 break;
             case R.id.nav_menu07:
                 startActivity(new Intent(getBaseContext(), A_A_SplashScreenActivity.class));
+                exitAct02();
                 finish();
                 break;
             case R.id.nav_menu08:
                 startActivity(new Intent(getBaseContext(), A_A_OnBoardingActivity.class));
+                exitAct02();
                 finish();
                 break;
         }
@@ -181,6 +192,17 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
 
     //Lista Produtos
     void storeProducts_ListConsult(){
+        S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M02_ListConsult.this);
+        S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M02_ListConsult.this);
+        int countItens = conexaoDAO_ListProductCount.numItensListS( dados.getIdListL() );
+        int countItensCheck = conexaoDAO_ListProductCountCheck.numItensCheck( dados.getIdListL() );
+
+        if( countItensCheck == countItens ) {
+            list_concluida.setVisibility(View.VISIBLE);
+        } else {
+            list_concluida.setVisibility(View.GONE);
+        }
+
         //idListL, nomeList, dataList, checkList,
         //idProduct, idListP, nomeProduct, quantProduct, medidaProduct, tipoProduct, valorProduct, checkProduct
 
@@ -262,6 +284,21 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
         } else {
             //Toast.makeText(this, R.string.erro_product, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void exitAct02() {
+        S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M02_ListConsult.this);
+        S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M02_ListConsult.this);
+        int countItens = conexaoDAO_ListProductCount.numItensListS( dados.getIdListL() );
+        int countItensCheck = conexaoDAO_ListProductCountCheck.numItensCheck( dados.getIdListL() );
+
+        if( countItensCheck == countItens ) {
+            conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true );
+            Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, R.string.list_save, Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 }

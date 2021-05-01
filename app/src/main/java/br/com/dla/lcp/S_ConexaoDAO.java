@@ -7,10 +7,8 @@ import android.content.ContextWrapper;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.SyncStateContract;
 
 import java.io.File;
-import java.util.ArrayList;
 
 public class S_ConexaoDAO {
     S_Dados dados = new S_Dados();
@@ -52,13 +50,14 @@ public class S_ConexaoDAO {
     private static final String DATABASE_SELECT_JOIN02            = S_Dados.getDatebaseSelectJoin02();
     private static final String DATABASE_SELECT_JOIN03            = S_Dados.getDatebaseSelectJoin03();
 
-    private static final String DATABASE_SELECT_PRODUCT         = S_Dados.getDatabaseSelectProduct();
-    private static final String DATABASE_SELECT_LIST            = S_Dados.getDatabaseSelectList();
-    private static final String DATABASE_SELECT_LIST_CHECK      = S_Dados.getDatabaseSelectListCheck();
-    private static final String DATABASE_SELECT_LIST_ISCHECK      = S_Dados.getDatabaseSelectListIsCheck();
-    private static final String DATABASE_COUNT_PRODUCT_LIST     = S_Dados.getDatabaseCountProductList();
-    private static final String DATABASE_COUNT_PRODUCT_CHECK01     = S_Dados.getDatabaseCountProductCheck01();
-    private static final String DATABASE_COUNT_PRODUCT_CHECK02     = S_Dados.getDatabaseCountProductCheck02();
+    private static final String DATABASE_SELECT_PRODUCT             = S_Dados.getDatabaseSelectProduct();
+    private static final String DATABASE_SELECT_PRODUCT_TOTAL       = S_Dados.getDatabaseSelectProductTotal();
+    private static final String DATABASE_SELECT_LIST                = S_Dados.getDatabaseSelectList();
+    private static final String DATABASE_SELECT_LIST_CHECK          = S_Dados.getDatabaseSelectListCheck();
+    private static final String DATABASE_SELECT_LIST_ISCHECK        = S_Dados.getDatabaseSelectListIsCheck();
+    private static final String DATABASE_COUNT_PRODUCT_LIST         = S_Dados.getDatabaseCountProductList();
+    private static final String DATABASE_COUNT_PRODUCT_CHECK01      = S_Dados.getDatabaseCountProductCheck01();
+    private static final String DATABASE_COUNT_PRODUCT_CHECK02      = S_Dados.getDatabaseCountProductCheck02();
 
     //	---------------------	Metodo Construtor	---------------------	//
     public S_ConexaoDAO(Context context){
@@ -179,6 +178,21 @@ public class S_ConexaoDAO {
         SQLiteDatabase DATABASEList = conexao.getReadableDatabase();
         Cursor cursor = DATABASEList.rawQuery(query, null);
         return cursor.getCount();
+
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read Count() - table lista	-----***-----	//
+    public double numReadProductTotal(int idListL) {
+
+        double valorTotal = 0;
+        SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
+        String query = DATABASE_SELECT_PRODUCT_TOTAL+idListL+PONT_VIRG;
+
+        Cursor cursor = DATABASEProductTotal.rawQuery(query, null);
+        if(cursor.moveToFirst()) { valorTotal = cursor.getDouble(0); }
+
+        return valorTotal;
 
     }
     //	-------------------------------------------------------------------	//

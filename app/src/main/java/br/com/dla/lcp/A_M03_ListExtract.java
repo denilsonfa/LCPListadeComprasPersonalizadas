@@ -47,7 +47,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
     //Criar lista (Adicionar Produto) == Creditos: @Denilson_fa
     S_Dados dados = new S_Dados();
 
-    private TextView nomeListSELECTED03;
+    private TextView nomeListSELECTED03, totalValorListITEM03;
     private ImageView reloadListExtrato, editListExtrato;
 
     //private String idProductDADOS, idListPDADOS, nomeProductDADOS, quantProductDADOS, medidaProductDADOS, tipoProductDADOS;
@@ -80,6 +80,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
 
         //S_Dados = ID dos Itens
         nomeListSELECTED03 = findViewById(R.id.nomeListSELECTED03);
+        totalValorListITEM03 = findViewById(R.id.totalValorListITEM03);
         reloadListExtrato = findViewById(R.id.reloadListExtrato);
         editListExtrato = findViewById(R.id.editListExtrato);
 
@@ -184,27 +185,17 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
 
     //Função Menu
     //Ao sair, apaga lista se não houver nenhum item
-//    @Override
-//    public void onBackPressed(){
-//        S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M03_ListExtract.this);
-//        S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M03_ListExtract.this);
-//        int countItens = conexaoDAO_ListProductCount.numItensListS( dados.getIdListL() );
-//        int countItensCheck = conexaoDAO_ListProductCountCheck.numItensCheck( dados.getIdListL() );
-//
-//        if (drawerLayout03.isDrawerOpen(GravityCompat.START)){
-//            drawerLayout03.closeDrawer(GravityCompat.START);
-//        } else {
-//            if( countItensCheck == countItens ) {
-//                conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true );
-//                Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
-//            } else {
-//                Toast.makeText(this, R.string.list_save, Toast.LENGTH_SHORT).show();
-//            }
-//
-//            super.onBackPressed();
-//        }
-//        finish();
-//    }
+    @Override
+    public void onBackPressed(){
+
+        if (drawerLayout03.isDrawerOpen(GravityCompat.START)){
+            drawerLayout03.closeDrawer(GravityCompat.START);
+        } else {
+            Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
+            super.onBackPressed();
+        }
+        finish();
+    }
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -212,34 +203,42 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
         switch (menuItem.getItemId()) {
             case R.id.nav_menu01:
                 startActivity(new Intent(getBaseContext(), A_M01_ListCreate_SetList.class));
+                Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             case R.id.nav_menu02:
                 startActivity(new Intent(getBaseContext(), A_M02_ListConsult_SetList.class));
+                Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             case R.id.nav_menu03:
                 startActivity(new Intent(getBaseContext(), A_M03_ListExtrato_SetList.class));
+                Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             case R.id.nav_menu04:
                 startActivity(new Intent(getBaseContext(), A_M04_ConfigActivity.class));
+                Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             case R.id.nav_menu05:
                 startActivity(new Intent(getBaseContext(), A_M05_ProductGrafic.class));
+                Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             case R.id.nav_menu06:
                 startActivity(new Intent(getBaseContext(), A_M06_InfoActivity.class));
+                Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             case R.id.nav_menu07:
                 startActivity(new Intent(getBaseContext(), A_A_SplashScreenActivity.class));
+                Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             case R.id.nav_menu08:
                 startActivity(new Intent(getBaseContext(), A_A_OnBoardingActivity.class));
+                Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
                 finish();
                 break;
         }
@@ -335,6 +334,12 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
             //SETTEXT DADOS IN TEXTVIEWS
             String nomeList = nomeListIDDADOS+" ( "+ dataListIDDADOS +" )";
             nomeListSELECTED03.setText(nomeList);
+
+            S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M03_ListExtract.this);
+            double totalValor = conexaoDAO_ListProductCountCheck.numReadProductTotal( dados.getIdListL() );
+            String totVal = "R$ "+totalValor;
+
+            totalValorListITEM03.setText(totVal);
 
         } else {
             //Toast.makeText(this, R.string.erro_product, Toast.LENGTH_SHORT).show();

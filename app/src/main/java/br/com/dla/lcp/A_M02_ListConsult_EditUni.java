@@ -251,6 +251,8 @@ public class A_M02_ListConsult_EditUni extends AppCompatActivity {
     public void definiValor() {
 
         double valor = Double.parseDouble( String.valueOf(valorProductEdTx_EDIT_U.getText()) );
+        valor = (Math.rint (valor * 100.0) / 100.0);
+
         double quantidade = Double.parseDouble( quantProductID );
         double valorTotal;
         String valorStr;
@@ -271,6 +273,7 @@ public class A_M02_ListConsult_EditUni extends AppCompatActivity {
         }
 
         //definir resultado
+        valorTotal = (Math.rint (valorTotal * 100.0) / 100.0);
         String totalStr = "R$ "+valorTotal;
 
         valorProductEDIT_U.setText(valorStr);
