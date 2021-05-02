@@ -56,6 +56,9 @@
     <string name="valorProduct">Valor do Produto</string>
     <string name="totalProduct">Valor Total</string>
 
+
+    <string name="valorProductEdit">Valor do Produto: </string>
+
     <string name="idListL">ID Lista (Lista)</string>
     <string name="nomeList">Nome da Lista</string>
     <string name="dataList">Data de Criação da Lista</string>
@@ -87,6 +90,9 @@
     <string name="sltList_obs02">* Faça a consulta das listas aqui.</string>
     <string name="sltList_obs02_new">Deseja criar uma lista nova?</string>
     <string name="sltList_obs02_cart">O produto foi adicionado ao carrinho?</string>
+    <string name="sltList_obs02_cart2A">O produto ainda não foi adicionado ao carrinho!</string>
+    <string name="sltList_obs02_cart2S">O produto ainda não foi adicionado ao carrinho. Clique aqui para confirmar!</string>
+    <string name="sltList_obs02_cart2N">O produto já esta no carrinho!</string>
     <string name="sltList_obs02_obs">Adicionado todos os produtos ao carrinho, a lista será concluida.</string>
     <string name="sltList_obs03">* Só serãm exibidas lista consultadas.</string>
     <string name="sltProduct01_deletObs">Apagar produto selecionado:</string>
@@ -113,8 +119,8 @@
 
     <!--  String Outros  -->
     <string name="continuar">Continuar</string>
-    <string name="proximo">Proximo</string>
-    <string name="anterio">Anterior</string>
+    <string name="proximo">Proximo ≫</string>
+    <string name="anterio">≪ Anterior</string>
     <string name="cancelar">Cancelar</string>
     <string name="cancel">Operação cancelada!</string>
 

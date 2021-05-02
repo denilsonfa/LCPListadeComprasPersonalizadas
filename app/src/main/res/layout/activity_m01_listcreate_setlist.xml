@@ -7,7 +7,6 @@
     tools:context=".A_M01_ListCreate_SetList">
 
     <LinearLayout
-        android:id="@+id/listCreateScreen_Edit01"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
