@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".A_M09_Tmp"/>
         <activity
             android:name=".A_A_SplashScreenActivity"
             android:screenOrientation="portrait">
@@ -52,6 +51,10 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
+            android:name=".A_M02_ListConsult_EditMult"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
             android:name=".A_M03_ListExtract"
             android:screenOrientation="portrait" />
         <activity
@@ -65,6 +68,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".A_M06_InfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".A_M09_Tmp"
             android:screenOrientation="portrait" />
         <activity
             android:name=".A_H_MainTop01"

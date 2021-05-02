@@ -70,6 +70,7 @@
     <string name="add">Adicionar</string>
     <string name="addProduct">Adicionar Produto</string>
     <string name="editProduct">Editar Produto</string>
+    <string name="editProductMult">Multipla edição de Produtos</string>
     <string name="editedProduct">Produto editado com sucesso!</string>
     <string name="editedProduct_addValor">Valor do produto adicionado com sucesso!</string>
     <string name="erro_product">Erro ao editar o produto!</string>
@@ -154,6 +155,7 @@
     <string name="list_clear_delet">Lista vazia apagada automaticamente!</string>
     <string name="list_save">Lista salva com sucesso!</string>
     <string name="list_concluida">Lista concluida!</string>
+    <string name="list_concluidaMult">Todos os produtos já estão no carrinho!</string>
     <string name="list_editing">Voltando para edição da Lista!</string>
 
     <!-- STRINGS List Create -->

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".A_M02_ListConsult_EditUni">
+    tools:context=".A_M02_ListConsult_EditMult">
 
     <!--tools:context=".A_M02_ListConsult_EditUni"-->
 
@@ -335,6 +335,33 @@
                 </LinearLayout>
 
             </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/stl_tire_list_border_tb"
+            android:visibility="gone"
+            android:id="@+id/list_concluida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto_light"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="@string/list_concluidaMult"
+                android:textColor="@color/textAzul03_t"
+                android:textSize="15sp"
+                android:ellipsize="end"
+                android:singleLine="true"/>
 
         </LinearLayout>
 

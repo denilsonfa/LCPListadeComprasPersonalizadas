@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -41,6 +42,7 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
     RecyclerView recyclerView_ListConsult;
     TextView no_data_ListConsult;
     LinearLayout list_concluida;
+    Button editMultItens;
     S_ConexaoDAO conexaoDAO_ListConsult;
     S_ConexaoDAO conexaoDAO_ListLista_ListConsult;
     ArrayList<String> idListL, nomeList, dataList, checkList, idProduct, idListP, nomeProduct, quantProduct, medidaProduct, tipoProduct, valorProduct, checkProduct;
@@ -86,6 +88,7 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
         nomeListSELECTED02b = findViewById(R.id.nomeListSELECTED02b);
         reloadListConsult = findViewById(R.id.reloadListConsult);
         list_concluida = findViewById(R.id.list_concluida);
+        editMultItens = findViewById(R.id.editMultItens);
 
         //Recebendo Dados do Produto selecionado
         getAndSetIntentDataLista_ListConsult();
@@ -101,6 +104,24 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
             @Override
             public void onClick(View view) {
                 resetStoreProducts_ListConsult();
+            }
+        });
+
+        //editMultItens
+        editMultItens.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String a = "ID: "+dados.getIdListL()+" NOME: "+dados.getNomeList()+"\n DATA: "+dados.getDataList()+" CHECK: "+dados.getCheckList();
+                nomeListSELECTED02.setText(a);
+
+//                Intent intent = new Intent(A_M02_ListConsult.this, A_M02_ListConsult_EditMult.class);
+//                intent.putExtra("idListLID", String.valueOf(dados.getIdListL()));
+//                intent.putExtra("nomeListID", String.valueOf(dados.getNomeList()));
+//                intent.putExtra("dataListID", String.valueOf(dados.getDataList()));
+//                intent.putExtra("checkListID", String.valueOf(dados.getCheckList()));
+//                A_M02_ListConsult.this.startActivity(intent);
+
             }
         });
     }
