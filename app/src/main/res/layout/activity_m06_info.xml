@@ -53,6 +53,271 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/bg_head_color"
+            android:gravity="center|bottom"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/app_name1"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/lg_lcp_color_t"/>
+
+            <TextView
+                android:id="@+id/txtLogo01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bebasneue"
+                android:text="@string/name_pt01"
+                android:textAlignment="center"
+                android:textColor="@color/textAzul02_t"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtLogo02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bebasneue"
+                android:text="@string/name_pt02"
+                android:textAlignment="center"
+                android:textColor="@color/textAzul01_t"
+                android:textSize="18sp"
+                android:layout_marginBottom="40dp"/>
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:background="@drawable/stl_tire_list_border_tb">
+
+            <LinearLayout style="@style/main_btnV">
+
+                <!-- OPIÇÂO 01 -->
+                <LinearLayout
+                    android:id="@+id/option_sobre"
+                    style="@style/main_btnH"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_sobre"
+                        style="@style/main_btnIMag"
+                        android:contentDescription="@string/main_menu06"
+                        app:srcCompat="@drawable/ic_main_menu06" />
+
+                    <LinearLayout style="@style/main_btnV">
+
+                        <TextView
+                            style="@style/main_btnTxt1"
+                            android:text="@string/main_menu06"
+                            android:textSize="20sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- TEXTO 01 -->
+                <LinearLayout
+                    android:id="@+id/option_sobre_txt"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:background="@color/textPreto08">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tips_desc06"
+                        android:textColor="@color/textPreto05"
+                        android:fontFamily="@font/raleway_regular"/>
+
+                </LinearLayout>
+
+                <!-- OPIÇÂO 02 -->
+                <LinearLayout
+                    android:id="@+id/option_dev"
+                    style="@style/main_btnH"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_dev"
+                        style="@style/main_btnIMag"
+                        android:contentDescription="@string/dev"
+                        app:srcCompat="@drawable/ic_item_dev" />
+
+                    <LinearLayout style="@style/main_btnV">
+
+                        <TextView
+                            style="@style/main_btnTxt1"
+                            android:text="@string/dev"
+                            android:textSize="20sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- TEXTO 02 -->
+                <LinearLayout
+                    android:id="@+id/option_dev_txt"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:background="@color/textPreto08"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/EasterEggDevDL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dev01"
+                        android:textColor="@color/textPreto05"
+                        android:fontFamily="@font/raleway_regular"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dev02"
+                        android:textColor="@color/textPreto05"
+                        android:fontFamily="@font/raleway_regular"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dev03"
+                        android:textColor="@color/textPreto05"
+                        android:fontFamily="@font/raleway_regular"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dev04"
+                        android:textColor="@color/textPreto05"
+                        android:fontFamily="@font/raleway_regular"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dev05"
+                        android:textColor="@color/textPreto05"
+                        android:fontFamily="@font/raleway_regular"/>
+
+                </LinearLayout>
+
+                <!-- OPIÇÂO 03 -->
+                <LinearLayout
+                    android:id="@+id/option_doc"
+                    style="@style/main_btnH"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_doc"
+                        style="@style/main_btnIMag"
+                        android:contentDescription="@string/doc"
+                        app:srcCompat="@drawable/ic_item_doc" />
+
+                    <LinearLayout style="@style/main_btnV">
+
+                        <TextView
+                            style="@style/main_btnTxt1"
+                            android:text="@string/doc"
+                            android:textSize="20sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- TEXTO 03 -->
+                <LinearLayout
+                    android:id="@+id/option_doc_txt"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/textPreto08">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/doc_txt"
+                        android:textColor="@color/textPreto05"
+                        android:fontFamily="@font/raleway_regular"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"/>
+
+                </LinearLayout>
+
+                <!-- OPIÇÂO 04 -->
+                <LinearLayout
+                    android:id="@+id/option_site"
+                    style="@style/main_btnH"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_site"
+                        style="@style/main_btnIMag"
+                        android:contentDescription="@string/site"
+                        app:srcCompat="@drawable/ic_item_site" />
+
+                    <LinearLayout style="@style/main_btnV">
+
+                        <TextView
+                            style="@style/main_btnTxt1"
+                            android:text="@string/site"
+                            android:textSize="20sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- TEXTO 04 -->
+                <LinearLayout
+                    android:id="@+id/option_site_txt"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/textPreto08">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/site_txt"
+                        android:textColor="@color/textPreto05"
+                        android:fontFamily="@font/raleway_regular"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
     </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

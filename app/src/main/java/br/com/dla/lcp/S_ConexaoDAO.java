@@ -60,6 +60,7 @@ public class S_ConexaoDAO {
     private static final String DATABASE_SELECT_LIST                = S_Dados.getDatabaseSelectList();
     private static final String DATABASE_SELECT_LIST_CHECK          = S_Dados.getDatabaseSelectListCheck();
     private static final String DATABASE_SELECT_LIST_ISCHECK        = S_Dados.getDatabaseSelectListIsCheck();
+    private static final String DATABASE_SELECT_IDPRODUCT           = S_Dados.getDatabaseSelectIdproduct();
     private static final String DATABASE_COUNT_PRODUCT_LIST         = S_Dados.getDatabaseCountProductList();
     private static final String DATABASE_COUNT_PRODUCT_CHECK01      = S_Dados.getDatabaseCountProductCheck01();
     private static final String DATABASE_COUNT_PRODUCT_CHECK02      = S_Dados.getDatabaseCountProductCheck02();
@@ -272,6 +273,21 @@ public class S_ConexaoDAO {
         if(cursor.moveToFirst()) { valorTotal = cursor.getString(0); }
 
         return valorTotal;
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read - table lista join produtos	-----***-----	//
+    public Cursor readIdProduct(String idListL) {
+        SQLiteDatabase DATABASE = conexao.getReadableDatabase();
+
+        String DATABASE_SELECT_JOIN = DATABASE_SELECT_IDPRODUCT+idListL+PONT_VIRG;
+
+        Cursor cursor = null;
+        if(DATABASE!=null){
+            cursor = DATABASE.rawQuery(DATABASE_SELECT_JOIN, null);
+            //cursor = DATABASE.rawQuery(DATABASE_SELECT_PRODUCT, null);
+        }
+        return cursor;
     }
     //	-------------------------------------------------------------------	//
 

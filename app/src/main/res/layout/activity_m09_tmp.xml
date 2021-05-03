@@ -106,7 +106,7 @@
                 android:textSize="18sp"
                 android:clickable="true"
                 android:focusable="true"
-                android:enabled="false"/>
+                android:enabled="true"/>
 
         </LinearLayout>
 

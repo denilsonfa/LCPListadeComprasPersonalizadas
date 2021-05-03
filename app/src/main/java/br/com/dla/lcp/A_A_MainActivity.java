@@ -99,8 +99,8 @@ public class A_A_MainActivity extends AppCompatActivity {
     public void main_menu09(View view){
         //Temporario
         //Toast.makeText(A_A_MainActivity.this, R.string.main_menu09,Toast.LENGTH_LONG).show();
-//        Intent intent = new Intent(this, A_M09_Tmp.class);
         Intent intent = new Intent(this, A_M09_Tmp.class);
+        //Intent intent = new Intent(this, tmp.class);
         startActivity(intent);
     }
 

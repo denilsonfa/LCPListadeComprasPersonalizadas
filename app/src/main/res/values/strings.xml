@@ -4,6 +4,7 @@
     <string name="app_name">LCP - Lista de Compras Personalizadas</string>
     <string name="app_name1">LCP</string>
     <string name="app_name2">Lista de Compras Personalizadas</string>
+    <string name="app_version">2.0</string>
     <string name="name_pt01">Lista de Compras</string>
     <string name="name_pt02">Personalizadas</string>
 
@@ -43,7 +44,7 @@
     <string name="tips05">Facilite sua vida!</string>
     <string name="tips_desc05">Com o aplicativo, você poderá melhorar algo que parece simples e rotineiro na vida de nossos usuários. Onde, o tem como objetivo, facilitar e ter mais rapidez na hora de fazer as suas compras, sendo uma lista inteligente, organizada e comparadora o valor total das compras.</string>
     <string name="tips06">Lista de Compras Personalizadas</string>
-    <string name="tips_desc06">Ut in imperdiet odio. In dapibus hendrerit tempus. In dapibus velit ante, eu vestibulum risus facilisis tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ornare purus nec aliquam.</string>
+    <string name="tips_desc06">Se você está cansado de sempre procurar uma caneta e um pedaço de papel em casa e ter que levá-los enquanto faz compras no mercado, vai aproveitar o LCP, que irá disponíbilizar esta função na palma da sua mão, diretamente em seu smartphone!.</string>
 
     <!--  List_creater  -->
     <string name="idProduct">ID Produto</string>
@@ -135,6 +136,18 @@
     <string name="aces_fast">Acesso Rapido</string>
     <string name="ico_dw_open">Abrir Menu de Navegação</string>
     <string name="ico_dw_close">Fechar Menu de Navegação</string>
+    <string name="dev">Desenvolvedores</string>
+    <string name="doc">Documentação</string>
+    <string name="site">Site</string>
+    <string name="doc_txt">Ler documentação do TCC.</string>
+    <string name="site_txt">Visitar site da aplicação.</string>
+
+    <!--  DESENVOLVEDORES DO LCP - TCC 2020-2021 -->
+    <string name="dev01">Denilson Fabiano de Araujo</string>
+    <string name="dev02">Izabela Aquino de Oliveira</string>
+    <string name="dev03">Jorge Henrique Coutinho de Meirelles</string>
+    <string name="dev04">Marcos Brendow Silva Santos</string>
+    <string name="dev05">Weslei Giovani Evaristo da Silva</string>
 
     <!--  ERROS E AVISOS -->
     <string name="num0">00</string>

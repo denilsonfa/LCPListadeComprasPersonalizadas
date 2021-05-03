@@ -175,6 +175,11 @@ public class S_Dados implements Serializable {
             +TL_NAME+" order by "
             +TL_ITEM01+" desc;";
 
+    protected static final String DATABASE_SELECT_IDPRODUCT = " select "
+            +TP_ITEM01+" from "
+            +TP_NAME+" where "
+            +TP_ITEM02+" = ";
+
     protected static final String DATABASE_COUNT_PRODUCT_LIST = "SELECT * FROM "
             +TP_NAME+" where "
             +TP_ITEM02+" = ";
@@ -353,6 +358,7 @@ public class S_Dados implements Serializable {
     public static String getDatabaseSelectList() {return DATABASE_SELECT_LIST;}
     public static String getDatabaseSelectListCheck() {return DATABASE_SELECT_LIST_CHECK;}
     public static String getDatabaseSelectListIsCheck() {return DATABASE_SELECT_LIST_ISCHECK;}
+    public static String getDatabaseSelectIdproduct() {return DATABASE_SELECT_IDPRODUCT;}
 
     public static String getDatabaseCountProductList(){return DATABASE_COUNT_PRODUCT_LIST;}
     public static String getDatabaseCountProductCheck01(){return DATABASE_COUNT_PRODUCT_CHECK01;}

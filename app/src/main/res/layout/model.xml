@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/drawer_layout02_EditMult"
+    android:id="@+id/drawer_layout02_EditMult_tmp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,20 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/cor_gradient_branco"
         tools:ignore="UselessParent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/sltProduct03_editObs"
-            android:fontFamily="@font/bebasneue"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:paddingTop="35dp"
-            android:paddingBottom="20dp"
-            android:background="@color/textAzul03"
-            android:textColor="@color/textBranco01"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,7 +34,7 @@
                 style="@style/list_form">
 
                 <ImageView
-                    android:id="@+id/tipoProductEDIT_IMG_M"
+                    android:id="@+id/tipoProductEDIT_IMG_M_tmp"
                     android:layout_width="0dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
@@ -56,7 +43,7 @@
                     app:tint="@color/textPreto05" />
 
                 <ImageView
-                    android:id="@+id/checkProductEDIT_IMG_M"
+                    android:id="@+id/checkProductEDIT_IMG_M_tmp"
                     android:layout_width="0dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
@@ -76,7 +63,7 @@
                 android:layout_marginTop="10dp">
 
                 <TextView
-                    android:id="@+id/nomeProductEDIT_TXT_M"
+                    android:id="@+id/nomeProductEDIT_TXT_M_tmp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/nomeProduct"
@@ -97,7 +84,7 @@
                     android:paddingBottom="10dp">
 
                     <TextView
-                        android:id="@+id/quantProductEDIT_TXT_M"
+                        android:id="@+id/quantProductEDIT_TXT_M_tmp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="15dp"
@@ -111,7 +98,7 @@
                         android:singleLine="true"/>
 
                     <TextView
-                        android:id="@+id/medidaProductEDIT_TXT_M"
+                        android:id="@+id/medidaProductEDIT_TXT_M_tmp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="15dp"
@@ -137,7 +124,7 @@
                         android:paddingEnd="5dp"/>
 
                     <TextView
-                        android:id="@+id/tipoProductEDIT_TXT_M"
+                        android:id="@+id/tipoProductEDIT_TXT_M_tmp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="15dp"
@@ -169,7 +156,7 @@
                     android:textColor="@color/textPreto05"/>
 
                 <EditText
-                    android:id="@+id/valorProductEDIT_EDIT_M"
+                    android:id="@+id/valorProductEDIT_EDIT_M_tmp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="40dp"
@@ -193,7 +180,6 @@
                 android:layout_marginBottom="2dp">
 
                 <TextView
-                    android:id="@+id/confirmEDIT_TXT_L_M"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_light"
@@ -218,7 +204,7 @@
                     android:baselineAligned="false">
 
                     <LinearLayout
-                        android:id="@+id/confirmEDIT_EDIT_L_M"
+                        android:id="@+id/confirmEDIT_EDIT_L_M_tmp"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -228,7 +214,7 @@
                         style="?android:attr/borderlessButtonStyle">
 
                         <TextView
-                            android:id="@+id/confirmEDIT_EDIT_T_M"
+                            android:id="@+id/confirmEDIT_EDIT_T_M_tmp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/add"
@@ -246,7 +232,7 @@
 
             <TextView
                 android:background="@drawable/stl_tire_list_border_tb"
-                android:id="@+id/textValorOptionB02_EDIT_TXT_M"
+                android:id="@+id/textValorOptionB02_EDIT_TXT_M_tmp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/bebasneue"
@@ -259,7 +245,7 @@
 
             <LinearLayout
                 android:background="@drawable/stl_tire_list_border_tb"
-                android:id="@+id/textValorOptionA02_EDIT_TXT_M"
+                android:id="@+id/textValorOptionA02_EDIT_TXT_M_tmp"
                 android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -286,7 +272,7 @@
                         android:textAlignment="center"/>
 
                     <TextView
-                        android:id="@+id/valorProductEDIT_TXT_M"
+                        android:id="@+id/valorProductEDIT_TXT_M_tmp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -320,7 +306,7 @@
                         android:textAlignment="center"/>
 
                     <TextView
-                        android:id="@+id/totalProductEDIT_TXT_M"
+                        android:id="@+id/totalProductEDIT_TXT_M_tmp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -342,7 +328,7 @@
         <LinearLayout
             android:background="@drawable/stl_tire_list_border_tb"
             android:visibility="gone"
-            android:id="@+id/list_concluida"
+            android:id="@+id/list_concluida_tmp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -363,47 +349,6 @@
                 android:textSize="15sp"
                 android:ellipsize="end"
                 android:singleLine="true"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="10dp">
-
-            <Button
-                android:id="@+id/anteriorEDIT_EDIT_M"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/anterio"
-                style="?android:attr/borderlessButtonStyle"
-                android:fontFamily="@font/raleway_regular"
-                android:background="@drawable/stl_btn_color"
-                android:textColor="@color/textBranco02"
-                android:textSize="12sp"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginEnd="10dp"/>
-
-            <Button
-                android:id="@+id/proximoEDIT_EDIT_M"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/proximo"
-                style="?android:attr/borderlessButtonStyle"
-                android:fontFamily="@font/raleway_regular"
-                android:background="@drawable/stl_btn_color"
-                android:textColor="@color/textBranco01"
-                android:textSize="12sp"
-                android:clickable="true"
-                android:focusable="true"/>
 
         </LinearLayout>
 
