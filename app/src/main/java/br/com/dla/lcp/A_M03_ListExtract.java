@@ -86,7 +86,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
         editListExtrato = findViewById(R.id.editListExtrato);
 
         //Recebendo Dados do Produto selecionado
-        getAndSetIntentDataLista_ListConsult();
+        getAndSetIntentDataLista_ListExtract();
 
         //RecyclerView
         recyclerView_ListExtrato = findViewById(R.id.readProductListExtrato);
@@ -187,7 +187,6 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
     }
 
     //Função Menu
-    //Ao sair, apaga lista se não houver nenhum item
     @Override
     public void onBackPressed(){
 
@@ -316,7 +315,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
     }
 
     //Recebendo dados do item selecionado para editar
-    void getAndSetIntentDataLista_ListConsult() {
+    void getAndSetIntentDataLista_ListExtract() {
         if (getIntent().hasExtra("idListLID") &&
                 getIntent().hasExtra("nomeListID") &&
                 getIntent().hasExtra("dataListID") &&

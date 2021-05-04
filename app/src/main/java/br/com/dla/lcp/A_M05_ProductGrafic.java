@@ -1,20 +1,28 @@
 package br.com.dla.lcp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.WindowManager;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 public class A_M05_ProductGrafic extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
@@ -22,6 +30,27 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     DrawerLayout drawerLayout05;
     NavigationView navigationView05;
     Toolbar toolbar05;
+
+    //RecyclerView == Creditos:  Stevdza-San (YOUTUBE)
+    //Lista Produtos
+    RecyclerView recyclerView_ProductGrafic, recyclerView_ProductGrafic_SetList;
+    TextView no_data_ProductGrafic, no_data_ProductGrafic_SetList;
+    S_ConexaoDAO conexaoDAO_ProductGrafic, conexaoDAO_ListLista05;
+    S_ConexaoDAO conexaoDAO_ListLista_ProductGrafic;
+    ArrayList<String> idListL, nomeList, dataList, checkList, idProduct, idListP, nomeProduct, quantProduct, medidaProduct, tipoProduct, valorProduct, checkProduct;
+    ArrayList<String> selectionList05, idListL05, nomeList05, dataList05, checkList05;
+
+    //TMP
+    S_M03_ListLista_Adapter s_m03_list_lista_adapter;
+    S_M05_ListLista_Adapter s_m05_list_lista_adapter;
+
+    S_M03_ListExtrato_Adapter s_m05_productGrafic_adapter;
+
+    //Criar lista (Adicionar Produto) == Creditos: @Denilson_fa
+    S_Dados dados = new S_Dados();
+
+    //private String idProductDADOS, idListPDADOS, nomeProductDADOS, quantProductDADOS, medidaProductDADOS, tipoProductDADOS;
+    private String idListLDADOS, nomeListIDDADOS, dataListIDDADOS, checkListIDDADOS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +76,57 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         toggle.syncState();
 
         navigationView05.setNavigationItemSelectedListener(this);
+
+
+        //S_Dados = ID dos Itens
+        //Atualizando recyclerView
+//        resetStoreLists();
+
+        //Recebendo Dados do Produto selecionado
+        getAndSetIntentDataLista_ProductGrafic();
+
+
+        //RecyclerView
+        recyclerView_ProductGrafic_SetList = findViewById(R.id.readProductListGrafico_l);
+        no_data_ProductGrafic_SetList = findViewById(R.id.no_data_ListGrafico_l);
+
+        recyclerView_ProductGrafic = findViewById(R.id.readProductListGrafico_p);
+        no_data_ProductGrafic = findViewById(R.id.no_data_ListGrafico_p);
+
+        resetStoreProducts_ProductGrafic();
+
+//        //Função reloadListCreate
+//        reloadListExtrato.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                resetStoreProducts_ListExtrato();
+//            }
+//        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //Após retornar da editar/apagar produto, recarrega a lista
+        resetStoreProducts_ProductGrafic();
+
+        //Após retornar da editar/apagar produto, recarrega a lista
+        resetStoreLists();
+    }
+
+
+    //Função Menu
+    @Override
+    public void onBackPressed(){
+
+        if (drawerLayout05.isDrawerOpen(GravityCompat.START)){
+            drawerLayout05.closeDrawer(GravityCompat.START);
+        } else {
+            //Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
+            super.onBackPressed();
+        }
+        finish();
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -88,4 +168,143 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         }
         drawerLayout05.closeDrawer(GravityCompat.START); return true;
     }
+
+    //RecyclerView
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
+    }
+
+    //Lista Listas
+    void storeLists(){
+        Cursor cursor = conexaoDAO_ListLista05.readListIsCheck();
+        if(cursor.getCount() == 0) {
+            //no_data_ProductGrafic_SetList.setVisibility(View.VISIBLE);
+            //recyclerView_ProductGrafic_SetList.setVisibility(View.GONE);
+        } else {
+            while (cursor.moveToNext()){
+                idListL05.add(cursor.getString(0));
+                nomeList05.add(cursor.getString(1));
+                dataList05.add(cursor.getString(2));
+                checkList05.add(cursor.getString(3));
+            }
+            //no_data_ProductGrafic_SetList.setVisibility(View.GONE);
+            //recyclerView_ProductGrafic_SetList.setVisibility(View.VISIBLE);
+        }
+    }
+
+    //Metodo
+    void resetStoreLists() {
+        conexaoDAO_ListLista05 = new S_ConexaoDAO(A_M05_ProductGrafic.this);
+        idListL05 = new ArrayList<>();
+        nomeList05 = new ArrayList<>();
+        dataList05 = new ArrayList<>();
+        checkList05 = new ArrayList<>();
+
+        storeLists();
+
+
+        recyclerView_ProductGrafic_SetList.setOrientation(LinearLayoutManager.HORIZONTAL);
+        s_m05_list_lista_adapter = new S_M05_ListLista_Adapter(A_M05_ProductGrafic.this, selectionList05, idListL05, nomeList05, dataList05, checkList05);
+        recyclerView_ProductGrafic_SetList.setAdapter(s_m05_list_lista_adapter);
+        recyclerView_ProductGrafic_SetList.setLayoutManager(new LinearLayoutManager(A_M05_ProductGrafic.this));
+    }
+
+    //Lista Produtos
+    void storeProducts_ListConsult(){
+        //idListL, nomeList, dataList, checkList,
+        //idProduct, idListP, nomeProduct, quantProduct, medidaProduct, tipoProduct, valorProduct, checkProduct
+
+        Cursor cursor = conexaoDAO_ProductGrafic.readProduct(String.valueOf(dados.getIdListL()));
+        if(cursor.getCount() == 0) {
+            no_data_ProductGrafic.setVisibility(View.VISIBLE);
+            recyclerView_ProductGrafic.setVisibility(View.GONE);
+        } else {
+            while (cursor.moveToNext()){
+                idListL.add(        cursor.getString(0));
+                nomeList.add(       cursor.getString(1));
+                dataList.add(       cursor.getString(2));
+                checkList.add(      cursor.getString(3));
+
+                idProduct.add(      cursor.getString(4));
+                idListP.add(        cursor.getString(5));
+                nomeProduct.add(    cursor.getString(6));
+                quantProduct.add(   cursor.getString(7));
+                medidaProduct.add(  cursor.getString(8));
+                tipoProduct.add(    cursor.getString(9));
+                valorProduct.add(   cursor.getString(10));
+                checkProduct.add(   cursor.getString(11));
+            }
+            no_data_ProductGrafic.setVisibility(View.GONE);
+            recyclerView_ProductGrafic.setVisibility(View.VISIBLE);
+        }
+    }
+
+    //Reset storeProducts
+    void resetStoreProducts_ProductGrafic(){
+        conexaoDAO_ProductGrafic = new S_ConexaoDAO(A_M05_ProductGrafic.this);
+        idListL = new ArrayList<>();
+        nomeList = new ArrayList<>();
+        dataList = new ArrayList<>();
+        checkList = new ArrayList<>();
+
+        idProduct = new ArrayList<>();
+        idListP = new ArrayList<>();
+        nomeProduct = new ArrayList<>();
+        quantProduct = new ArrayList<>();
+        medidaProduct = new ArrayList<>();
+        tipoProduct = new ArrayList<>();
+        valorProduct = new ArrayList<>();
+        checkProduct = new ArrayList<>();
+
+        storeProducts_ListConsult();
+
+        s_m05_productGrafic_adapter = new S_M03_ListExtrato_Adapter(A_M05_ProductGrafic.this,
+                idListL, nomeList, dataList, checkList, idProduct, idListP, nomeProduct, quantProduct,
+                medidaProduct, tipoProduct, valorProduct, checkProduct);
+
+        recyclerView_ProductGrafic.setAdapter(s_m05_productGrafic_adapter);
+        recyclerView_ProductGrafic.setLayoutManager(new LinearLayoutManager(A_M05_ProductGrafic.this));
+    }
+
+    //Recebendo dados do item selecionado para editar
+    void getAndSetIntentDataLista_ProductGrafic() {
+        if (getIntent().hasExtra("idListLID") &&
+                getIntent().hasExtra("nomeListID") &&
+                getIntent().hasExtra("dataListID") &&
+                getIntent().hasExtra("checkListID") ) {
+
+            //GETTING
+            idListLDADOS = getIntent().getStringExtra("idListLID");
+            nomeListIDDADOS = getIntent().getStringExtra("nomeListID");
+            dataListIDDADOS = getIntent().getStringExtra("dataListID");
+            checkListIDDADOS = getIntent().getStringExtra("checkListID");
+
+            //SETTING
+            dados.setIdListL(Integer.parseInt(idListLDADOS));
+            dados.setNomeList(nomeListIDDADOS);
+            dados.setDataList(dataListIDDADOS);
+            dados.setCheckList(Boolean.parseBoolean(checkListIDDADOS));
+
+            //SETTEXT DADOS IN TEXTVIEWS
+            //String nomeList = nomeListIDDADOS+" ( "+ dataListIDDADOS +" )";
+//            nomeListSELECTED03.setText(nomeListIDDADOS);
+//            nomeListSELECTED03b.setText(dataListIDDADOS);
+
+            S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M05_ProductGrafic.this);
+            double totalValor = conexaoDAO_ListProductCountCheck.numReadProductTotal( dados.getIdListL() );
+            totalValor = (Math.rint (totalValor * 100.0) / 100.0);
+            String totVal = "R$ "+totalValor;
+
+//            totalValorListITEM03.setText(totVal);
+
+        } else {
+            //Toast.makeText(this, R.string.erro_product, Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
 }

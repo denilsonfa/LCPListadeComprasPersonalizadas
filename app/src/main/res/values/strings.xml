@@ -151,9 +151,12 @@
 
     <!--  ERROS E AVISOS -->
     <string name="num0">00</string>
-    <string name="num1">ID: 1</string>
+    <string name="num1">ID: 000</string>
     <string name="num2">R$ 0.00</string>
     <string name="num3">00 x R$ 0.00</string>
+    <string name="num4">100.00 %</string>
+    <string name="num5">ID: 00 | R$ 0.00</string>
+    <string name="listname">Lista de Compras 00/00</string>
     <string name="trace">-</string>
     <string name="Erro">ERRO!</string>
     <string name="Atencao">ATENÇÃO!</string>
@@ -162,6 +165,8 @@
     <string name="list_vazia_l">Nenhuma Lista foi encontrada. Crie uma nova lista.</string>
     <string name="product_valor_vazio">Adicione o valor do Produto.</string>
     <string name="product_valor_vazio2">Não foi adicionado ao carrinho!</string>
+    <string name="grafic_vazia_l">Dados insuficientes para montar o grafico.</string>
+    <string name="grafic_vazia_p">Nenhuma Lista foi encontrada.</string>
     <string name="erro_noText01">Não se esqueça de preencher todos os campos!</string>
     <string name="erro_noText02">Não se esqueça de adicionar o Valor do Produto!</string>
     <string name="list_create">Lista criada com sucesso!</string>

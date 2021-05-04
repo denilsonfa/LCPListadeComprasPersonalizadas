@@ -97,31 +97,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/main_menu04"
-                style="@style/main_btnH"
-                android:clickable="true"
-                android:focusable="true"
-                android:onClick="main_menu04">
-
-                <ImageView
-                    style="@style/main_btnIMag"
-                    android:contentDescription="@string/main_menu04"
-                    app:srcCompat="@drawable/ic_main_menu04" />
-
-                <LinearLayout style="@style/main_btnV">
-
-                    <TextView
-                        style="@style/main_btnTxt1"
-                        android:text="@string/main_menu04" />
-
-                    <TextView
-                        style="@style/main_btnTxt2"
-                        android:text="@string/main_desc_menu04" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/main_menu05"
                 style="@style/main_btnH"
                 android:clickable="true"
@@ -146,6 +121,31 @@
                 </LinearLayout>
 
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_menu04"
+                style="@style/main_btnH"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="main_menu04">
+
+                <ImageView
+                    style="@style/main_btnIMag"
+                    android:contentDescription="@string/main_menu04"
+                    app:srcCompat="@drawable/ic_main_menu04" />
+
+                <LinearLayout style="@style/main_btnV">
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/main_menu04" />
+
+                    <TextView
+                        style="@style/main_btnTxt2"
+                        android:text="@string/main_desc_menu04" />
+
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout

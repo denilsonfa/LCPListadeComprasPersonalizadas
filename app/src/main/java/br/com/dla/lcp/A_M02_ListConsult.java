@@ -17,7 +17,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +28,7 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class A_M02_ListConsult extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -112,8 +112,23 @@ public class A_M02_ListConsult extends AppCompatActivity implements NavigationVi
             @Override
             public void onClick(View view) {
 
-                String a = "ID: "+dados.getIdListL()+" NOME: "+dados.getNomeList()+"\n DATA: "+dados.getDataList()+" CHECK: "+dados.getCheckList();
-                nomeListSELECTED02.setText(a);
+                //String a = "ID: "+dados.getIdListL()+" NOME: "+dados.getNomeList()+"\n DATA: "+dados.getDataList()+" CHECK: "+dados.getCheckList();
+                //nomeListSELECTED02.setText(a);
+
+//                int max = Integer.parseInt(String.valueOf(conexaoDAO_ListConsult.readIdProductMAX(dados.getIdListL())));
+//                int count = 0;
+//
+//                String[] a = new String[max];
+//                for(int i = 0; i < max; i ++){
+//                    String b =  String.valueOf(conexaoDAO_ListConsult.readIdProduct(dados.getIdListL(), dados.getIdProduct()));
+//                    if(b != "0"){
+//                        count += 1;
+//                        a[count] = b;
+//                    }
+//                }
+
+                nomeListSELECTED02.setHeight(150);
+                //nomeListSELECTED02.setText(Arrays.toString(a));
 
 //                Intent intent = new Intent(A_M02_ListConsult.this, A_M02_ListConsult_EditMult.class);
 //                intent.putExtra("idListLID", String.valueOf(dados.getIdListL()));

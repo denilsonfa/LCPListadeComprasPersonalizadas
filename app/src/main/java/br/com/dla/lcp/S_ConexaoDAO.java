@@ -61,6 +61,10 @@ public class S_ConexaoDAO {
     private static final String DATABASE_SELECT_LIST_CHECK          = S_Dados.getDatabaseSelectListCheck();
     private static final String DATABASE_SELECT_LIST_ISCHECK        = S_Dados.getDatabaseSelectListIsCheck();
     private static final String DATABASE_SELECT_IDPRODUCT           = S_Dados.getDatabaseSelectIdproduct();
+
+    private static final String DATABASE_SELECT_IDPRODUCT01         = S_Dados.getDatabaseSelectIdproduct01();
+    private static final String DATABASE_SELECT_IDPRODUCT02         = S_Dados.getDatabaseSelectIdproduct02();
+
     private static final String DATABASE_COUNT_PRODUCT_LIST         = S_Dados.getDatabaseCountProductList();
     private static final String DATABASE_COUNT_PRODUCT_CHECK01      = S_Dados.getDatabaseCountProductCheck01();
     private static final String DATABASE_COUNT_PRODUCT_CHECK02      = S_Dados.getDatabaseCountProductCheck02();
@@ -160,11 +164,11 @@ public class S_ConexaoDAO {
 
     //	-----***-----	Read - table lista	-----***-----	//
     public Cursor readListIsCheck() {
-        SQLiteDatabase DATABASE = conexao.getReadableDatabase();
+        SQLiteDatabase DATABASE_LIST_IsCheck = conexao.getReadableDatabase();
 
         Cursor cursor = null;
-        if(DATABASE!=null){
-            cursor = DATABASE.rawQuery(DATABASE_SELECT_LIST_ISCHECK, null);
+        if(DATABASE_LIST_IsCheck !=null){
+            cursor = DATABASE_LIST_IsCheck.rawQuery(DATABASE_SELECT_LIST_ISCHECK, null);
         }
         return cursor;
     }
@@ -276,18 +280,53 @@ public class S_ConexaoDAO {
     }
     //	-------------------------------------------------------------------	//
 
-    //	-----***-----	Read - table lista join produtos	-----***-----	//
-    public Cursor readIdProduct(String idListL) {
-        SQLiteDatabase DATABASE = conexao.getReadableDatabase();
+    //	-----***-----	Read - idprodutos max 	-----***-----	//
+    public long readIdProductMAX(int idListL) {
+//        SQLiteDatabase DATABASE = conexao.getReadableDatabase();
+//
+//        String DATABASE_SELECT_JOIN = DATABASE_SELECT_IDPRODUCT+idListL+PONT_VIRG;
+//
+//        Cursor cursor = null;
+//        if(DATABASE!=null){
+//            cursor = DATABASE.rawQuery(DATABASE_SELECT_JOIN, null);
+//            //cursor = DATABASE.rawQuery(DATABASE_SELECT_PRODUCT, null);
+//        }
+//        DATABASE.close();
+//        return cursor;
 
+        long valorTotal = 0;
+        SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
         String DATABASE_SELECT_JOIN = DATABASE_SELECT_IDPRODUCT+idListL+PONT_VIRG;
 
-        Cursor cursor = null;
-        if(DATABASE!=null){
-            cursor = DATABASE.rawQuery(DATABASE_SELECT_JOIN, null);
-            //cursor = DATABASE.rawQuery(DATABASE_SELECT_PRODUCT, null);
-        }
-        return cursor;
+        Cursor cursor = DATABASEProductTotal.rawQuery(DATABASE_SELECT_JOIN, null);
+        if(cursor.moveToFirst()) { valorTotal = cursor.getLong(0); }
+
+        return valorTotal;
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read - idprodutos max 	-----***-----	//
+    public long readIdProduct(int idListL, int idProduct) {
+//        SQLiteDatabase DATABASE = conexao.getReadableDatabase();
+//
+//        String DATABASE_SELECT_JOIN = DATABASE_SELECT_IDPRODUCT+idListL+PONT_VIRG;
+//
+//        Cursor cursor = null;
+//        if(DATABASE!=null){
+//            cursor = DATABASE.rawQuery(DATABASE_SELECT_JOIN, null);
+//            //cursor = DATABASE.rawQuery(DATABASE_SELECT_PRODUCT, null);
+//        }
+//        DATABASE.close();
+//        return cursor;
+
+        long valorTotal = 0;
+        SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
+        String DATABASE_SELECT_JOIN = DATABASE_SELECT_IDPRODUCT01+idListL+DATABASE_SELECT_IDPRODUCT02+idListL+PONT_VIRG;
+
+        Cursor cursor = DATABASEProductTotal.rawQuery(DATABASE_SELECT_JOIN, null);
+        if(cursor.moveToFirst()) { valorTotal = cursor.getLong(0); }
+
+        return valorTotal;
     }
     //	-------------------------------------------------------------------	//
 

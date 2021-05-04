@@ -16,13 +16,11 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -36,7 +34,7 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
     ImageView imgLogo, img_sobre, img_dev, img_doc, img_site;
     LinearLayout option_sobre, option_dev, option_doc, option_site;
     LinearLayout option_sobre_txt, option_dev_txt, option_doc_txt, option_site_txt;
-    TextView EasterEggDevDL, txtLogo01, txtLogo02;
+    TextView hello, txtLogo01, txtLogo02;
 
     Animation fadein, fadeout;
 
@@ -66,9 +64,9 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
         navigationView06.setNavigationItemSelectedListener(this);
 
         //Animação
-//        fadein = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down_anim);
-//        fadeout = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up_anim);
-//        OBJETO.startAnimation(fadein);
+        fadein = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadein);
+        fadeout = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadeout);
+        //OBJETO.startAnimation(fadein);
 
         //SOBRE
         //ImageView: imgLogo, img_sobre, img_dev, img_doc, img_site;
@@ -91,7 +89,7 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
         option_site_txt = findViewById(R.id.option_site_txt);
 
         //TextView: EasterEggDevDL, txtLogo01, txtLogo02;
-        EasterEggDevDL = findViewById(R.id.EasterEggDevDL);
+        hello = findViewById(R.id.hello);
         txtLogo01 = findViewById(R.id.txtLogo01);
         txtLogo02 = findViewById(R.id.txtLogo02);
 
@@ -151,37 +149,30 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
         option_doc_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://www.lcp.eteccruzeiro.dev.br/doc";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
+                chamar("https://www.lcp.eteccruzeiro.dev.br/doc");
             }
         });
 
         option_site_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://www.lcp.eteccruzeiro.dev.br/";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
+                chamar("https://www.lcp.eteccruzeiro.dev.br/");
             }
         });
 
-        EasterEggDevDL.setOnLongClickListener(new View.OnLongClickListener() {
+        hello.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
 
                 getWindow().setStatusBarColor(Color.rgb(0,0,0));
                 //ImageView: imgLogo, img_sobre, img_dev, img_doc, img_site;
-                imgLogo.setImageResource(R.drawable.lg_lcp_preto);
-                img_sobre.setImageResource(R.drawable.ic_item_easteegg);
-                img_dev.setImageResource(R.drawable.ic_item_easteegg);
-                img_doc.setImageResource(R.drawable.ic_item_easteegg);
-                img_site.setImageResource(R.drawable.ic_item_easteegg);
+                imgLogo.setImageResource(R.drawable.ic_item_hello);
+                imgLogo.startAnimation(fadein);
 
                 txtLogo01.setTextColor(0x66000000);
+                txtLogo01.startAnimation(fadein);
                 txtLogo02.setTextColor(0x88000000);
+                txtLogo02.startAnimation(fadein);
 
                 txtLogo01.setText("Meus parabéns, você acaba de descobrir um Easter Egg!");
                 txtLogo02.setText("Me sigue no Instagram. ✌✌✌");
@@ -189,10 +180,8 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        String url = "https://www.instagram.com/denilson_fa/";
-                        Intent i = new Intent(Intent.ACTION_VIEW);
-                        i.setData(Uri.parse(url));
-                        startActivity(i);
+                        chamar("https://www.instagram.com/denilson_fa/");
+
                     }
                 }, 5000);
                 return false;
@@ -239,5 +228,12 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
                 break;
         }
         drawerLayout06.closeDrawer(GravityCompat.START); return true;
+    }
+
+    public void chamar(String link){
+        String url = link;
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
     }
 }

@@ -9,7 +9,7 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     tools:context=".A_M05_ProductGrafic"
-    android:background="#f0f0f0">
+    android:background="#FFF">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view05"
@@ -26,6 +26,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:ignore="UselessParent">
@@ -50,6 +51,123 @@
                     android:textSize="22sp" />
 
                 </androidx.appcompat.widget.Toolbar>
+
+        </LinearLayout>
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            layout="@layout/header_a_grafic"/>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="240dp"-->
+<!--            android:background="@drawable/cor_gradient_azul2"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/no_data_ListGrafico_l"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:fontFamily="@font/bebasneue"-->
+<!--                android:gravity="center"-->
+<!--                android:padding="20dp"-->
+<!--                android:text="@string/grafic_vazia_l"-->
+<!--                android:textColor="@color/textBranco15"-->
+<!--                android:textSize="16sp"-->
+<!--                android:visibility="gone"-->
+<!--                android:background="@drawable/bg_head_branco01"/>-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/readProductListGrafico_l"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:paddingTop="20dp"-->
+<!--                android:paddingBottom="20dp"-->
+<!--                android:visibility="visible"-->
+<!--                android:background="@drawable/bg_head_branco01"/>-->
+
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/tipsDown"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:background="@drawable/bg_buttom_bar"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginTop="-30dp"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="0dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/no_data_ListGrafico_p"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/bebasneue"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="@string/grafic_vazia_p"
+                android:textColor="@color/textAzul05_t"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/readProductListGrafico_p"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingEnd="5dp"
+                android:paddingStart="0dp"
+                android:text="@string/valorTotalList"
+                android:textColor="@color/textPreto05"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/totalValorListITEM05"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto_light"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="@string/num2"
+                android:textColor="@color/textPreto05"
+                android:textSize="24sp"
+                android:ellipsize="end"
+                android:singleLine="true"/>
 
         </LinearLayout>
 
