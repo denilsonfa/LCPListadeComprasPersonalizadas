@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:baselineAligned="false"
+        android:gravity="top"
+        android:paddingTop="10dp"
+        android:background="@color/textBranco01"
+        android:padding="10dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/nomeProductEDIT_TXT_M"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nomeProduct"
+            android:paddingTop="10dp"
+            android:fontFamily="@font/bebasneue"
+            android:textColor="@color/textPreto05"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAlignment="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/textPreto07"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:text="@string/valorProductEdit"
+                android:fontFamily="@font/raleway_bold"
+                android:textSize="16sp"
+                android:textColor="@color/textPreto05"/>
+
+            <EditText
+                android:id="@+id/valorProductEDIT_EDIT_M"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:hint="@string/valorProduct"
+                android:autofillHints=""
+                android:maxLength="30"
+                android:inputType="numberDecimal"
+                android:textSize="16sp"
+                style="?attr/editTextStyle"
+                android:theme="@style/list_edTxt"
+                android:background="@drawable/stl_edittext"
+                android:layout_marginBottom="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:text="@string/sltList_obs02_cart"
+                android:fontFamily="@font/raleway_bold"
+                android:textSize="16sp"
+                android:textColor="@color/textPreto05"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp">
+
+                <Button
+                    android:id="@+id/cancelEDIT_EDIT_M"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/nao"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:fontFamily="@font/bebasneue"
+                    android:background="@drawable/stl_btn_vermelho"
+                    android:textColor="@color/textBranco02"
+                    android:textSize="18sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginEnd="10dp"/>
+
+                <Button
+                    android:id="@+id/confirmEDIT_EDIT_M"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sim"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:fontFamily="@font/bebasneue"
+                    android:background="@drawable/stl_btn_color"
+                    android:textColor="@color/textBranco01"
+                    android:textSize="18sp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

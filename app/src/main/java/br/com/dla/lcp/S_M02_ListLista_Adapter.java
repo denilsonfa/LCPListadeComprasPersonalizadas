@@ -1,6 +1,7 @@
 package br.com.dla.lcp;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class S_M02_ListLista_Adapter extends RecyclerView.Adapter<S_M02_ListLista_Adapter.HolderListConsult> {
@@ -65,12 +67,43 @@ public class S_M02_ListLista_Adapter extends RecyclerView.Adapter<S_M02_ListList
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(context, A_M02_ListConsult.class);
-                intent.putExtra("idListLID", String.valueOf(idListL.get(position)));
-                intent.putExtra("nomeListID", String.valueOf(nomeList.get(position)));
-                intent.putExtra("dataListID", String.valueOf(dataList.get(position)));
-                intent.putExtra("checkListID", String.valueOf(checkList.get(position)));
-                context.startActivity(intent);
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle(R.string.sltProduct02_editTipo);
+                builder.setMessage(R.string.sltProduct02_editTipoObs);
+
+                //define um botão negativo
+                builder.setNeutralButton(R.string.sltProduct02_editTipoUni, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                        Intent intent = new Intent(context, A_M02_ListConsult_ListUni.class);
+                        intent.putExtra("idListLID", String.valueOf(idListL.get(position)));
+                        intent.putExtra("nomeListID", String.valueOf(nomeList.get(position)));
+                        intent.putExtra("dataListID", String.valueOf(dataList.get(position)));
+                        intent.putExtra("checkListID", String.valueOf(checkList.get(position)));
+                        context.startActivity(intent);
+
+                    }
+                });
+
+                //define um botão positivo
+                builder.setNegativeButton(R.string.sltProduct02_editTipoMult, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                        Intent intent = new Intent(context, A_M02_ListConsult_ListMult.class);
+                        intent.putExtra("idListLID", String.valueOf(idListL.get(position)));
+                        intent.putExtra("nomeListID", String.valueOf(nomeList.get(position)));
+                        intent.putExtra("dataListID", String.valueOf(dataList.get(position)));
+                        intent.putExtra("checkListID", String.valueOf(checkList.get(position)));
+                        context.startActivity(intent);
+
+                    }
+                });
+
+                //cria o AlertDialog
+                AlertDialog  alerta = builder.create();
+
+                //Exibe
+                alerta.show();
 
             }
         });

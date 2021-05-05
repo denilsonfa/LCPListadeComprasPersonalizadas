@@ -42,7 +42,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".A_M02_ListConsult"
+            android:name=".A_M02_ListConsult_ListUni"
             android:screenOrientation="portrait" />
         <activity
             android:name=".A_M02_ListConsult_SetList"
@@ -52,7 +52,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".A_M02_ListConsult_EditMult"
+            android:name=".A_M02_ListConsult_ListMult"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity

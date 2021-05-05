@@ -45,6 +45,7 @@ public class S_M05_ListLista_Adapter extends RecyclerView.Adapter<S_M05_ListList
 
     @Override
     public void onBindViewHolder(@NonNull HolderListConsult holder, final int position) {
+
         //selectionList_Grafic, nomeListITEM_bar, totalListITEM_bar
         holder.nomeListITEM_bar.setText(String.valueOf(nomeList.get(position)));
         holder.totalListITEM_bar.setHeight(200);

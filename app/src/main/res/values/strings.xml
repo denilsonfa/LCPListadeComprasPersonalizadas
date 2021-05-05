@@ -85,6 +85,10 @@
     <string name="valorTotal">Total:</string>
     <string name="valorTotalList">Valor total de todos os produtos desta Lista:</string>
 
+
+    <string name="sltList_obs02_incart">Está no carrinho</string>
+    <string name="sltList_obs02_nocart">Não está no carrinho</string>
+
     <string name="sltList_alert01">Selecione uma lista ou crie uma nova:</string>
     <string name="sltList_alert02">Selecione uma lista para consultar:</string>
     <string name="sltList_alert03">Selecione uma lista para ver o extrato:</string>
@@ -96,11 +100,16 @@
     <string name="sltList_obs02_cart2S">O produto ainda não foi adicionado ao carrinho. Clique aqui para confirmar!</string>
     <string name="sltList_obs02_cart2N">O produto já esta no carrinho!</string>
     <string name="sltList_obs02_obs">Adicionado todos os produtos ao carrinho, a lista será concluida.</string>
+    <string name="sltProduct02_editTipo">Selecione qual tipo de edição:</string>
+    <string name="sltProduct02_editTipoObs">Selecione o tipo de edição, para adicionar o valor aos produtos e finalizar a lista, este que mais se enquadra com o momento atual!</string>
+    <string name="sltProduct02_editTipoUni">Edições Unitarias</string>
+    <string name="sltProduct02_editTipoMult">Multiplas Edições</string>
     <string name="sltList_obs03">* Só serãm exibidas lista consultadas.</string>
     <string name="sltProduct01_deletObs">Apagar produto selecionado:</string>
     <string name="sltProduct02_editObs">Editar produto selecionado:</string>
     <string name="sltProduct02_exitList">A lista já foi concluida?</string>
     <string name="sltProduct02_exitListObs">Alguns itens não foram adicionado ao carrinho! \nVocê deseja finalizar a lista mesmo assim? Ou não? Para poder edita-la novamente.</string>
+    <string name="sltList_obs02_editMult">Adicione o valor do produto e defina se foi ou não adicionado ao carrinho!</string>
 
     <string name="sltProduct03_editObs">Adicionar valor do produto:</string>
     <string name="sltProduct03_reEdit">Editar Lista?</string>

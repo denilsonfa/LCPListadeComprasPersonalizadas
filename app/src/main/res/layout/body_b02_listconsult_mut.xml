@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:cardBackgroundColor="@color/transparent"
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="false"
+    app:contentPadding="0dp"
+    app:cardCornerRadius="0dp">
+
+    <LinearLayout
+        android:id="@+id/main_menu02_mult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingEnd="2dp"
+        android:paddingStart="2dp"
+        android:paddingTop="5dp"
+        android:background="@drawable/stl_main_btn"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="top"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                android:id="@+id/idProductITEM02_mult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/num1"
+                android:textColor="@color/textPreto05"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:singleLine="true"/>
+
+            <ImageView
+                android:id="@+id/tipoProductITEM02_img_mult"
+                android:layout_width="@dimen/img_listcreat_tipo"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/tipoProduct"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                app:srcCompat="@drawable/ic_item_09" />
+
+            <ImageView
+                android:id="@+id/productInCart02_mult"
+                android:layout_width="@dimen/img_listcreat_tipo"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/checkProduct"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="0dp"
+                app:srcCompat="@drawable/ic_item_incart"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:background="@drawable/stl_tire_text_border_l"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp">
+
+            <TextView
+                android:id="@+id/nomeProductITEM02_mult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_bold"
+                android:text="@string/nomeProduct"
+                android:textColor="@color/textPreto05"
+                android:textSize="16sp"
+                android:ellipsize="end"
+                android:singleLine="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/quantProductITEM02_mult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:textStyle="bold"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="0dp"
+                    android:text="@string/num0"
+                    android:textColor="@color/textPreto05"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/medidaProductITEM02_mult"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:textStyle="bold"
+                    android:text="@string/medidaProduct"
+                    android:textColor="@color/textPreto05"
+                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    android:singleLine="true"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tipoProductITEM02_mult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/tipoProduct"
+                android:textColor="@color/textPreto05"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/textValorOptionA02_mult"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:background="@color/textVermelho02"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_regular"
+                    android:text="@string/product_valor_vazio2"
+                    android:textColor="@color/textBranco01"
+                    android:textSize="12sp"
+                    android:textAlignment="center"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/textValorOptionB02_mult"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:background="@color/textAzul02"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:textStyle="bold"
+                            android:paddingEnd="5dp"
+                            android:paddingStart="0dp"
+                            android:text="@string/valor"
+                            android:textColor="@color/textBranco01"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/valorProductITEM02_mult"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_light"
+                            android:textStyle="bold"
+                            android:text="@string/num2"
+                            android:textColor="@color/textBranco01"
+                            android:textSize="12sp"
+                            android:ellipsize="end"
+                            android:singleLine="true"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:textStyle="bold"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="0dp"
+                        android:text="@string/valorTotal"
+                        android:textColor="@color/textBranco01"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/totalProductITEM02_mult"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/roboto_light"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:text="@string/num2"
+                        android:textColor="@color/textBranco01"
+                        android:textSize="22sp"
+                        android:ellipsize="end"
+                        android:singleLine="true"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/stl_tire_text_border_l">
+
+            <ImageView
+                android:id="@+id/editValorProductITEM02_mult"
+                android:layout_width="@dimen/img_listcreat_btn"
+                android:layout_height="@dimen/img_listcreat_btn"
+                android:contentDescription="@string/editProduct"
+                android:padding="8dp"
+                app:srcCompat="@drawable/ic_item_edit"
+                android:background="@drawable/stl_item_color"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -3,61 +3,67 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="220dp"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
     app:cardBackgroundColor="@color/transparent"
+    app:cardCornerRadius="0dp"
     app:cardElevation="0dp"
     app:cardUseCompatPadding="false"
-    app:contentPadding="0dp"
-    app:cardCornerRadius="0dp">
+    app:contentPadding="0dp">
 
     <LinearLayout
-        android:id="@+id/selectionList_Grafic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        tools:ignore="UselessParent">
+        android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/selectionList_Grafic"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingStart="10dp"
-            android:paddingEnd="0dp"
-            android:gravity="bottom">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            tools:ignore="UselessParent">
 
-            <br.com.dla.lcp.VerticalTextView
-                android:id="@+id/nomeListITEM_bar"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:rotation="180"
-                android:text="@string/nomeList"
-                android:textAllCaps="true"
-                android:textColor="@color/textPreto16"
-                android:textSize="12sp"
-                android:visibility="visible"
-                android:fontFamily="@font/bebasneue"/>
+                android:gravity="bottom"
+                android:paddingEnd="0dp"
+                android:paddingStart="10dp">
 
-        </LinearLayout>
+                <br.com.dla.lcp.VerticalTextView
+                    android:id="@+id/nomeListITEM_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/bebasneue"
+                    android:rotation="180"
+                    android:text="@string/nomeList"
+                    android:textAllCaps="true"
+                    android:textColor="@color/textBranco02_t"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingStart="0dp"
-            android:paddingEnd="10dp"
-            android:gravity="bottom">
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/totalListITEM_bar"
-                android:layout_width="10dp"
-                android:layout_height="200dp"
-                android:background="@drawable/cor_gradient_preto"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:paddingEnd="10dp"
+                android:paddingStart="0dp">
+
+                <TextView
+                    android:id="@+id/totalListITEM_bar"
+                    android:layout_width="10dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/cor_gradient_azul5" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
-
 
 </androidx.cardview.widget.CardView>

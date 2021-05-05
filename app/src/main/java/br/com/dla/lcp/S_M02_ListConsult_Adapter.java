@@ -64,7 +64,7 @@ public class S_M02_ListConsult_Adapter extends RecyclerView.Adapter<S_M02_ListCo
     @Override
     public HolderListCreate onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.body_b02_listconsult, parent, false);
+        View view = inflater.inflate(R.layout.body_b02_listconsult_uni, parent, false);
         return new HolderListCreate(view);
     }
 

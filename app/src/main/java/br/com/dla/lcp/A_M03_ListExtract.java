@@ -139,23 +139,62 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
                 //define um botão positivo
                 builder.setNegativeButton(R.string.main_menu02, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
-                        //Toast.makeText(A_M03_ListExtract.this, R.string.main_menu02, Toast.LENGTH_SHORT).show();
 
-                        S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M03_ListExtract.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(A_M03_ListExtract.this);
+                        builder.setTitle(R.string.sltProduct02_editTipo);
+                        builder.setMessage(R.string.sltProduct02_editTipoObs);
 
-                        //Metodo para updateListCheck
-                        conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), false );
+                        //define um botão negativo
+                        builder.setNeutralButton(R.string.sltProduct02_editTipoUni, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
 
-                        //Enviar dados para outra Activity
-                        Intent intent = new Intent(A_M03_ListExtract.this, A_M02_ListConsult.class);
-                        intent.putExtra("idListLID", String.valueOf(dados.getIdListL()));
-                        intent.putExtra("nomeListID", String.valueOf(dados.getNomeList()));
-                        intent.putExtra("dataListID", String.valueOf(dados.getDataList()));
-                        intent.putExtra("checkListID", String.valueOf(dados.getCheckList()));
-                        A_M03_ListExtract.this.startActivity(intent);
+                                S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M03_ListExtract.this);
 
-                        //finalizando activity
-                        finish();
+                                //Metodo para updateListCheck
+                                conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), false );
+
+                                //Enviar dados para outra Activity
+                                Intent intent = new Intent(A_M03_ListExtract.this, A_M02_ListConsult_ListUni.class);
+                                intent.putExtra("idListLID", String.valueOf(dados.getIdListL()));
+                                intent.putExtra("nomeListID", String.valueOf(dados.getNomeList()));
+                                intent.putExtra("dataListID", String.valueOf(dados.getDataList()));
+                                intent.putExtra("checkListID", String.valueOf(dados.getCheckList()));
+                                A_M03_ListExtract.this.startActivity(intent);
+
+                                //finalizando activity
+                                finish();
+
+                            }
+                        });
+
+                        //define um botão positivo
+                        builder.setNegativeButton(R.string.sltProduct02_editTipoMult, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                                S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M03_ListExtract.this);
+
+                                //Metodo para updateListCheck
+                                conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), false );
+
+                                //Enviar dados para outra Activity
+                                Intent intent = new Intent(A_M03_ListExtract.this, A_M02_ListConsult_ListMult.class);
+                                intent.putExtra("idListLID", String.valueOf(dados.getIdListL()));
+                                intent.putExtra("nomeListID", String.valueOf(dados.getNomeList()));
+                                intent.putExtra("dataListID", String.valueOf(dados.getDataList()));
+                                intent.putExtra("checkListID", String.valueOf(dados.getCheckList()));
+                                A_M03_ListExtract.this.startActivity(intent);
+
+                                //finalizando activity
+                                finish();
+
+                            }
+                        });
+
+                        //cria o AlertDialog
+                        AlertDialog  alerta = builder.create();
+
+                        //Exibe
+                        alerta.show();
 
                     }
                 });

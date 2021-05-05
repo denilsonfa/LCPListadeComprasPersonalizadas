@@ -37,6 +37,9 @@ public class A_H_Grafic extends AppCompatActivity {
         recyclerView_ProductGrafic_SetList = (RecyclerView) findViewById(R.id.readProductListGrafico_l);
         no_data_ProductGrafic = (TextView) findViewById(R.id.no_data_ListGrafico_l);
 
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(A_H_Grafic.this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView_ProductGrafic_SetList.setLayoutManager(linearLayoutManager);
+
         //Atualizando recyclerView
 //        resetStoreLists();
     }

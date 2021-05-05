@@ -182,7 +182,6 @@ public class S_ConexaoDAO {
 
     //	-----***-----	Read Count() - table lista	-----***-----	//
     public int numItensListS(int idListL) {
-
         String query = DATABASE_COUNT_PRODUCT_LIST+idListL+PONT_VIRG;
         SQLiteDatabase DATABASEList = conexao.getReadableDatabase();
         Cursor cursor = DATABASEList.rawQuery(query, null);

@@ -3,16 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout02"
+    android:id="@+id/drawer_layout02_mult"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
-    tools:context=".A_M02_ListConsult"
+    tools:context=".A_M02_ListConsult_ListMult"
     android:background="#f0f0f0">
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view02"
+        android:id="@+id/nav_view02_mult"
         android:layout_gravity="start"
         android:layout_height="match_parent"
         android:layout_width="wrap_content"
@@ -20,7 +20,6 @@
         app:menu="@menu/menu02_options"/>
 
     <LinearLayout
-        android:id="@+id/listConsultScreen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -31,7 +30,7 @@
             tools:ignore="UselessParent">
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar02"
+                android:id="@+id/toolbar02_mult"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -44,7 +43,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/nomeListSELECTED02"
+                        android:id="@+id/nomeListSELECTED02_mult"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center|start"
@@ -55,7 +54,7 @@
                         android:textSize="22sp" />
 
                     <TextView
-                        android:id="@+id/nomeListSELECTED02b"
+                        android:id="@+id/nomeListSELECTED02b_mult"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center|start"
@@ -68,7 +67,7 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/reloadListConsult"
+                    android:id="@+id/reloadListConsult_mult"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:src="@drawable/ic_item_reflesh"
@@ -84,7 +83,7 @@
                     android:focusable="true"
                     android:layout_gravity="center|end"
                     android:gravity="center"
-                    android:visibility="invisible"/>
+                    android:visibility="visible"/>
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -94,9 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingTop="0dp"
-            android:paddingBottom="5dp">
+            android:orientation="vertical">
 
             <TextView
                 android:background="@drawable/stl_tire_list_border_tb"
@@ -110,7 +107,7 @@
                 android:padding="5dp"/>
 
             <TextView
-                android:id="@+id/no_data_ListConsult"
+                android:id="@+id/no_data_ListConsult_mult"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/bebasneue"
@@ -126,7 +123,7 @@
                 app:layout_constraintTop_toBottomOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/readProductListConsult"
+                android:id="@+id/readProductListConsult_mult"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="visible"
@@ -139,8 +136,8 @@
 
         <LinearLayout
             android:background="@drawable/stl_tire_list_border_tb"
-            android:visibility="gone"
-            android:id="@+id/list_concluida"
+            android:visibility="visible"
+            android:id="@+id/list_concluida_mult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -161,31 +158,6 @@
                 android:textSize="30sp"
                 android:ellipsize="end"
                 android:singleLine="true"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="bottom"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
-
-            <Button
-                android:id="@+id/editMultItens"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/editProductMult"
-                style="?android:attr/borderlessButtonStyle"
-                android:fontFamily="@font/bebasneue"
-                android:background="@drawable/stl_btn_color"
-                android:textColor="@color/textBranco01"
-                android:textSize="18sp"
-                android:clickable="true"
-                android:focusable="true"/>
 
         </LinearLayout>
 

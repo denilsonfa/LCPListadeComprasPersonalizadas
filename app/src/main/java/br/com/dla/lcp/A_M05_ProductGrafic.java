@@ -205,9 +205,10 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         checkList05 = new ArrayList<>();
 
         storeLists();
+        
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(A_M05_ProductGrafic.this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView_ProductGrafic_SetList.setLayoutManager(linearLayoutManager);
 
-
-        recyclerView_ProductGrafic_SetList.setOrientation(LinearLayoutManager.HORIZONTAL);
         s_m05_list_lista_adapter = new S_M05_ListLista_Adapter(A_M05_ProductGrafic.this, selectionList05, idListL05, nomeList05, dataList05, checkList05);
         recyclerView_ProductGrafic_SetList.setAdapter(s_m05_list_lista_adapter);
         recyclerView_ProductGrafic_SetList.setLayoutManager(new LinearLayoutManager(A_M05_ProductGrafic.this));
