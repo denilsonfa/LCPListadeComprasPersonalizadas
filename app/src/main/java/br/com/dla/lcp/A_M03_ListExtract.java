@@ -120,7 +120,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
                         S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M03_ListExtract.this);
 
                         //Metodo para updateListCheck
-                        conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), false );
+                        conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), false, 0 );
 
                         //Enviar dados para outra Activity
                         Intent intent = new Intent(A_M03_ListExtract.this, A_M01_ListCreate.class);
@@ -151,7 +151,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
                                 S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M03_ListExtract.this);
 
                                 //Metodo para updateListCheck
-                                conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), false );
+                                conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), false, 0 );
 
                                 //Enviar dados para outra Activity
                                 Intent intent = new Intent(A_M03_ListExtract.this, A_M02_ListConsult_ListUni.class);
@@ -174,7 +174,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
                                 S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M03_ListExtract.this);
 
                                 //Metodo para updateListCheck
-                                conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), false );
+                                conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), false, 0 );
 
                                 //Enviar dados para outra Activity
                                 Intent intent = new Intent(A_M03_ListExtract.this, A_M02_ListConsult_ListMult.class);
@@ -312,14 +312,14 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
                 dataList.add(       cursor.getString(2));
                 checkList.add(      cursor.getString(3));
 
-                idProduct.add(      cursor.getString(4));
-                idListP.add(        cursor.getString(5));
-                nomeProduct.add(    cursor.getString(6));
-                quantProduct.add(   cursor.getString(7));
-                medidaProduct.add(  cursor.getString(8));
-                tipoProduct.add(    cursor.getString(9));
-                valorProduct.add(   cursor.getString(10));
-                checkProduct.add(   cursor.getString(11));
+                idProduct.add(      cursor.getString(5));
+                idListP.add(        cursor.getString(6));
+                nomeProduct.add(    cursor.getString(7));
+                quantProduct.add(   cursor.getString(8));
+                medidaProduct.add(  cursor.getString(9));
+                tipoProduct.add(    cursor.getString(10));
+                valorProduct.add(   cursor.getString(11));
+                checkProduct.add(   cursor.getString(12));
             }
             no_data_ListExtrato.setVisibility(View.GONE);
             recyclerView_ListExtrato.setVisibility(View.VISIBLE);

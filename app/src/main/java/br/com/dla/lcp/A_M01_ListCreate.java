@@ -160,7 +160,7 @@ public class A_M01_ListCreate extends AppCompatActivity implements NavigationVie
         addProductID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if( (nomeProductID.getText().toString().equals("")) || (quantProductID.getText().toString().equals(""))) {
+                if( (nomeProductID.getText().toString().equals("")) || (quantProductID.getText().toString().equals("")) || (quantProductID.getText().toString().equals("0"))) {
                     Toast.makeText(A_M01_ListCreate.this, R.string.erro_noText01,Toast.LENGTH_LONG).show();
                 } else {
                     S_ConexaoDAO crud = new S_ConexaoDAO(getBaseContext());
@@ -319,14 +319,14 @@ public class A_M01_ListCreate extends AppCompatActivity implements NavigationVie
                 dataList.add(       cursor.getString(2));
                 checkList.add(      cursor.getString(3));
 
-                idProduct.add(      cursor.getString(4));
-                idListP.add(        cursor.getString(5));
-                nomeProduct.add(    cursor.getString(6));
-                quantProduct.add(   cursor.getString(7));
-                medidaProduct.add(  cursor.getString(8));
-                tipoProduct.add(    cursor.getString(9));
-                valorProduct.add(   cursor.getString(10));
-                checkProduct.add(   cursor.getString(11));
+                idProduct.add(      cursor.getString(5));
+                idListP.add(        cursor.getString(6));
+                nomeProduct.add(    cursor.getString(7));
+                quantProduct.add(   cursor.getString(8));
+                medidaProduct.add(  cursor.getString(9));
+                tipoProduct.add(    cursor.getString(10));
+                valorProduct.add(   cursor.getString(11));
+                checkProduct.add(   cursor.getString(12));
             }
             no_data_ListCreate.setVisibility(View.GONE);
             recyclerView_ListCreate.setVisibility(View.VISIBLE);

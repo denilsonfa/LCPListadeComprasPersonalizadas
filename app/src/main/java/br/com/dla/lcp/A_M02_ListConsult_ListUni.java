@@ -123,7 +123,9 @@ public class A_M02_ListConsult_ListUni extends AppCompatActivity implements Navi
 
         if( countItensCheck == countItens ) {
             //se for, ficha a lista
-            conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true );
+            double totalValor = conexaoDAO_ListProductCount.numReadProductTotal( dados.getIdListL() );
+
+            conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true, totalValor );
             Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
             finish();
 
@@ -138,7 +140,7 @@ public class A_M02_ListConsult_ListUni extends AppCompatActivity implements Navi
             builder.setPositiveButton(R.string.nao, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface arg0, int arg1) {
                     S_ConexaoDAO conexaoDAO_bd = new S_ConexaoDAO(A_M02_ListConsult_ListUni.this);
-                    conexaoDAO_bd.updateListCheck( String.valueOf(dados.getIdListL()), false );
+                    conexaoDAO_bd.updateListCheck( String.valueOf(dados.getIdListL()), false, 0 );
                     Toast.makeText(A_M02_ListConsult_ListUni.this, R.string.list_save, Toast.LENGTH_SHORT).show();
                     finish();
                 }
@@ -148,7 +150,10 @@ public class A_M02_ListConsult_ListUni extends AppCompatActivity implements Navi
             builder.setNegativeButton(R.string.sim, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface arg0, int arg1) {
                     S_ConexaoDAO conexaoDAO_bd = new S_ConexaoDAO(A_M02_ListConsult_ListUni.this);
-                    conexaoDAO_bd.updateListCheck( String.valueOf(dados.getIdListL()), true );
+
+                    double totalValor = conexaoDAO_bd.numReadProductTotal( dados.getIdListL() );
+
+                    conexaoDAO_bd.updateListCheck( String.valueOf(dados.getIdListL()), true, totalValor );
                     Toast.makeText(A_M02_ListConsult_ListUni.this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
                     finish();
 
@@ -261,14 +266,14 @@ public class A_M02_ListConsult_ListUni extends AppCompatActivity implements Navi
                 dataList.add(       cursor.getString(2));
                 checkList.add(      cursor.getString(3));
 
-                idProduct.add(      cursor.getString(4));
-                idListP.add(        cursor.getString(5));
-                nomeProduct.add(    cursor.getString(6));
-                quantProduct.add(   cursor.getString(7));
-                medidaProduct.add(  cursor.getString(8));
-                tipoProduct.add(    cursor.getString(9));
-                valorProduct.add(   cursor.getString(10));
-                checkProduct.add(   cursor.getString(11));
+                idProduct.add(      cursor.getString(5));
+                idListP.add(        cursor.getString(6));
+                nomeProduct.add(    cursor.getString(7));
+                quantProduct.add(   cursor.getString(8));
+                medidaProduct.add(  cursor.getString(9));
+                tipoProduct.add(    cursor.getString(10));
+                valorProduct.add(   cursor.getString(11));
+                checkProduct.add(   cursor.getString(12));
             }
             no_data_ListConsult.setVisibility(View.GONE);
             recyclerView_ListConsult.setVisibility(View.VISIBLE);
@@ -338,7 +343,10 @@ public class A_M02_ListConsult_ListUni extends AppCompatActivity implements Navi
         int countItensCheck = conexaoDAO_ListProductCountCheck.numItensCheck( dados.getIdListL() );
 
         if( countItensCheck == countItens ) {
-            conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true );
+
+            double totalValor = conexaoDAO_ListProductCount.numReadProductTotal( dados.getIdListL() );
+
+            conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true, totalValor );
             Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, R.string.list_save, Toast.LENGTH_SHORT).show();

@@ -99,12 +99,47 @@
 <!--            android:layout_marginTop="-30dp"/>-->
 
         <LinearLayout
+            android:id="@+id/tipsDown"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_buttom_bar"
+            android:orientation="horizontal"
+            android:layout_marginTop="-30dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="-20dp">
+
+            <TextView
+                android:id="@+id/nomeListITEM05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bebasneue"
+                android:textAlignment="textStart"
+                android:textStyle="bold"
+                android:paddingEnd="5dp"
+                android:paddingStart="0dp"
+                android:text="@string/nomeList"
+                android:textColor="@color/textPreto05"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="vertical"
             android:paddingTop="0dp"
-            android:paddingBottom="5dp">
+            android:paddingBottom="5dp"
+            android:background="@drawable/stl_tire_list_border_tb">
 
             <TextView
                 android:id="@+id/no_data_ListGrafico_p"

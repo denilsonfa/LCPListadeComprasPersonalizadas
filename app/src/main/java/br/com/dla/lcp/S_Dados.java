@@ -1,6 +1,7 @@
 package br.com.dla.lcp;
 
 import android.annotation.SuppressLint;
+import android.widget.TextView;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -39,6 +40,7 @@ public class S_Dados implements Serializable {
     protected String	nomeList = "Lista de Compras ";		    //Nome da Lista == (Lista de Compras 01)
     protected String	dataList;								//data da criação da lista
     protected boolean   checkList;                              //Boolean de checar se a lista está completa
+    protected double    totalList;                              //Double que armazena o valor total da lista após finalização.
 
     //	---------------------		Atributos - BD Consult		---------------------	//
     protected int		idListC;								//ID para consulta da lista
@@ -57,7 +59,8 @@ public class S_Dados implements Serializable {
     protected static final String       TL_ITEM02 = "nomeList";
     protected static final String       TL_ITEM03 = "dataList";
     protected static final String       TL_ITEM04 = "checkList";
-    protected static final String       TL_ITEM05 = "ultimoIdList";
+    protected static final String       TL_ITEM05 = "totalList";
+    protected static final String       TL_ITEM06 = "ultimoIdList";
 
     //TABELA PRODUTOS
     protected static final String       TP_NAME   = "produtos";
@@ -87,7 +90,8 @@ public class S_Dados implements Serializable {
             +TL_ITEM01+ " integer primary key autoincrement, "
             +TL_ITEM02+ " varchar(20) not null, "
             +TL_ITEM03+ " varchar(20) not null, "
-            +TL_ITEM04+ " boolean "
+            +TL_ITEM04+ " boolean, "
+            +TL_ITEM05+ " double "
             +");";
 
     protected static final String DATABASE_TABLE_PRODUTOS = "create table " +TP_NAME+ "( "
@@ -130,7 +134,7 @@ public class S_Dados implements Serializable {
 
     protected static final String DATABASE_SELECT_LIST_MAX = " select MAX("
             +TL_ITEM01+") as "
-            +TL_ITEM05+" from "
+            + TL_ITEM06 +" from "
             +TL_NAME+";";
 
     protected static final String DATABASE_SELECT_LIST_NOME = " select "
@@ -147,6 +151,15 @@ public class S_Dados implements Serializable {
             +TL_ITEM04+" from "
             +TL_NAME+" where "
             +TL_ITEM01+" = ";
+
+    protected static final String DATABASE_SELECT_LIST_TL = " select "
+            +TL_ITEM05+" from "
+            +TL_NAME+" where "
+            +TL_ITEM01+" = ";
+
+    protected static final String DATABASE_SELECT_LIST_TOTAL_MAX = " select MAX("
+            +TL_ITEM05+") from "
+            +TL_NAME+";";
 
     //Consultas Productos
 
@@ -309,6 +322,13 @@ public class S_Dados implements Serializable {
         this.checkList = checkList;
     }
 
+    public double getTotalList() {
+        return totalList;
+    }
+    public void setTotalList(double totalList) {
+        this.totalList = totalList;
+    }
+
     //	---------------------	Getters e Setters - BD Consult ---------------------	//
     public int getIdListC() {
         return idListC;
@@ -360,6 +380,8 @@ public class S_Dados implements Serializable {
     public static String getDatabaseSelectListNome() {return DATABASE_SELECT_LIST_NOME;}
     public static String getDatabaseSelectListData() {return DATABASE_SELECT_LIST_DATA;}
     public static String getDatabaseSelectListChk() {return DATABASE_SELECT_LIST_CHK;}
+    public static String getDatabaseSelectListTL() {return DATABASE_SELECT_LIST_TL;}
+    public static String getDatabaseSelectListTotalMax() {return DATABASE_SELECT_LIST_TOTAL_MAX;}
 
     public static String getDatabaseSelectProduct() {return DATABASE_SELECT_PRODUCT;}
     public static String getDatabaseSelectProductTotal() {return DATABASE_SELECT_PRODUCT_TOTAL;}
@@ -378,6 +400,5 @@ public class S_Dados implements Serializable {
     public static String getDatabaseTpDrop() {return DATABASE_TP_DROP;}
 
     public static String getWhereIdProduct() {return WHERE_IDPRODUCT;}
-
-
+    
 }

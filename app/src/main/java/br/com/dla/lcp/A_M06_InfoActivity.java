@@ -31,10 +31,10 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
     NavigationView navigationView06;
     Toolbar toolbar06;
 
-    ImageView imgLogo, img_sobre, img_dev, img_doc, img_site;
-    LinearLayout option_sobre, option_dev, option_doc, option_site;
-    LinearLayout option_sobre_txt, option_dev_txt, option_doc_txt, option_site_txt;
-    TextView hello, txtLogo01, txtLogo02;
+    ImageView imgLogo, img_sobre, img_dev, img_doc, img_site, img_github;
+    LinearLayout option_sobre, option_dev, option_doc, option_site, option_github;
+    LinearLayout option_sobre_txt, option_dev_txt, option_doc_txt, option_site_txt, option_github_txt;
+    TextView hello, txtLogo01, txtLogo02, txt_sobre;
 
     Animation fadein, fadeout;
 
@@ -69,35 +69,43 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
         //OBJETO.startAnimation(fadein);
 
         //SOBRE
-        //ImageView: imgLogo, img_sobre, img_dev, img_doc, img_site;
+        //ImageView: imgLogo, img_sobre, img_dev, img_doc, img_site, img_github;
         imgLogo = findViewById(R.id.imgLogo);
         img_sobre = findViewById(R.id.img_sobre);
         img_dev = findViewById(R.id.img_dev);
         img_doc = findViewById(R.id.img_doc);
         img_site = findViewById(R.id.img_site);
+        img_github = findViewById(R.id.img_github);
 
-        //LinearLayout: option_sobre, option_dev, option_doc, option_site;
+        //LinearLayout: option_sobre, option_dev, option_doc, option_site, option_github;
         option_sobre = findViewById(R.id.option_sobre);
         option_dev = findViewById(R.id.option_dev);
         option_doc = findViewById(R.id.option_doc);
         option_site = findViewById(R.id.option_site);
+        option_github = findViewById(R.id.option_github);
 
-        //LinearLayout: option_sobre_txt, option_dev_txt, option_doc_txt, option_site_txt, EasterEggDevDL;
+        //LinearLayout: option_sobre_txt, option_dev_txt, option_doc_txt, option_site_txt, EasterEggDevDL, option_site_github;
         option_sobre_txt = findViewById(R.id.option_sobre_txt);
         option_dev_txt = findViewById(R.id.option_dev_txt);
         option_doc_txt = findViewById(R.id.option_doc_txt);
         option_site_txt = findViewById(R.id.option_site_txt);
+        option_github_txt = findViewById(R.id.option_site_github);
 
-        //TextView: EasterEggDevDL, txtLogo01, txtLogo02;
+        //TextView: EasterEggDevDL, txtLogo01, txtLogo02, txt_sobre;
         hello = findViewById(R.id.hello);
         txtLogo01 = findViewById(R.id.txtLogo01);
         txtLogo02 = findViewById(R.id.txtLogo02);
+        txt_sobre = findViewById(R.id.txt_sobre);
 
         //definir visibilidade
         option_sobre_txt.setVisibility(View.GONE);
         option_dev_txt.setVisibility(View.GONE);
         option_doc_txt.setVisibility(View.GONE);
         option_site_txt.setVisibility(View.GONE);
+        option_github_txt.setVisibility(View.GONE);
+
+        //definindo texto sobre a aplicação
+        txt_sobre.setText(R.string.tips_desc06_01);
 
         //Definir botões
         //menu
@@ -145,6 +153,17 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
             }
         });
 
+        option_github.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(option_github_txt.getVisibility() == View.GONE){
+                    option_github_txt.setVisibility(View.VISIBLE);
+                } else {
+                    option_github_txt.setVisibility(View.GONE);
+                }
+            }
+        });
+
         //Textos clicaveis
         option_doc_txt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,6 +176,13 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
             @Override
             public void onClick(View view) {
                 chamar("https://www.lcp.eteccruzeiro.dev.br/");
+            }
+        });
+
+        option_github_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chamar("https://github.com/denilsonfa/LCPListadeComprasPersonalizadas");
             }
         });
 

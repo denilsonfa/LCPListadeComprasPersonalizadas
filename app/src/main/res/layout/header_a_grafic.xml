@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="250dp"
     android:background="@drawable/cor_gradient_azul2"
-    tools:context=".A_H_MainTop01">
+    tools:context=".A_H01_Main">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_head_branco01"
+        android:background="@drawable/bg_head_branco02"
         android:gravity="bottom"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,7 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_marginTop="26dp">
+            android:gravity="bottom"
+            android:layout_marginBottom="20dp">
 
             <TextView
                 android:id="@+id/no_data_ListGrafico_l"
@@ -40,22 +41,14 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/readProductListGrafico_l"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:visibility="visible"
-                android:scrollbars="horizontal"
                 android:orientation="horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:paddingTop="20dp"
+                android:paddingBottom="0dp"
+                android:background="@drawable/stl_tire_list_grafic"/>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/tipsDown"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/bg_buttom_bar"
-            android:orientation="horizontal"
-            android:layout_marginBottom="-22dp"/>
 
     </LinearLayout>
 

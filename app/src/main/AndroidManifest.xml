@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".tmp"></activity>
         <activity
             android:name=".A_A_SplashScreenActivity"
             android:screenOrientation="portrait">
@@ -74,7 +73,7 @@
             android:name=".A_M09_Tmp"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".A_H_MainTop01"
+            android:name=".A_H01_Main"
             android:screenOrientation="portrait" />
     </application>
 

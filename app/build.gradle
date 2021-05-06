@@ -42,6 +42,4 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     implementation 'co.uk.rushorm:rushandroid:1.2.0'
 
-
-
 }

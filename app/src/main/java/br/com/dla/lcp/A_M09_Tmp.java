@@ -64,39 +64,10 @@ public class A_M09_Tmp extends AppCompatActivity implements NavigationView.OnNav
             @Override
             public void onClick(View v) {
                 S_ConexaoDAO crud = new S_ConexaoDAO(getBaseContext());
-//                //Criando nova lista
-//                long numListDia = S_Dados.getDia();
-//                long numListMes = S_Dados.getMes();
-//
-//                crud.createList(numListDia, numListMes);
-                //crud.readIdProduct("8");
+                float valorMax = crud.maxTotalList();
+                //long valorMax = crud.idUltimaList();
 
-                idListL = new ArrayList<>();
-
-                Cursor cursor = crud.readProduct("8");
-                if(cursor.getCount() == 0) {
-                    Toast.makeText(A_M09_Tmp.this, "ERRO", Toast.LENGTH_SHORT).show();
-                } else {
-                    while (cursor.moveToNext()){
-                        idListL.add(        cursor.getString(0));
-//                        nomeList.add(       cursor.getString(1));
-//                        dataList.add(       cursor.getString(2));
-//                        checkList.add(      cursor.getString(3));
-//
-//                        idProduct.add(      cursor.getString(4));
-//                        idListP.add(        cursor.getString(5));
-//                        nomeProduct.add(    cursor.getString(6));
-//                        quantProduct.add(   cursor.getString(7));
-//                        medidaProduct.add(  cursor.getString(8));
-//                        tipoProduct.add(    cursor.getString(9));
-//                        valorProduct.add(   cursor.getString(10));
-//                        checkProduct.add(   cursor.getString(11));
-                    }
-                }
-
-
-                addListID.setText((CharSequence) addListID);
-
+                addListID.setText( String.valueOf(valorMax) );
 
             }
         });

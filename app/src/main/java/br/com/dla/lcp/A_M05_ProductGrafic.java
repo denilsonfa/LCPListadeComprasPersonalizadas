@@ -17,7 +17,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -38,16 +37,19 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     S_ConexaoDAO conexaoDAO_ProductGrafic, conexaoDAO_ListLista05;
     S_ConexaoDAO conexaoDAO_ListLista_ProductGrafic;
     ArrayList<String> idListL, nomeList, dataList, checkList, idProduct, idListP, nomeProduct, quantProduct, medidaProduct, tipoProduct, valorProduct, checkProduct;
-    ArrayList<String> selectionList05, idListL05, nomeList05, dataList05, checkList05;
+    ArrayList<String> selectionList05, idListL05, nomeList05, dataList05, checkList05, totalList05;
 
     //TMP
     S_M03_ListLista_Adapter s_m03_list_lista_adapter;
-    S_M05_ListLista_Adapter s_m05_list_lista_adapter;
+    S_H05_ListLista_Adapter s_m05_list_lista_adapter;
 
     S_M03_ListExtrato_Adapter s_m05_productGrafic_adapter;
 
     //Criar lista (Adicionar Produto) == Creditos: @Denilson_fa
     S_Dados dados = new S_Dados();
+
+    float valorMax = 0;
+    private TextView totalValorListITEM05, nomeListITEM05;
 
     //private String idProductDADOS, idListPDADOS, nomeProductDADOS, quantProductDADOS, medidaProductDADOS, tipoProductDADOS;
     private String idListLDADOS, nomeListIDDADOS, dataListIDDADOS, checkListIDDADOS;
@@ -77,14 +79,18 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
 
         navigationView05.setNavigationItemSelectedListener(this);
 
+        //S_Dados = ID dos Itens
+//        nomeListITEM05.findViewById(R.id.nomeListITEM05);
+//        totalValorListITEM05.findViewById(R.id.totalValorListITEM05);
+
+        //Pegar valor Maximo do totalList da lista
+        S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M05_ProductGrafic.this);
+        valorMax = conexaoDAO_ListProductCountCheck.maxTotalList();
+
 
         //S_Dados = ID dos Itens
-        //Atualizando recyclerView
-//        resetStoreLists();
-
         //Recebendo Dados do Produto selecionado
-        getAndSetIntentDataLista_ProductGrafic();
-
+        getAndSetIntentDataLista_ProductGrafic(valorMax);
 
         //RecyclerView
         recyclerView_ProductGrafic_SetList = findViewById(R.id.readProductListGrafico_l);
@@ -95,13 +101,6 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
 
         resetStoreProducts_ProductGrafic();
 
-//        //Função reloadListCreate
-//        reloadListExtrato.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                resetStoreProducts_ListExtrato();
-//            }
-//        });
     }
 
     @Override
@@ -112,7 +111,7 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         resetStoreProducts_ProductGrafic();
 
         //Após retornar da editar/apagar produto, recarrega a lista
-        resetStoreLists();
+        resetStoreLists(valorMax);
     }
 
 
@@ -182,36 +181,38 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     void storeLists(){
         Cursor cursor = conexaoDAO_ListLista05.readListIsCheck();
         if(cursor.getCount() == 0) {
-            //no_data_ProductGrafic_SetList.setVisibility(View.VISIBLE);
-            //recyclerView_ProductGrafic_SetList.setVisibility(View.GONE);
+            no_data_ProductGrafic_SetList.setVisibility(View.VISIBLE);
+            recyclerView_ProductGrafic_SetList.setVisibility(View.GONE);
         } else {
             while (cursor.moveToNext()){
                 idListL05.add(cursor.getString(0));
                 nomeList05.add(cursor.getString(1));
                 dataList05.add(cursor.getString(2));
                 checkList05.add(cursor.getString(3));
+                totalList05.add(cursor.getString(4));
             }
-            //no_data_ProductGrafic_SetList.setVisibility(View.GONE);
-            //recyclerView_ProductGrafic_SetList.setVisibility(View.VISIBLE);
+            no_data_ProductGrafic_SetList.setVisibility(View.GONE);
+            recyclerView_ProductGrafic_SetList.setVisibility(View.VISIBLE);
         }
     }
 
     //Metodo
-    void resetStoreLists() {
+    void resetStoreLists(float valorMax05) {
         conexaoDAO_ListLista05 = new S_ConexaoDAO(A_M05_ProductGrafic.this);
         idListL05 = new ArrayList<>();
         nomeList05 = new ArrayList<>();
         dataList05 = new ArrayList<>();
         checkList05 = new ArrayList<>();
+        totalList05 = new ArrayList<>();
 
         storeLists();
-        
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(A_M05_ProductGrafic.this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView_ProductGrafic_SetList.setLayoutManager(linearLayoutManager);
 
-        s_m05_list_lista_adapter = new S_M05_ListLista_Adapter(A_M05_ProductGrafic.this, selectionList05, idListL05, nomeList05, dataList05, checkList05);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView myList = (RecyclerView) findViewById(R.id.readProductListGrafico_l);
+        myList.setLayoutManager(layoutManager);
+
+        s_m05_list_lista_adapter = new S_H05_ListLista_Adapter(A_M05_ProductGrafic.this, selectionList05, idListL05, nomeList05, dataList05, checkList05, totalList05, valorMax05);
         recyclerView_ProductGrafic_SetList.setAdapter(s_m05_list_lista_adapter);
-        recyclerView_ProductGrafic_SetList.setLayoutManager(new LinearLayoutManager(A_M05_ProductGrafic.this));
     }
 
     //Lista Produtos
@@ -230,14 +231,14 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
                 dataList.add(       cursor.getString(2));
                 checkList.add(      cursor.getString(3));
 
-                idProduct.add(      cursor.getString(4));
-                idListP.add(        cursor.getString(5));
-                nomeProduct.add(    cursor.getString(6));
-                quantProduct.add(   cursor.getString(7));
-                medidaProduct.add(  cursor.getString(8));
-                tipoProduct.add(    cursor.getString(9));
-                valorProduct.add(   cursor.getString(10));
-                checkProduct.add(   cursor.getString(11));
+                idProduct.add(      cursor.getString(5));
+                idListP.add(        cursor.getString(6));
+                nomeProduct.add(    cursor.getString(7));
+                quantProduct.add(   cursor.getString(8));
+                medidaProduct.add(  cursor.getString(9));
+                tipoProduct.add(    cursor.getString(10));
+                valorProduct.add(   cursor.getString(11));
+                checkProduct.add(   cursor.getString(12));
             }
             no_data_ProductGrafic.setVisibility(View.GONE);
             recyclerView_ProductGrafic.setVisibility(View.VISIBLE);
@@ -272,7 +273,7 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     }
 
     //Recebendo dados do item selecionado para editar
-    void getAndSetIntentDataLista_ProductGrafic() {
+    void getAndSetIntentDataLista_ProductGrafic(float valorMax) {
         if (getIntent().hasExtra("idListLID") &&
                 getIntent().hasExtra("nomeListID") &&
                 getIntent().hasExtra("dataListID") &&
@@ -290,8 +291,8 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
             dados.setDataList(dataListIDDADOS);
             dados.setCheckList(Boolean.parseBoolean(checkListIDDADOS));
 
-            //SETTEXT DADOS IN TEXTVIEWS
-            //String nomeList = nomeListIDDADOS+" ( "+ dataListIDDADOS +" )";
+//            SETTEXT DADOS IN TEXTVIEWS
+//            String nomeList = nomeListIDDADOS+" ( "+ dataListIDDADOS +" )";
 //            nomeListSELECTED03.setText(nomeListIDDADOS);
 //            nomeListSELECTED03b.setText(dataListIDDADOS);
 
@@ -300,7 +301,12 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
             totalValor = (Math.rint (totalValor * 100.0) / 100.0);
             String totVal = "R$ "+totalValor;
 
-//            totalValorListITEM03.setText(totVal);
+            nomeListITEM05.findViewById(R.id.nomeListITEM05);
+            totalValorListITEM05.findViewById(R.id.totalValorListITEM05);
+
+            String nomeList = "ID: "+dados.getIdListL()+" | "+dados.getNomeProduct();
+            nomeListITEM05.setText(nomeList);
+            totalValorListITEM05.setText(totVal);
 
         } else {
             //Toast.makeText(this, R.string.erro_product, Toast.LENGTH_SHORT).show();

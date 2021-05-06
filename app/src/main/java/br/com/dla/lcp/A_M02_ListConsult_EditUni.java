@@ -78,7 +78,7 @@ public class A_M02_ListConsult_EditUni extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(charSequence.toString().equals("")){
+                if(charSequence.toString().equals("") || charSequence.toString().equals("0")){
                     //visibilidade dos itens
                     textValorOptionB02_U.setVisibility(View.VISIBLE);
                     textValorOptionA02_U.setVisibility(View.GONE);
@@ -97,7 +97,7 @@ public class A_M02_ListConsult_EditUni extends AppCompatActivity {
         cancelEDIT_U.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if( (valorProductEdTx_EDIT_U.getText().toString().equals("")) ) {
+                if( (valorProductEdTx_EDIT_U.getText().toString().equals("") || valorProductEdTx_EDIT_U.getText().toString().equals("0")) ) {
                     Toast.makeText(A_M02_ListConsult_EditUni.this, R.string.erro_noText02,Toast.LENGTH_LONG).show();
                 } else {
                     //S_Dados = Guardando S_Dados em variavies
@@ -128,7 +128,7 @@ public class A_M02_ListConsult_EditUni extends AppCompatActivity {
         confirmEDIT_U.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if( (valorProductEdTx_EDIT_U.getText().toString().equals("")) ) {
+                if( (valorProductEdTx_EDIT_U.getText().toString().equals("") || valorProductEdTx_EDIT_U.getText().toString().equals("0")) ) {
                     Toast.makeText(A_M02_ListConsult_EditUni.this, R.string.erro_noText02,Toast.LENGTH_LONG).show();
                 } else {
                     //S_Dados = Guardando S_Dados em variavies

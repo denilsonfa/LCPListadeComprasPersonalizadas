@@ -44,7 +44,12 @@
     <string name="tips05">Facilite sua vida!</string>
     <string name="tips_desc05">Com o aplicativo, você poderá melhorar algo que parece simples e rotineiro na vida de nossos usuários. Onde, o tem como objetivo, facilitar e ter mais rapidez na hora de fazer as suas compras, sendo uma lista inteligente, organizada e comparadora o valor total das compras.</string>
     <string name="tips06">Lista de Compras Personalizadas</string>
-    <string name="tips_desc06">Se você está cansado de sempre procurar uma caneta e um pedaço de papel em casa e ter que levá-los enquanto faz compras no mercado, vai aproveitar o LCP, que irá disponíbilizar esta função na palma da sua mão, diretamente em seu smartphone!.</string>
+    <string name="tips_desc06_01">
+        Está aplicação, é resultado do fruto de muita dedicação e empenho dos desenvolvedores, sendo o Trabalho de conclusão de Curso de Desenvolvimento de Sistemas, da Escola Técnica Estadual (ETEC) do estado de São Paulo, da cidade de Cruzeiro. Partindo do problema de pesquisa em que consiste em:  “Como simplificar as listas de compras para a ida ao supermercado atualmente? ”
+    \n\nOnde assim o objetivo geral do trabalho, se apresentou em desenvolver uma aplicação mobile, cujo a sua funcionalidade possibilite o usuário a criar uma lista de compras para auxiliá-lo quando estiver no mercado adquirindo os seus itens de compra. Especificamente, substituir a lista de papel, esta que costuma dar mais trabalho ou até mesmo chegar a ser perdida, em horas que a sua consulta é imprescindível.
+    \n\nSendo assim, a ideia do aplicativo mobile, é facilitar a criação da lista de compras, podendo se organizar mais, auxiliando-o. Assim, com o desenvolvimento desta aplicação, os desenvolvedores puderam implementar os conhecimentos adquiridos durando o período acadêmico, além de adquirir novas experiências e técnicas. Além de que o usuário, ao utilizar esta aplicação irá perceber que em meio a dificuldades ocorridas durante as compras, uma simples aplicação irá estabelecer em sua rotina uma grande facilidade durante a utilização, além de teoricamente ajudá-lo a gerenciar suas economias.
+    </string>
+
 
     <!--  List_creater  -->
     <string name="idProduct">ID Produto</string>
@@ -108,12 +113,18 @@
     <string name="sltProduct01_deletObs">Apagar produto selecionado:</string>
     <string name="sltProduct02_editObs">Editar produto selecionado:</string>
     <string name="sltProduct02_exitList">A lista já foi concluida?</string>
-    <string name="sltProduct02_exitListObs">Alguns itens não foram adicionado ao carrinho! \nVocê deseja finalizar a lista mesmo assim? Ou não? Para poder edita-la novamente.</string>
+    <string name="sltProduct02_exitListObs">
+        Alguns itens não foram adicionado ao carrinho!
+        \nVocê deseja finalizar a lista mesmo assim? Ou não? Para poder edita-la novamente.
+    </string>
     <string name="sltList_obs02_editMult">Adicione o valor do produto e defina se foi ou não adicionado ao carrinho!</string>
 
     <string name="sltProduct03_editObs">Adicionar valor do produto:</string>
     <string name="sltProduct03_reEdit">Editar Lista?</string>
-    <string name="sltProduct03_reEditObs">Você poderá editar os produtos com a opção (Criar e Editar Lista) ou editar os valores com a opção (Consultar Lista)? \n\nAssim a lista será editavel até que seja concluida novamente.</string>
+    <string name="sltProduct03_reEditObs">
+        Você poderá editar os produtos com a opção (Criar e Editar Lista) ou editar os valores com a opção (Consultar Lista)?
+        \n\nAssim a lista será editavel até que seja concluida novamente.
+    </string>
 
 
     <string name="addedProduct">Produto Adicionado!</string>
@@ -148,8 +159,10 @@
     <string name="dev">Desenvolvedores</string>
     <string name="doc">Documentação</string>
     <string name="site">Site</string>
+    <string name="github">GitHub</string>
     <string name="doc_txt">Ler documentação do TCC.</string>
     <string name="site_txt">Visitar site da aplicação.</string>
+    <string name="github_txt">Visitar repositorio da aplicação no GitHub.</string>
 
     <!--  DESENVOLVEDORES DO LCP - TCC 2020-2021 -->
     <string name="dev01">Denilson Fabiano de Araujo</string>
@@ -163,7 +176,7 @@
     <string name="num1">ID: 000</string>
     <string name="num2">R$ 0.00</string>
     <string name="num3">00 x R$ 0.00</string>
-    <string name="num4">100.00 %</string>
+    <string name="num4">100 %</string>
     <string name="num5">ID: 00 | R$ 0.00</string>
     <string name="listname">Lista de Compras 00/00</string>
     <string name="trace">-</string>

@@ -131,7 +131,7 @@
                 <!-- TEXTO 01 -->
                 <LinearLayout
                     android:id="@+id/option_sobre_txt"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
@@ -141,10 +141,11 @@
                     android:background="@color/textPreto08">
 
                     <TextView
+                        android:id="@+id/txt_sobre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/tips_desc06"
-                        android:textColor="@color/textPreto05"
+                        android:text="@string/tips_desc06_01"
+                        android:textColor="@color/textPreto04"
                         android:fontFamily="@font/raleway_regular"/>
 
                 </LinearLayout>
@@ -176,7 +177,7 @@
                 <!-- TEXTO 02 -->
                 <LinearLayout
                     android:id="@+id/option_dev_txt"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
@@ -191,7 +192,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/dev01"
-                        android:textColor="@color/textPreto05"
+                        android:textColor="@color/textPreto04"
                         android:fontFamily="@font/raleway_regular"
                         android:layout_marginBottom="5dp"/>
                     <TextView
@@ -251,7 +252,7 @@
                 <!-- TEXTO 03 -->
                 <LinearLayout
                     android:id="@+id/option_doc_txt"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/textPreto08">
@@ -260,7 +261,52 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/doc_txt"
-                        android:textColor="@color/textPreto05"
+                        android:textColor="@color/textPreto04"
+                        android:fontFamily="@font/raleway_regular"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"/>
+
+                </LinearLayout>
+
+                <!-- OPIÇÂO 04 -->
+                <LinearLayout
+                    android:id="@+id/option_github"
+                    style="@style/main_btnH"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_github"
+                        style="@style/main_btnIMag"
+                        android:contentDescription="@string/github"
+                        app:srcCompat="@drawable/ic_item_github" />
+
+                    <LinearLayout style="@style/main_btnV">
+
+                        <TextView
+                            style="@style/main_btnTxt1"
+                            android:text="@string/github"
+                            android:textSize="20sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- TEXTO 05 -->
+                <LinearLayout
+                    android:id="@+id/option_site_github"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/textPreto08">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/github_txt"
+                        android:textColor="@color/textPreto04"
                         android:fontFamily="@font/raleway_regular"
                         android:paddingStart="20dp"
                         android:paddingEnd="20dp"
@@ -296,7 +342,7 @@
                 <!-- TEXTO 04 -->
                 <LinearLayout
                     android:id="@+id/option_site_txt"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/textPreto08">
@@ -305,7 +351,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/site_txt"
-                        android:textColor="@color/textPreto05"
+                        android:textColor="@color/textPreto04"
                         android:fontFamily="@font/raleway_regular"
                         android:paddingStart="20dp"
                         android:paddingEnd="20dp"

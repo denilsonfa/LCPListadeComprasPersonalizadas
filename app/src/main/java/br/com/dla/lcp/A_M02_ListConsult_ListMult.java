@@ -117,7 +117,7 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
 
     }
 
-    public static void tst(final Context context, final String idListL, String nomeProductS) {
+    public static void popEditValor(final Context context, final String idListL, String nomeProductS) {
 
 
         final A_M02_ListConsult_ListMult a = new A_M02_ListConsult_ListMult();
@@ -162,7 +162,7 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
                     conexaoDAO.updateProductValor( idListL, valorProduct, checkProduct );
 
                     //Mensagem de confirmação
-                    Toast.makeText(context, R.string.editedProduct_addValor,Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context, R.string.editedProduct_addValor,Toast.LENGTH_LONG).show();
 
                     //Reload Activity
                     ((Activity) context).recreate();
@@ -184,7 +184,7 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
                 conexaoDAO.updateProductValor( idListL, valorProduct, checkProduct );
 
                 //Mensagem de confirmação
-                Toast.makeText(context, R.string.editedProduct_addValor,Toast.LENGTH_LONG).show();
+                //Toast.makeText(context, R.string.editedProduct_addValor,Toast.LENGTH_LONG).show();
 
                 //Reload Activity
                 ((Activity) context).recreate();
@@ -213,7 +213,9 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
 
         if( countItensCheck == countItens ) {
             //se for, ficha a lista
-            conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true );
+            double totalValor = conexaoDAO_ListProductCount.numReadProductTotal( dados.getIdListL() );
+
+            conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true , totalValor);
             Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
             finish();
 
@@ -228,7 +230,7 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
             builder.setPositiveButton(R.string.nao, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface arg0, int arg1) {
                     S_ConexaoDAO conexaoDAO_bd = new S_ConexaoDAO(A_M02_ListConsult_ListMult.this);
-                    conexaoDAO_bd.updateListCheck( String.valueOf(dados.getIdListL()), false );
+                    conexaoDAO_bd.updateListCheck( String.valueOf(dados.getIdListL()), false,0 );
                     Toast.makeText(A_M02_ListConsult_ListMult.this, R.string.list_save, Toast.LENGTH_SHORT).show();
                     finish();
                 }
@@ -238,7 +240,10 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
             builder.setNegativeButton(R.string.sim, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface arg0, int arg1) {
                     S_ConexaoDAO conexaoDAO_bd = new S_ConexaoDAO(A_M02_ListConsult_ListMult.this);
-                    conexaoDAO_bd.updateListCheck( String.valueOf(dados.getIdListL()), true );
+
+                    double totalValor = conexaoDAO_bd.numReadProductTotal( dados.getIdListL() );
+
+                    conexaoDAO_bd.updateListCheck( String.valueOf(dados.getIdListL()), true, totalValor);
                     Toast.makeText(A_M02_ListConsult_ListMult.this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
                     finish();
 
@@ -326,72 +331,6 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
         }
     }
 
-//    public static void editPopup(final int idProduct, String nomeProduct, double valorProduct){
-//
-//        final TextView nomeProductEDIT_TXT_M;
-//        final EditText valorProductEDIT_EDIT_M;
-//        final Button cancelEDIT_EDIT_M, confirmEDIT_EDIT_M;
-//
-//        nomeProductEDIT_TXT_M = (TextView) dialogView.findViewById(R.id.nomeProductEDIT_TXT_M);
-//        valorProductEDIT_EDIT_M = (EditText) dialogView.findViewById(R.id.valorProductEDIT_EDIT_M);
-//        cancelEDIT_EDIT_M = (Button) dialogView.findViewById(R.id.cancelEDIT_EDIT_M);
-//        confirmEDIT_EDIT_M = (Button) dialogView.findViewById(R.id.confirmEDIT_EDIT_M);
-//
-//        //nomeProductEDIT_TXT_M
-//        nomeProductEDIT_TXT_M.setText(nomeProduct);
-//
-//        //valorProductEDIT_EDIT_M
-//        if( valorProduct == 0 ){
-//            valorProductEDIT_EDIT_M.setText("");
-//        } else {
-//            valorProductEDIT_EDIT_M.setText( String.valueOf( valorProduct ) );
-//        }
-//
-//        //cancelEDIT_EDIT_M
-//        cancelEDIT_EDIT_M.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                //S_Dados = Guardando S_Dados em variavies
-//                String zero = "0";
-//                valorProductEDIT_EDIT_M.setText(zero);
-//                String idProductS = String.valueOf( idProduct );
-//                Double valorProduct = Double.parseDouble( valorProductEDIT_EDIT_M.getText().toString() );
-//                boolean checkProduct = false;
-//
-//                //Editando dados do produto
-//                S_ConexaoDAO conexaoDAO = new S_ConexaoDAO(context);
-//                conexaoDAO.updateProductValor( idProductS, valorProduct, checkProduct );
-//
-//                //Mensagem de confirmação
-//                Toast.makeText(context, R.string.editedProduct_addValor,Toast.LENGTH_LONG).show();
-//            }
-//        });
-//
-//        //cancelEDIT_EDIT_M
-//        confirmEDIT_EDIT_M.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                //S_Dados = Guardando S_Dados em variavies
-//                String idProductS = String.valueOf( idProduct );
-//                Double valorProduct = Double.parseDouble( valorProductEDIT_EDIT_M.getText().toString() );
-//                boolean checkProduct = true;
-//
-//                //Editando dados do produto
-//                S_ConexaoDAO conexaoDAO = new S_ConexaoDAO(context);
-//                conexaoDAO.updateProductValor( idProductS, valorProduct, checkProduct );
-//
-//                //Mensagem de confirmação
-//                Toast.makeText(context, R.string.editedProduct_addValor,Toast.LENGTH_LONG).show();
-//
-//            }
-//        });
-//
-//        builder.setView(dialogView);
-//        builder.setCancelable(true);
-//        builder.show();
-//
-//    }
-
     //Lista Produtos
     void storeProducts_ListConsult(){
         S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M02_ListConsult_ListMult.this);
@@ -419,14 +358,14 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
                 dataList.add(       cursor.getString(2));
                 checkList.add(      cursor.getString(3));
 
-                idProduct.add(      cursor.getString(4));
-                idListP.add(        cursor.getString(5));
-                nomeProduct.add(    cursor.getString(6));
-                quantProduct.add(   cursor.getString(7));
-                medidaProduct.add(  cursor.getString(8));
-                tipoProduct.add(    cursor.getString(9));
-                valorProduct.add(   cursor.getString(10));
-                checkProduct.add(   cursor.getString(11));
+                idProduct.add(      cursor.getString(5));
+                idListP.add(        cursor.getString(6));
+                nomeProduct.add(    cursor.getString(7));
+                quantProduct.add(   cursor.getString(8));
+                medidaProduct.add(  cursor.getString(9));
+                tipoProduct.add(    cursor.getString(10));
+                valorProduct.add(   cursor.getString(11));
+                checkProduct.add(   cursor.getString(12));
             }
             no_data_ListConsult_mult.setVisibility(View.GONE);
             recyclerView_ListConsult_mult.setVisibility(View.VISIBLE);
@@ -497,7 +436,10 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
         int countItensCheck = conexaoDAO_ListProductCountCheck.numItensCheck( dados.getIdListL() );
 
         if( countItensCheck == countItens ) {
-            conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true );
+
+            double totalValor = conexaoDAO_ListProductCount.numReadProductTotal( dados.getIdListL() );
+
+            conexaoDAO_ListProductCount.updateListCheck( String.valueOf(dados.getIdListL()), true, totalValor );
             Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, R.string.list_save, Toast.LENGTH_SHORT).show();

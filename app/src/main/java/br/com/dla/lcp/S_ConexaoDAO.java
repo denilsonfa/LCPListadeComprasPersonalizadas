@@ -27,6 +27,8 @@ public class S_ConexaoDAO {
     protected static final String       TL_ITEM02 = S_Dados.TL_ITEM02;
     protected static final String       TL_ITEM03 = S_Dados.TL_ITEM03;
     protected static final String       TL_ITEM04 = S_Dados.TL_ITEM04;
+    protected static final String       TL_ITEM05 = S_Dados.TL_ITEM05;
+    protected static final String       TL_ITEM06 = S_Dados.TL_ITEM06;
     protected static final String       TL_DATE   = S_Dados.TL_DATE;
 
     //TABELA PRODUTOS
@@ -51,9 +53,11 @@ public class S_ConexaoDAO {
     private static final String DATABASE_SELECT_JOIN03              = S_Dados.getDatebaseSelectJoin03();
 
     private static final String DATABASE_SELECT_LIST_MAX            = S_Dados.getDatabaseSelectListMax();
-    private static final String DATABASE_SELECT_LIST_NOME            = S_Dados.getDatabaseSelectListNome();
-    private static final String DATABASE_SELECT_LIST_DATA            = S_Dados.getDatabaseSelectListData();
+    private static final String DATABASE_SELECT_LIST_NOME           = S_Dados.getDatabaseSelectListNome();
+    private static final String DATABASE_SELECT_LIST_DATA           = S_Dados.getDatabaseSelectListData();
     private static final String DATABASE_SELECT_LIST_CHK            = S_Dados.getDatabaseSelectListChk();
+    private static final String DATABASE_SELECT_LIST_TL             = S_Dados.getDatabaseSelectListTL();
+    private static final String DATABASE_SELECT_LIST_TOTAL_MAX      = S_Dados.getDatabaseSelectListTotalMax();
 
     private static final String DATABASE_SELECT_PRODUCT             = S_Dados.getDatabaseSelectProduct();
     private static final String DATABASE_SELECT_PRODUCT_TOTAL       = S_Dados.getDatabaseSelectProductTotal();
@@ -90,6 +94,7 @@ public class S_ConexaoDAO {
         valores.put( TL_ITEM02, nomeList + numListFormat );
         valores.put( TL_ITEM03, TL_DATE);
         valores.put( TL_ITEM04, "0");
+        valores.put( TL_ITEM05, "0");
 
         resultado = DATABASE.insert(TL_NAME, null, valores);
         DATABASE.close();
@@ -238,6 +243,20 @@ public class S_ConexaoDAO {
     //	-------------------------------------------------------------------	//
 
     //	-----***-----	Read DATABASE - table lista idUltimaList	-----***-----	//
+    public float maxTotalList() {
+
+        float valorTotal = 0;
+        SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
+        String query = DATABASE_SELECT_LIST_TOTAL_MAX;
+
+        Cursor cursor = DATABASEProductTotal.rawQuery(query, null);
+        if(cursor.moveToFirst()) { valorTotal = cursor.getFloat(0); }
+
+        return valorTotal;
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read DATABASE - table lista idUltimaList	-----***-----	//
     public String readListName(long idListL) {
 
         String valorTotal = "";
@@ -271,6 +290,20 @@ public class S_ConexaoDAO {
         String valorTotal = "";
         SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
         String query = DATABASE_SELECT_LIST_CHK+idListL+PONT_VIRG;
+
+        Cursor cursor = DATABASEProductTotal.rawQuery(query, null);
+        if(cursor.moveToFirst()) { valorTotal = cursor.getString(0); }
+
+        return valorTotal;
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read DATABASE - table lista idUltimaList	-----***-----	//
+    public String readListTL(long idListL) {
+
+        String valorTotal = "";
+        SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
+        String query = DATABASE_SELECT_LIST_TL+idListL+PONT_VIRG;
 
         Cursor cursor = DATABASEProductTotal.rawQuery(query, null);
         if(cursor.moveToFirst()) { valorTotal = cursor.getString(0); }
@@ -332,7 +365,7 @@ public class S_ConexaoDAO {
     //	---------------------		UPDATE		---------------------	//
 
     //	-----***-----	UPDATE DATABASE - table list	-----***-----	//
-    public boolean updateListCheck(String idListL, boolean checkList) {
+    public boolean updateListCheck(String idListL, boolean checkList, double totalList) {
         SQLiteDatabase DATABASE = conexao.getWritableDatabase();
 
         String TL_ITEM01ADD = TL_ITEM01+"=?";
@@ -340,6 +373,7 @@ public class S_ConexaoDAO {
         ContentValues contentValues = new ContentValues();
         contentValues.put("idListL", idListL);
         contentValues.put("checkList", checkList);
+        contentValues.put("totalList", totalList);
 
         long result = DATABASE.update(TL_NAME, contentValues, TL_ITEM01ADD, new String[]{idListL});
         if (result == -1) {

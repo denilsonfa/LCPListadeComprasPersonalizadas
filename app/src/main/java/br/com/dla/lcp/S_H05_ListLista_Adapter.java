@@ -8,31 +8,39 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class S_M05_ListLista_Adapter extends RecyclerView.Adapter<S_M05_ListLista_Adapter.HolderListConsult> {
+public class S_H05_ListLista_Adapter extends RecyclerView.Adapter<S_H05_ListLista_Adapter.HolderListConsult> {
 
     private Context context;
-    private ArrayList selectionList, idListL, nomeList, dataList, checkList;
+    private ArrayList selectionList, idListL, nomeList, dataList, checkList, totalList;
     int position;
+    double valorMax, porcentagem = 0;
 
-    S_M05_ListLista_Adapter(Context context,
+    //Pegar valor Maximo do totalList da lista
+    A_M05_ProductGrafic a_m05_productGrafic = new A_M05_ProductGrafic();
+    //int valorMax = a_m05_productGrafic.valorMax;
+
+    S_H05_ListLista_Adapter(Context context,
                             ArrayList selectionList,
                             ArrayList idListL,
                             ArrayList nomeList,
                             ArrayList dataList,
-                            ArrayList checkList) {
+                            ArrayList checkList,
+                            ArrayList totalList,
+                            double    valorMax) {
         this.context = context;
         this.selectionList = selectionList;
         this.idListL = idListL;
         this.nomeList = nomeList;
         this.dataList = dataList;
         this.checkList = checkList;
+        this.totalList = totalList;
+        this.valorMax = valorMax;
     }
 
     @NonNull
@@ -46,25 +54,20 @@ public class S_M05_ListLista_Adapter extends RecyclerView.Adapter<S_M05_ListList
     @Override
     public void onBindViewHolder(@NonNull HolderListConsult holder, final int position) {
 
+        //totalList
+        //double totalListInt = Integer.parseInt( String.valueOf(totalList.get(position)) );
+        //porcentagem = ((totalListInt*100)/valorMax)*4;
+        String idNomeLista = "ID: "+String.valueOf(idListL.get(position))+" | "+String.valueOf(nomeList.get(position));
+        //float a = (float) porcentagem;
+
+        if(porcentagem < 25) {
+            holder.totalListITEM_bar.setHeight(25);
+        } else {
+            holder.totalListITEM_bar.setHeight(50);
+        }
+
         //selectionList_Grafic, nomeListITEM_bar, totalListITEM_bar
-        holder.nomeListITEM_bar.setText(String.valueOf(nomeList.get(position)));
-        holder.totalListITEM_bar.setHeight(200);
-
-        //idListL, nomeList, dataList
-//        holder.idListL.setText( String.valueOf("ID: " + idListL.get(position)));
-//        holder.nomeList.setText(String.valueOf(nomeList.get(position)));
-//        holder.dataList.setText(String.valueOf(dataList.get(position)));
-
-        //checkList
-//        if( (String.valueOf(checkList.get(position)).equals("0")) ){
-//
-//            holder.checkList.setChecked(false);
-//
-//        } else {
-//
-//            holder.checkList.setChecked(true);
-//
-//        }
+        holder.nomeListITEM_bar.setText(idNomeLista);
 
         //Selecionar Lista
         holder.selectionList_Grafic.setOnClickListener(new View.OnClickListener() {

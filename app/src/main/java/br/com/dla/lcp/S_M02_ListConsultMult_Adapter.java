@@ -1,22 +1,13 @@
 package br.com.dla.lcp;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.res.ColorStateList;
-import android.text.InputFilter;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -175,77 +166,8 @@ public class S_M02_ListConsultMult_Adapter extends RecyclerView.Adapter<S_M02_Li
                 String idL = String.valueOf(idProduct.get(position));
                 String nomeP = String.valueOf(nomeProduct.get(position));
 
-                A_M02_ListConsult_ListMult.tst(context, idL, nomeP);
-
-//                //Nome do Produto
-//                String nomeProductS = String.valueOf(nomeProduct.get(position));
-//                final String id = String.valueOf(idProduct.get(position));
-//
-//                FrameLayout.LayoutParams params = new  FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//                final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//                final EditText input = new EditText(context);
-//                FrameLayout container = new FrameLayout(context);
-//
-//                builder.setTitle(nomeProductS);
-//                builder.setMessage(R.string.sltList_obs02_editMult);
-//
-//                input.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-//                input.setFilters(new InputFilter[] { new InputFilter.LengthFilter(30) });
-//                input.setHint(R.string.valorProduct);
-//                input.setSingleLine();
-//
-//                params.leftMargin = container.getResources().getDimensionPixelSize(R.dimen.dp_19);
-//                params.rightMargin = container.getResources().getDimensionPixelSize(R.dimen.dp_19);
-//
-//                input.setLayoutParams(params);
-//                container.addView(input);
-//                builder.setView(container);
-//
-//
-//                // Set up the buttons
-//                builder.setNeutralButton(R.string.sltList_obs02_incart, new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//
-//                        //Pegando dados do input
-//                        valorProductText = input.getText().toString();
-//
-//                        if(valorProductText.equals("") || valorProductText.equals("0")){
-//                            Toast.makeText(context, R.string.erro_noText01,Toast.LENGTH_LONG).show();
-//                        } else {
-//
-//                            Double valorProduct = Double.parseDouble( valorProductText );
-//                            boolean checkProduct = true;
-//
-//                            //Editando dados do produto
-//                            S_ConexaoDAO conexaoDAO = new S_ConexaoDAO(context);
-//                            conexaoDAO.updateProductValor( id, valorProduct, checkProduct );
-//
-//                            //Mensagem de confirmação
-//                            Toast.makeText(context, R.string.editedProduct_addValor,Toast.LENGTH_LONG).show();
-//                        }
-//
-//                    }
-//                });
-//                builder.setNegativeButton(R.string.sltList_obs02_nocart, new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//
-//                        //Por ser a opção de que não está  no carrinho, o produto tem o valorProduct zerado e o checkProduct false
-//                        Double valorProduct = 0.0;
-//                        boolean checkProduct = false;
-//
-//                        //Editando dados do produto
-//                        S_ConexaoDAO conexaoDAO = new S_ConexaoDAO(context);
-//                        conexaoDAO.updateProductValor( id, valorProduct, checkProduct );
-//
-//                        //Mensagem de confirmação
-//                        Toast.makeText(context, R.string.editedProduct_addValor,Toast.LENGTH_LONG).show();
-//
-//                    }
-//                });
-//
-//                builder.show();
+                //CHamar metodo para editar valor do produto
+                A_M02_ListConsult_ListMult.popEditValor(context, idL, nomeP);
 
             }
         });
