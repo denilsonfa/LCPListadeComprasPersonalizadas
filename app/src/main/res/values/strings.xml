@@ -83,6 +83,7 @@
     <string name="deletedProduct">Produto apagado com sucesso!</string>
     <string name="remProduct">Remover Produto</string>
     <string name="deletProduct">Apagar Produto</string>
+    <string name="erro_lista">Erro carregar lista!</string>
     <string name="addList">Adicionar Lista</string>
     <string name="addList1">Criar nova Lista</string>
     <string name="valor">Valor:</string>

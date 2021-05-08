@@ -1,7 +1,7 @@
 package br.com.dla.lcp;
 
+import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +19,12 @@ public class S_H05_ListLista_Adapter extends RecyclerView.Adapter<S_H05_ListList
     private Context context;
     private ArrayList selectionList, idListL, nomeList, dataList, checkList, totalList;
     int position;
-    double valorMax, porcentagem = 0;
+    double valorMax, totalListInt, porcentagem = 0;
+    protected static long idUltimaListaSelected = 0;
+    String idNomeLista;
 
-    //Pegar valor Maximo do totalList da lista
-    A_M05_ProductGrafic a_m05_productGrafic = new A_M05_ProductGrafic();
-    //int valorMax = a_m05_productGrafic.valorMax;
+    //Criar lista (Adicionar Produto) == Creditos: @Denilson_fa
+    S_Dados dados = new S_Dados();
 
     S_H05_ListLista_Adapter(Context context,
                             ArrayList selectionList,
@@ -55,15 +56,14 @@ public class S_H05_ListLista_Adapter extends RecyclerView.Adapter<S_H05_ListList
     public void onBindViewHolder(@NonNull HolderListConsult holder, final int position) {
 
         //totalList
-        //double totalListInt = Integer.parseInt( String.valueOf(totalList.get(position)) );
-        //porcentagem = ((totalListInt*100)/valorMax)*4;
-        String idNomeLista = "ID: "+String.valueOf(idListL.get(position))+" | "+String.valueOf(nomeList.get(position));
-        //float a = (float) porcentagem;
+        totalListInt = Double.parseDouble( String.valueOf(totalList.get(position)) );
+        porcentagem = ((totalListInt*100)/valorMax)*4;
+        idNomeLista = "ID: "+String.valueOf(idListL.get(position))+" - "+String.valueOf(nomeList.get(position));
 
-        if(porcentagem < 25) {
+        if((int)porcentagem < 25) {
             holder.totalListITEM_bar.setHeight(25);
         } else {
-            holder.totalListITEM_bar.setHeight(50);
+            holder.totalListITEM_bar.setHeight((int)porcentagem);
         }
 
         //selectionList_Grafic, nomeListITEM_bar, totalListITEM_bar
@@ -74,12 +74,10 @@ public class S_H05_ListLista_Adapter extends RecyclerView.Adapter<S_H05_ListList
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(context, A_M05_ProductGrafic.class);
-                intent.putExtra("idListLID", String.valueOf(idListL.get(position)));
-                intent.putExtra("nomeListID", String.valueOf(nomeList.get(position)));
-                intent.putExtra("dataListID", String.valueOf(dataList.get(position)));
-                intent.putExtra("checkListID", String.valueOf(checkList.get(position)));
-                context.startActivity(intent);
+                long idListaL = Long.parseLong( String.valueOf( idListL.get(position) ) );
+                idUltimaListaSelected = idListaL;
+                ((Activity) context).recreate();
+
 
             }
         });
@@ -113,4 +111,5 @@ public class S_H05_ListLista_Adapter extends RecyclerView.Adapter<S_H05_ListList
             checkList = itemView.findViewById(R.id.checkListITEM);
         }
     }
+
 }

@@ -40,19 +40,18 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     ArrayList<String> selectionList05, idListL05, nomeList05, dataList05, checkList05, totalList05;
 
     //TMP
-    S_M03_ListLista_Adapter s_m03_list_lista_adapter;
     S_H05_ListLista_Adapter s_m05_list_lista_adapter;
-
-    S_M03_ListExtrato_Adapter s_m05_productGrafic_adapter;
+    S_M03_ListExtrato_Adapter s_m03_productGrafic_adapter;
 
     //Criar lista (Adicionar Produto) == Creditos: @Denilson_fa
     S_Dados dados = new S_Dados();
 
+    //Valor Maximo para geração do calculo do grafico
     float valorMax = 0;
-    private TextView totalValorListITEM05, nomeListITEM05;
 
-    //private String idProductDADOS, idListPDADOS, nomeProductDADOS, quantProductDADOS, medidaProductDADOS, tipoProductDADOS;
-    private String idListLDADOS, nomeListIDDADOS, dataListIDDADOS, checkListIDDADOS;
+    //id da ultima lista / ou lista consultada referente ao grafico
+    long idUltimaLista;
+    private TextView totalValorListITEM05, nomeListITEM05;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,18 +78,18 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
 
         navigationView05.setNavigationItemSelectedListener(this);
 
-        //S_Dados = ID dos Itens
-//        nomeListITEM05.findViewById(R.id.nomeListITEM05);
-//        totalValorListITEM05.findViewById(R.id.totalValorListITEM05);
-
-        //Pegar valor Maximo do totalList da lista
+        //Definir valor maximo para gerar grafico
         S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M05_ProductGrafic.this);
         valorMax = conexaoDAO_ListProductCountCheck.maxTotalList();
 
+        //definir qual lista irá abrir automativamente assim que iniciar activity
+        long idListaSelected = S_H05_ListLista_Adapter.idUltimaListaSelected;
 
-        //S_Dados = ID dos Itens
-        //Recebendo Dados do Produto selecionado
-        getAndSetIntentDataLista_ProductGrafic(valorMax);
+        if( idListaSelected == 0) {
+            setIdUltimaLista( conexaoDAO_ListProductCountCheck.idUltimaList() );
+        } else {
+            setIdUltimaLista(idListaSelected);
+        }
 
         //RecyclerView
         recyclerView_ProductGrafic_SetList = findViewById(R.id.readProductListGrafico_l);
@@ -99,7 +98,21 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         recyclerView_ProductGrafic = findViewById(R.id.readProductListGrafico_p);
         no_data_ProductGrafic = findViewById(R.id.no_data_ListGrafico_p);
 
-        resetStoreProducts_ProductGrafic();
+        totalValorListITEM05 = findViewById(R.id.totalValorListITEM05);
+        nomeListITEM05 = findViewById(R.id.nomeListITEM05);
+
+        //Consultar nome da lista atual
+        String readListName = "ID: "+getIdUltimaLista()+" - "+conexaoDAO_ListProductCountCheck.readListName(getIdUltimaLista());
+        //Consultar valor total da lista atual
+        double totalValor = Double.parseDouble( conexaoDAO_ListProductCountCheck.readListTL( getIdUltimaLista() ) );
+        totalValor = (Math.rint (totalValor * 100.0) / 100.0);
+        String totVal = "R$ "+totalValor;
+
+        //imprimir dados
+        nomeListITEM05.setText(readListName);
+        totalValorListITEM05.setText(totVal);
+
+        resetStoreProducts_ProductGrafic(getIdUltimaLista());
 
     }
 
@@ -108,12 +121,12 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         super.onResume();
 
         //Após retornar da editar/apagar produto, recarrega a lista
-        resetStoreProducts_ProductGrafic();
+        resetStoreProducts_ProductGrafic(getIdUltimaLista());
 
         //Após retornar da editar/apagar produto, recarrega a lista
         resetStoreLists(valorMax);
-    }
 
+    }
 
     //Função Menu
     @Override
@@ -125,7 +138,8 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
             //Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
             super.onBackPressed();
         }
-        finish();
+        isDestroyed();
+        //finish();
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -211,16 +225,18 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         RecyclerView myList = (RecyclerView) findViewById(R.id.readProductListGrafico_l);
         myList.setLayoutManager(layoutManager);
 
-        s_m05_list_lista_adapter = new S_H05_ListLista_Adapter(A_M05_ProductGrafic.this, selectionList05, idListL05, nomeList05, dataList05, checkList05, totalList05, valorMax05);
+        s_m05_list_lista_adapter = new S_H05_ListLista_Adapter(A_M05_ProductGrafic.this,
+                selectionList05, idListL05, nomeList05, dataList05, checkList05, totalList05, valorMax05);
         recyclerView_ProductGrafic_SetList.setAdapter(s_m05_list_lista_adapter);
     }
 
     //Lista Produtos
-    void storeProducts_ListConsult(){
+    void storeProducts_ListConsult(long idListaP2){
         //idListL, nomeList, dataList, checkList,
         //idProduct, idListP, nomeProduct, quantProduct, medidaProduct, tipoProduct, valorProduct, checkProduct
 
-        Cursor cursor = conexaoDAO_ProductGrafic.readProduct(String.valueOf(dados.getIdListL()));
+        //Cursor cursor = conexaoDAO_ProductGrafic.readProduct(String.valueOf(dados.getIdListL()));
+        Cursor cursor = conexaoDAO_ProductGrafic.readProduct( String.valueOf(idListaP2) );
         if(cursor.getCount() == 0) {
             no_data_ProductGrafic.setVisibility(View.VISIBLE);
             recyclerView_ProductGrafic.setVisibility(View.GONE);
@@ -246,7 +262,7 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     }
 
     //Reset storeProducts
-    void resetStoreProducts_ProductGrafic(){
+    void resetStoreProducts_ProductGrafic(long idListaP){
         conexaoDAO_ProductGrafic = new S_ConexaoDAO(A_M05_ProductGrafic.this);
         idListL = new ArrayList<>();
         nomeList = new ArrayList<>();
@@ -262,56 +278,22 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         valorProduct = new ArrayList<>();
         checkProduct = new ArrayList<>();
 
-        storeProducts_ListConsult();
+        storeProducts_ListConsult(idListaP);
 
-        s_m05_productGrafic_adapter = new S_M03_ListExtrato_Adapter(A_M05_ProductGrafic.this,
+        s_m03_productGrafic_adapter = new S_M03_ListExtrato_Adapter(A_M05_ProductGrafic.this,
                 idListL, nomeList, dataList, checkList, idProduct, idListP, nomeProduct, quantProduct,
                 medidaProduct, tipoProduct, valorProduct, checkProduct);
 
-        recyclerView_ProductGrafic.setAdapter(s_m05_productGrafic_adapter);
+        recyclerView_ProductGrafic.setAdapter(s_m03_productGrafic_adapter);
         recyclerView_ProductGrafic.setLayoutManager(new LinearLayoutManager(A_M05_ProductGrafic.this));
     }
 
-    //Recebendo dados do item selecionado para editar
-    void getAndSetIntentDataLista_ProductGrafic(float valorMax) {
-        if (getIntent().hasExtra("idListLID") &&
-                getIntent().hasExtra("nomeListID") &&
-                getIntent().hasExtra("dataListID") &&
-                getIntent().hasExtra("checkListID") ) {
-
-            //GETTING
-            idListLDADOS = getIntent().getStringExtra("idListLID");
-            nomeListIDDADOS = getIntent().getStringExtra("nomeListID");
-            dataListIDDADOS = getIntent().getStringExtra("dataListID");
-            checkListIDDADOS = getIntent().getStringExtra("checkListID");
-
-            //SETTING
-            dados.setIdListL(Integer.parseInt(idListLDADOS));
-            dados.setNomeList(nomeListIDDADOS);
-            dados.setDataList(dataListIDDADOS);
-            dados.setCheckList(Boolean.parseBoolean(checkListIDDADOS));
-
-//            SETTEXT DADOS IN TEXTVIEWS
-//            String nomeList = nomeListIDDADOS+" ( "+ dataListIDDADOS +" )";
-//            nomeListSELECTED03.setText(nomeListIDDADOS);
-//            nomeListSELECTED03b.setText(dataListIDDADOS);
-
-            S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M05_ProductGrafic.this);
-            double totalValor = conexaoDAO_ListProductCountCheck.numReadProductTotal( dados.getIdListL() );
-            totalValor = (Math.rint (totalValor * 100.0) / 100.0);
-            String totVal = "R$ "+totalValor;
-
-            nomeListITEM05.findViewById(R.id.nomeListITEM05);
-            totalValorListITEM05.findViewById(R.id.totalValorListITEM05);
-
-            String nomeList = "ID: "+dados.getIdListL()+" | "+dados.getNomeProduct();
-            nomeListITEM05.setText(nomeList);
-            totalValorListITEM05.setText(totVal);
-
-        } else {
-            //Toast.makeText(this, R.string.erro_product, Toast.LENGTH_SHORT).show();
-        }
-
+    //idUltimaLista Getter e Setter
+    public long getIdUltimaLista() {
+        return idUltimaLista;
+    }
+    public void setIdUltimaLista(long idUltimaLista) {
+        this.idUltimaLista = idUltimaLista;
     }
 
 }

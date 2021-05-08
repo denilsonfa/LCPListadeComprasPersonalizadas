@@ -13,14 +13,14 @@
     app:contentPadding="0dp">
 
     <LinearLayout
+        android:id="@+id/selectionList_Grafic"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="bottom"
-        android:background="#000">
+        android:background="@drawable/stl_btn_grafic">
 
         <LinearLayout
-            android:id="@+id/selectionList_Grafic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -40,14 +40,14 @@
                     android:id="@+id/nomeListITEM_bar"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/raleway_bold"
+                    android:fontFamily="@font/bebasneue"
                     android:rotation="180"
                     android:paddingStart="2dp"
                     android:paddingEnd="2dp"
                     android:text="@string/nomeList"
                     android:textAllCaps="true"
                     android:textColor="@color/textBranco02_t"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:visibility="visible" />
