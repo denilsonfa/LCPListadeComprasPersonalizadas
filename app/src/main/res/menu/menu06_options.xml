@@ -31,6 +31,16 @@
                         android:icon="@drawable/ic_main_menu05"
                         android:title="@string/main_menu05" />
 
+                    <item
+                        android:id="@+id/nav_menu07"
+                        android:icon="@drawable/ic_main_menu07"
+                        android:title="@string/main_menu07" />
+
+                    <item
+                        android:id="@+id/nav_menu08"
+                        android:icon="@drawable/ic_main_menu08"
+                        android:title="@string/main_menu08" />
+
                 </group>
             </menu>
         </item>

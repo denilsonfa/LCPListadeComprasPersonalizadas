@@ -45,10 +45,9 @@
         <LinearLayout
             android:id="@+id/tipsDown"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/bg_buttom_bar"
-            android:orientation="horizontal"
-            android:layout_marginBottom="-22dp"/>
+            android:layout_height="20dp"
+            android:background="@drawable/stl_tire_bar"
+            android:orientation="horizontal"/>
 
     </LinearLayout>
 

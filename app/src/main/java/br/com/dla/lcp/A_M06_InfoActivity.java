@@ -3,17 +3,21 @@ package br.com.dla.lcp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
+import androidx.core.widget.ImageViewCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -186,28 +190,43 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
             }
         });
 
+
+        //Mostrar/Esconder opção Graficos
+        S_ConexaoDAO s_conexaoDAO1 = new S_ConexaoDAO(A_M06_InfoActivity.this);
+        int countListCheck = s_conexaoDAO1.numListaCheck();
+        final Menu menu = navigationView06.getMenu();
+        menu.findItem(R.id.nav_menu07).setVisible(false);
+        menu.findItem(R.id.nav_menu08).setVisible(false);
+
+        if (countListCheck >= 1) {
+            menu.findItem(R.id.nav_menu05).setVisible(true);
+        } else {
+            menu.findItem(R.id.nav_menu05).setVisible(false);
+        }
+
+        //HELLO
         hello.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
 
-                getWindow().setStatusBarColor(Color.rgb(0,0,0));
                 //ImageView: imgLogo, img_sobre, img_dev, img_doc, img_site;
                 imgLogo.setImageResource(R.drawable.ic_item_hello);
+                ColorStateList csl = AppCompatResources.getColorStateList(A_M06_InfoActivity.this, R.color.textAzul01_t);
+                ImageViewCompat.setImageTintList(imgLogo, csl);
+
                 imgLogo.startAnimation(fadein);
-
-                txtLogo01.setTextColor(0x66000000);
-                txtLogo01.startAnimation(fadein);
-                txtLogo02.setTextColor(0x88000000);
-                txtLogo02.startAnimation(fadein);
-
                 txtLogo01.setText("Meus parabéns, você acaba de descobrir um Easter Egg!");
                 txtLogo02.setText("Me sigue no Instagram. ✌✌✌");
+                txtLogo01.startAnimation(fadein);
+                txtLogo02.startAnimation(fadein);
+
+                menu.findItem(R.id.nav_menu07).setVisible(true);
+                menu.findItem(R.id.nav_menu08).setVisible(true);
 
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         chamar("https://www.instagram.com/denilson_fa/");
-
                     }
                 }, 5000);
                 return false;
@@ -233,7 +252,7 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
                 finish();
                 break;
             case R.id.nav_menu04:
-                startActivity(new Intent(getBaseContext(), A_M04_ConfigActivity.class));
+                startActivity(new Intent(getBaseContext(), A_M04_AjudaActivity.class));
                 finish();
                 break;
             case R.id.nav_menu05:

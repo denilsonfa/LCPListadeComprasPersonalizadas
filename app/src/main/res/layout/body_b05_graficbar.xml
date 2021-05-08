@@ -44,7 +44,7 @@
                     android:rotation="180"
                     android:paddingStart="2dp"
                     android:paddingEnd="2dp"
-                    android:text="@string/nomeList"
+                    android:text="@string/listname"
                     android:textAllCaps="true"
                     android:textColor="@color/textBranco02_t"
                     android:textSize="14sp"

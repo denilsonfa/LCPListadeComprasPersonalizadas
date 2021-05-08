@@ -61,7 +61,7 @@
             android:name=".A_M03_ListExtrato_SetList"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".A_M04_ConfigActivity"
+            android:name=".A_M04_AjudaActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".A_M05_ProductGrafic"
@@ -69,12 +69,7 @@
         <activity
             android:name=".A_M06_InfoActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".A_M09_Tmp"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".A_H01_Main"
-            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

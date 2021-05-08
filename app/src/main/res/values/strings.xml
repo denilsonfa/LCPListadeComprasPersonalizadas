@@ -127,6 +127,7 @@
         \n\nAssim a lista será editavel até que seja concluida novamente.
     </string>
 
+    <string name="header_title01">1º Lista finalizada:</string>
 
     <string name="addedProduct">Produto Adicionado!</string>
     <string name="noaddedProduct">Erro ao adicionar Produto!</string>
@@ -179,7 +180,8 @@
     <string name="num3">00 x R$ 0.00</string>
     <string name="num4">100 %</string>
     <string name="num5">ID: 00 | R$ 0.00</string>
-    <string name="listname">Lista de Compras 00/00</string>
+    <string name="num6">R$ 000.00</string>
+    <string name="listname">ID: 00 - Lista de Compras 00/00</string>
     <string name="trace">-</string>
     <string name="Erro">ERRO!</string>
     <string name="Atencao">ATENÇÃO!</string>

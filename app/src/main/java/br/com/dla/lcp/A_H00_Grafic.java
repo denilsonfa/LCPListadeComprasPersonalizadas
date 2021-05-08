@@ -1,14 +1,14 @@
 package br.com.dla.lcp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class A_H01_Main extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class A_H00_Grafic extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.header_a_main);
+        setContentView(R.layout.header_a_grafic);
     }
 }

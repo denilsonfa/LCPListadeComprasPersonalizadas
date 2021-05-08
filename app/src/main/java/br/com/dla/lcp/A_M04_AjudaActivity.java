@@ -9,29 +9,19 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
-
-public class A_M09_Tmp extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+public class A_M04_AjudaActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
     //Menu (DrawerLayout) == Creditos: Coding With Tea
-    DrawerLayout drawerLayout09;
-    NavigationView navigationView09;
-    Toolbar toolbar09;
-
-    ArrayList<String> idListL, nomeList, dataList, checkList, idProduct, idListP, nomeProduct, quantProduct, medidaProduct, tipoProduct, valorProduct, checkProduct;
-
-    private Button addListID;
+    DrawerLayout drawerLayout04;
+    NavigationView navigationView04;
+    Toolbar toolbar04;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,39 +29,35 @@ public class A_M09_Tmp extends AppCompatActivity implements NavigationView.OnNav
         //requestWindowFeature(1);
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         getWindow().setStatusBarColor(Color.rgb(0,100,255));
-        setContentView(R.layout.activity_m09_tmp);
+        setContentView(R.layout.activity_m04_ajuda);
 
         //Activity = Menu
-        drawerLayout09 =findViewById(R.id.drawer_layout09);
-        navigationView09 =findViewById(R.id.nav_view09);
-        toolbar09 =findViewById(R.id.toolbar09);
+        drawerLayout04 =findViewById(R.id.drawer_layout04);
+        navigationView04 =findViewById(R.id.nav_view04);
+        toolbar04 =findViewById(R.id.toolbar04);
 
         //Activity = ToolBar
-        setSupportActionBar(toolbar09);
+        setSupportActionBar(toolbar04);
         getSupportActionBar().setTitle("");
 
         //Activity = Navigation Menu
-        navigationView09.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout09, toolbar09, R.string.ico_dw_open, R.string.ico_dw_close);
-        drawerLayout09.addDrawerListener(toggle);
+        navigationView04.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout04, toolbar04, R.string.ico_dw_open, R.string.ico_dw_close);
+        drawerLayout04.addDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView09.setNavigationItemSelectedListener(this);
+        navigationView04.setNavigationItemSelectedListener(this);
 
-        //S_Dados = Função ação do botão addListID
-        addListID = findViewById(R.id.addList);
-        addListID.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                S_ConexaoDAO crud = new S_ConexaoDAO(getBaseContext());
-                float valorMax = crud.maxTotalList();
-                //long valorMax = crud.idUltimaList();
+        //Mostrar/Esconder opção Graficos
+        S_ConexaoDAO s_conexaoDAO1 = new S_ConexaoDAO(A_M04_AjudaActivity.this);
+        int countListCheck = s_conexaoDAO1.numListaCheck();
+        Menu menu = navigationView04.getMenu();
 
-                addListID.setText( String.valueOf(valorMax) );
-
-            }
-        });
-
+        if (countListCheck >= 1) {
+            menu.findItem(R.id.nav_menu05).setVisible(true);
+        } else {
+            menu.findItem(R.id.nav_menu05).setVisible(false);
+        }
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -91,7 +77,7 @@ public class A_M09_Tmp extends AppCompatActivity implements NavigationView.OnNav
                 finish();
                 break;
             case R.id.nav_menu04:
-                startActivity(new Intent(getBaseContext(), A_M04_ConfigActivity.class));
+                startActivity(new Intent(getBaseContext(), A_M04_AjudaActivity.class));
                 finish();
                 break;
             case R.id.nav_menu05:
@@ -111,6 +97,6 @@ public class A_M09_Tmp extends AppCompatActivity implements NavigationView.OnNav
                 finish();
                 break;
         }
-        drawerLayout09.closeDrawer(GravityCompat.START); return true;
+        drawerLayout04.closeDrawer(GravityCompat.START); return true;
     }
 }

@@ -2,7 +2,6 @@ package br.com.dla.lcp;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,11 +10,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.InputType;
-import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -59,7 +57,7 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
     //Criar lista (Adicionar Produto) == Creditos: @Denilson_fa
     S_Dados dados = new S_Dados();
 
-    private TextView nomeListSELECTED02, nomeListSELECTED02b;
+    private TextView nomeListSELECTED02, nomeListSELECTED02b, totalValorListITEM02_mult;
     private ImageView reloadListConsult;
 
     //private String idProductDADOS, idListPDADOS, nomeProductDADOS, quantProductDADOS, medidaProductDADOS, tipoProductDADOS;
@@ -98,6 +96,8 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
         reloadListConsult = findViewById(R.id.reloadListConsult_mult);
         list_concluida = findViewById(R.id.list_concluida_mult);
 
+        totalValorListITEM02_mult = findViewById(R.id.totalValorListITEM02_mult);
+
         //Recebendo Dados do Produto selecionado
         getAndSetIntentDataLista_ListConsult();
 
@@ -114,6 +114,24 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
                 resetStoreProducts_ListConsult();
             }
         });
+
+        S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M02_ListConsult_ListMult.this);
+        double totalValor = conexaoDAO_ListProductCountCheck.numReadProductTotal( dados.getIdListL() );
+        totalValor = (Math.rint (totalValor * 100.0) / 100.0);
+        String totVal = "R$ "+totalValor;
+
+        totalValorListITEM02_mult.setText(totVal);
+
+        //Mostrar/Esconder opção Graficos
+        S_ConexaoDAO s_conexaoDAO1 = new S_ConexaoDAO(A_M02_ListConsult_ListMult.this);
+        int countListCheck = s_conexaoDAO1.numListaCheck();
+        Menu menu = navigationView02_mult.getMenu();
+
+        if (countListCheck >= 1) {
+            menu.findItem(R.id.nav_menu05).setVisible(true);
+        } else {
+            menu.findItem(R.id.nav_menu05).setVisible(false);
+        }
 
     }
 
@@ -209,7 +227,7 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
         S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M02_ListConsult_ListMult.this);
         S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M02_ListConsult_ListMult.this);
         int countItens = conexaoDAO_ListProductCount.numItensListS( dados.getIdListL() );
-        int countItensCheck = conexaoDAO_ListProductCountCheck.numItensCheck( dados.getIdListL() );
+        int countItensCheck = conexaoDAO_ListProductCountCheck.numProductCheck( dados.getIdListL() );
 
         if( countItensCheck == countItens ) {
             //se for, ficha a lista
@@ -293,7 +311,7 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
                 finish();
                 break;
             case R.id.nav_menu04:
-                startActivity(new Intent(getBaseContext(), A_M04_ConfigActivity.class));
+                startActivity(new Intent(getBaseContext(), A_M04_AjudaActivity.class));
                 exitAct02();
                 finish();
                 break;
@@ -336,7 +354,7 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
         S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M02_ListConsult_ListMult.this);
         S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M02_ListConsult_ListMult.this);
         int countItens = conexaoDAO_ListProductCount.numItensListS( dados.getIdListL() );
-        int countItensCheck = conexaoDAO_ListProductCountCheck.numItensCheck( dados.getIdListL() );
+        int countItensCheck = conexaoDAO_ListProductCountCheck.numProductCheck( dados.getIdListL() );
 
         if( countItensCheck == countItens ) {
             list_concluida.setVisibility(View.VISIBLE);
@@ -433,7 +451,7 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
         S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M02_ListConsult_ListMult.this);
         S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M02_ListConsult_ListMult.this);
         int countItens = conexaoDAO_ListProductCount.numItensListS( dados.getIdListL() );
-        int countItensCheck = conexaoDAO_ListProductCountCheck.numItensCheck( dados.getIdListL() );
+        int countItensCheck = conexaoDAO_ListProductCountCheck.numProductCheck( dados.getIdListL() );
 
         if( countItensCheck == countItens ) {
 

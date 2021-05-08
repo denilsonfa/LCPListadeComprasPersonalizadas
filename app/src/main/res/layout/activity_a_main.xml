@@ -9,10 +9,21 @@
     android:orientation="vertical">
 
     <include
-        android:id="@+id/includeMainTop"
-        layout="@layout/header_a_main"
+        android:id="@+id/main_menu00"
         android:layout_width="match_parent"
-        android:layout_height="250dp"/>
+        android:layout_height="250dp"
+        layout="@layout/header_a_grafic"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="main_menu05"/>
+
+    <LinearLayout
+        android:id="@+id/tipsDown"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/stl_tire_bar"
+        android:orientation="horizontal"
+        android:layout_marginTop="-20dp"/>
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -223,33 +234,6 @@
                     <TextView
                         style="@style/main_btnTxt2"
                         android:text="@string/main_desc_menu08" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/main_menu09"
-                style="@style/main_btnH"
-                android:clickable="true"
-                android:focusable="true"
-                android:onClick="main_menu09">
-
-                <ImageView
-                    style="@style/main_btnIMag"
-                    android:contentDescription="@string/main_menu09"
-                    app:srcCompat="@drawable/ic_main_menu09" />
-
-                <LinearLayout style="@style/main_btnV">
-
-                    <TextView
-                        style="@style/main_btnTxt1"
-                        android:text="@string/main_menu09" />
-
-                    <TextView
-                        style="@style/main_btnTxt2"
-                        android:text="@string/main_desc_menu09" />
 
                 </LinearLayout>
 

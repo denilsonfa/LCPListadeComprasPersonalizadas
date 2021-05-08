@@ -18,6 +18,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -215,6 +216,17 @@ public class A_M01_ListCreate extends AppCompatActivity implements NavigationVie
             }
         });
 
+        //Mostrar/Esconder opção Graficos
+        S_ConexaoDAO s_conexaoDAO1 = new S_ConexaoDAO(A_M01_ListCreate.this);
+        int countListCheck = s_conexaoDAO1.numListaCheck();
+        Menu menu = navigationView01.getMenu();
+
+        if (countListCheck >= 1) {
+            menu.findItem(R.id.nav_menu05).setVisible(true);
+        } else {
+            menu.findItem(R.id.nav_menu05).setVisible(false);
+        }
+
     }
 
     @Override
@@ -223,6 +235,7 @@ public class A_M01_ListCreate extends AppCompatActivity implements NavigationVie
 
         //Após retornar da editar/apagar produto, recarrega a lista
         resetStoreProducts_ListCreate();
+
     }
 
     //Função Menu
@@ -266,7 +279,7 @@ public class A_M01_ListCreate extends AppCompatActivity implements NavigationVie
                 finish();
                 break;
             case R.id.nav_menu04:
-                startActivity(new Intent(getBaseContext(), A_M04_ConfigActivity.class));
+                startActivity(new Intent(getBaseContext(), A_M04_AjudaActivity.class));
                 exitAct01();
                 finish();
                 break;

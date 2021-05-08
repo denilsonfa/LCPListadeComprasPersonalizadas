@@ -59,52 +59,13 @@
             android:layout_height="250dp"
             layout="@layout/header_a_grafic"/>
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="240dp"-->
-<!--            android:background="@drawable/cor_gradient_azul2"-->
-<!--            android:orientation="vertical">-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/no_data_ListGrafico_l"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:fontFamily="@font/bebasneue"-->
-<!--                android:gravity="center"-->
-<!--                android:padding="20dp"-->
-<!--                android:text="@string/grafic_vazia_l"-->
-<!--                android:textColor="@color/textBranco15"-->
-<!--                android:textSize="16sp"-->
-<!--                android:visibility="gone"-->
-<!--                android:background="@drawable/bg_head_branco01"/>-->
-
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/readProductListGrafico_l"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:paddingTop="20dp"-->
-<!--                android:paddingBottom="20dp"-->
-<!--                android:visibility="visible"-->
-<!--                android:background="@drawable/bg_head_branco01"/>-->
-
-
-<!--        </LinearLayout>-->
-
-<!--        <LinearLayout-->
-<!--            android:id="@+id/tipsDown"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:background="@drawable/bg_buttom_bar"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:layout_marginTop="-30dp"/>-->
-
         <LinearLayout
             android:id="@+id/tipsDown"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/bg_buttom_bar"
+            android:layout_height="20dp"
+            android:background="@drawable/stl_tire_bar"
             android:orientation="horizontal"
-            android:layout_marginTop="-28dp"/>
+            android:layout_marginTop="-20dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -114,8 +75,7 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:layout_marginTop="-18dp">
+            android:paddingBottom="10dp">
 
             <TextView
                 android:id="@+id/nomeListITEM05"

@@ -137,6 +137,12 @@ public class S_Dados implements Serializable {
             + TL_ITEM06 +" from "
             +TL_NAME+";";
 
+    protected static final String DATABASE_SELECT_LIST_MAX_CHECK = " select MAX("
+            +TL_ITEM01+") as "
+            + TL_ITEM06 +" from "
+            +TL_NAME+" where "
+            +TL_ITEM04+" = 1 ;";
+
     protected static final String DATABASE_SELECT_LIST_NOME = " select "
             +TL_ITEM02+" from "
             +TL_NAME+" where "
@@ -160,6 +166,11 @@ public class S_Dados implements Serializable {
     protected static final String DATABASE_SELECT_LIST_TOTAL_MAX = " select MAX("
             +TL_ITEM05+") from "
             +TL_NAME+";";
+
+    protected static final String DATABASE_COUNT_LISTA_CHECK = " select "
+            +TL_ITEM01+" from "
+            +TL_NAME+" where "
+            +TL_ITEM04+" = 1;";
 
     //Consultas Productos
 
@@ -377,11 +388,13 @@ public class S_Dados implements Serializable {
     public static String getDatebaseSelectJoin03() {return DATABASE_SELECT_JOIN03;}
 
     public static String getDatabaseSelectListMax() {return DATABASE_SELECT_LIST_MAX;}
+    public static String getDatabaseSelectListMaxCheck() {return DATABASE_SELECT_LIST_MAX_CHECK;}
     public static String getDatabaseSelectListNome() {return DATABASE_SELECT_LIST_NOME;}
     public static String getDatabaseSelectListData() {return DATABASE_SELECT_LIST_DATA;}
     public static String getDatabaseSelectListChk() {return DATABASE_SELECT_LIST_CHK;}
     public static String getDatabaseSelectListTL() {return DATABASE_SELECT_LIST_TL;}
     public static String getDatabaseSelectListTotalMax() {return DATABASE_SELECT_LIST_TOTAL_MAX;}
+    public static String getDatabaseSelectListIscheck() {return DATABASE_COUNT_LISTA_CHECK;}
 
     public static String getDatabaseSelectProduct() {return DATABASE_SELECT_PRODUCT;}
     public static String getDatabaseSelectProductTotal() {return DATABASE_SELECT_PRODUCT_TOTAL;}

@@ -53,11 +53,13 @@ public class S_ConexaoDAO {
     private static final String DATABASE_SELECT_JOIN03              = S_Dados.getDatebaseSelectJoin03();
 
     private static final String DATABASE_SELECT_LIST_MAX            = S_Dados.getDatabaseSelectListMax();
+    private static final String DATABASE_SELECT_LIST_MAX_CHECK      = S_Dados.getDatabaseSelectListMaxCheck();
     private static final String DATABASE_SELECT_LIST_NOME           = S_Dados.getDatabaseSelectListNome();
     private static final String DATABASE_SELECT_LIST_DATA           = S_Dados.getDatabaseSelectListData();
     private static final String DATABASE_SELECT_LIST_CHK            = S_Dados.getDatabaseSelectListChk();
     private static final String DATABASE_SELECT_LIST_TL             = S_Dados.getDatabaseSelectListTL();
     private static final String DATABASE_SELECT_LIST_TOTAL_MAX      = S_Dados.getDatabaseSelectListTotalMax();
+    private static final String DATABASE_COUNT_LISTA_CHECK          = S_Dados.getDatabaseSelectListIscheck();
 
     private static final String DATABASE_SELECT_PRODUCT             = S_Dados.getDatabaseSelectProduct();
     private static final String DATABASE_SELECT_PRODUCT_TOTAL       = S_Dados.getDatabaseSelectProductTotal();
@@ -211,7 +213,19 @@ public class S_ConexaoDAO {
     //	-------------------------------------------------------------------	//
 
     //	-----***-----	Read Count() - table lista	-----***-----	//
-    public int numItensCheck(int idListL) {
+    public int numListaCheck() {
+
+        String query = DATABASE_COUNT_LISTA_CHECK;
+        SQLiteDatabase DATABASEList = conexao.getReadableDatabase();
+        Cursor cursor = DATABASEList.rawQuery(query, null);
+        return cursor.getCount();
+
+    }
+    //	-------------------------------------------------------------------	//
+
+
+    //	-----***-----	Read Count() - table lista	-----***-----	//
+    public int numProductCheck(int idListL) {
 
         String query = DATABASE_COUNT_PRODUCT_CHECK01+idListL+DATABASE_COUNT_PRODUCT_CHECK02;
         SQLiteDatabase DATABASEList = conexao.getReadableDatabase();
@@ -234,6 +248,20 @@ public class S_ConexaoDAO {
         long valorTotal = 0;
         SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
         String query = DATABASE_SELECT_LIST_MAX;
+
+        Cursor cursor = DATABASEProductTotal.rawQuery(query, null);
+        if(cursor.moveToFirst()) { valorTotal = cursor.getLong(0); }
+
+        return valorTotal;
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read DATABASE - table lista idUltimaListCHECK	-----***-----	//
+    public long idUltimaListCheck() {
+
+        long valorTotal = 0;
+        SQLiteDatabase DATABASEProductTotal = conexao.getReadableDatabase();
+        String query = DATABASE_SELECT_LIST_MAX_CHECK;
 
         Cursor cursor = DATABASEProductTotal.rawQuery(query, null);
         if(cursor.moveToFirst()) { valorTotal = cursor.getLong(0); }

@@ -17,6 +17,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -212,6 +213,17 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
                 //Exibe
                 alerta.show();
 
+                //Mostrar/Esconder opção Graficos
+                S_ConexaoDAO s_conexaoDAO1 = new S_ConexaoDAO(A_M03_ListExtract.this);
+                int countListCheck = s_conexaoDAO1.numListaCheck();
+                Menu menu = navigationView03.getMenu();
+
+                if (countListCheck >= 1) {
+                    menu.findItem(R.id.nav_menu05).setVisible(true);
+                } else {
+                    menu.findItem(R.id.nav_menu05).setVisible(false);
+                }
+
             }
         });
     }
@@ -258,7 +270,7 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
                 finish();
                 break;
             case R.id.nav_menu04:
-                startActivity(new Intent(getBaseContext(), A_M04_ConfigActivity.class));
+                startActivity(new Intent(getBaseContext(), A_M04_AjudaActivity.class));
                 Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
                 finish();
                 break;

@@ -8,29 +8,32 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="295dp"
-        android:orientation="vertical">
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_head_branco02">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@drawable/bg_head_branco02"
+            android:gravity="bottom"
             tools:ignore="UselessParent">
 
             <ImageView
-                style="@style/imgTips"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/iv_onboard"
                 android:src="@drawable/img_tips_bg06"
+                android:paddingTop="50dp"
+                android:paddingBottom="20dp"
                 android:contentDescription="@string/tips_txt" />
 
             <LinearLayout
                 android:id="@+id/tipsDown"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_buttom_bar"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"/>
+                android:layout_height="20dp"
+                android:background="@drawable/stl_tire_bar"
+                android:orientation="horizontal"/>
 
             </LinearLayout>
 
@@ -41,7 +44,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:scrollbars="vertical"
-            android:layout_marginTop="-5dp"
             android:background="@color/textBranco01">
 
             <LinearLayout
@@ -50,6 +52,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:paddingTop="5dp"
                     android:id="@+id/tv_header"
                     android:text="@string/tips06"
                     style="@style/tips_title"/>

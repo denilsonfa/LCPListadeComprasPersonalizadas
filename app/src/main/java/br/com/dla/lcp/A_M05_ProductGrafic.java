@@ -17,6 +17,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -51,7 +52,9 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
 
     //id da ultima lista / ou lista consultada referente ao grafico
     long idUltimaLista;
-    private TextView totalValorListITEM05, nomeListITEM05;
+    private TextView totalValorListITEM05, nomeListITEM05, porcent0, porcent20, porcent50, porcent80, porcent100;
+    private TextView nomeListITEM05_header01, valorListITEM05_header01;
+    private LinearLayout option01, option02, option03;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,19 +81,6 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
 
         navigationView05.setNavigationItemSelectedListener(this);
 
-        //Definir valor maximo para gerar grafico
-        S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M05_ProductGrafic.this);
-        valorMax = conexaoDAO_ListProductCountCheck.maxTotalList();
-
-        //definir qual lista irá abrir automativamente assim que iniciar activity
-        long idListaSelected = S_H05_ListLista_Adapter.idUltimaListaSelected;
-
-        if( idListaSelected == 0) {
-            setIdUltimaLista( conexaoDAO_ListProductCountCheck.idUltimaList() );
-        } else {
-            setIdUltimaLista(idListaSelected);
-        }
-
         //RecyclerView
         recyclerView_ProductGrafic_SetList = findViewById(R.id.readProductListGrafico_l);
         no_data_ProductGrafic_SetList = findViewById(R.id.no_data_ListGrafico_l);
@@ -101,18 +91,131 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         totalValorListITEM05 = findViewById(R.id.totalValorListITEM05);
         nomeListITEM05 = findViewById(R.id.nomeListITEM05);
 
-        //Consultar nome da lista atual
-        String readListName = "ID: "+getIdUltimaLista()+" - "+conexaoDAO_ListProductCountCheck.readListName(getIdUltimaLista());
-        //Consultar valor total da lista atual
-        double totalValor = Double.parseDouble( conexaoDAO_ListProductCountCheck.readListTL( getIdUltimaLista() ) );
-        totalValor = (Math.rint (totalValor * 100.0) / 100.0);
-        String totVal = "R$ "+totalValor;
+        nomeListITEM05_header01 = findViewById(R.id.nomeListITEM05_header01);
+        valorListITEM05_header01 = findViewById(R.id.valorListITEM05_header01);
 
-        //imprimir dados
-        nomeListITEM05.setText(readListName);
-        totalValorListITEM05.setText(totVal);
+        //option01, option02, option03
+        //Conforme a quantidade de listas finalizadas, ele irá mostrar um header diferente
+        option01 = findViewById(R.id.option01);
+        option02 = findViewById(R.id.option02);
+        option03 = findViewById(R.id.option03);
 
-        resetStoreProducts_ProductGrafic(getIdUltimaLista());
+        //consultar quantas listas foram finalizadas
+        //conexaoDAO_ListLista_ProductGrafic.numListaCheck()
+        S_ConexaoDAO s_conexaoDAO1 = new S_ConexaoDAO(A_M05_ProductGrafic.this);
+        int countListCheck = s_conexaoDAO1.numListaCheck();
+
+        if(countListCheck >= 2) {
+            //Se numero de listas for maior que 2, aparece grafico
+
+            option01.setVisibility(View.GONE);
+            option02.setVisibility(View.GONE);
+            option03.setVisibility(View.VISIBLE);
+
+            //Definir valor maximo para gerar grafico
+            S_ConexaoDAO conexaoDAO_ListProductCountCheck = new S_ConexaoDAO(A_M05_ProductGrafic.this);
+            valorMax = conexaoDAO_ListProductCountCheck.maxTotalList();
+
+            //definir qual lista irá abrir automativamente assim que iniciar activity
+            long idListaSelected = S_H05_ListLista_Adapter.idUltimaListaSelected;
+
+            if( idListaSelected == 0) {
+                setIdUltimaLista( conexaoDAO_ListProductCountCheck.idUltimaListCheck() );
+            } else {
+                setIdUltimaLista(idListaSelected);
+            }
+
+            //Consultar nome da lista atual
+            String readListName = "ID: "+getIdUltimaLista()+" - "+conexaoDAO_ListProductCountCheck.readListName(getIdUltimaLista());
+            //Consultar valor total da lista atual
+            double totalValor = Double.parseDouble( conexaoDAO_ListProductCountCheck.readListTL( getIdUltimaLista() ) );
+            totalValor = (Math.rint (totalValor * 100.0) / 100.0);
+            String totVal = "R$ "+totalValor;
+
+            //imprimir dados
+            nomeListITEM05.setText(readListName);
+            totalValorListITEM05.setText(totVal);
+
+            //escala do grafico
+            //porcent0, porcent25, porcent50, porcent75, porcent100;
+            porcent0 = findViewById(R.id.porcent0);
+            porcent20 = findViewById(R.id.porcent20);
+            porcent50 = findViewById(R.id.porcent50);
+            porcent80 = findViewById(R.id.porcent80);
+            porcent100 = findViewById(R.id.porcent100);
+
+            //Calculos de porcentagem
+            //0%
+            double porcNum0 = (valorMax*0.00);
+            porcNum0 = (Math.rint (porcNum0 * 100.0) / 100.0);
+            String porc0 = "R$ "+porcNum0;
+
+            //25%
+            double porcNum20 = (valorMax*0.20);
+            porcNum20 = (Math.rint (porcNum20 * 100.0) / 100.0);
+            String porc20 = "R$ "+ porcNum20;
+
+            //50%
+            double porcNum50 = (valorMax*0.50);
+            porcNum50 = (Math.rint (porcNum50 * 100.0) / 100.0);
+            String porc50 = "R$ "+porcNum50;
+
+            //75%
+            double porcNum80 = (valorMax*0.80);
+            porcNum80 = (Math.rint (porcNum80 * 100.0) / 100.0);
+            String porc80 = "R$ "+ porcNum80;
+
+            //100%
+            double porcNum100 = (valorMax*1.00);
+            porcNum100 = (Math.rint (porcNum100 * 100.0) / 100.0);
+            String porc100 = "R$ "+porcNum100;
+
+            //SetText porcent
+            porcent0.setText(porc0);
+            porcent20.setText(porc20);
+            porcent50.setText(porc50);
+            porcent80.setText(porc80);
+            porcent100.setText(porc100);
+
+            //Carregar lista de produtos
+            resetStoreProducts_List(getIdUltimaLista());
+
+        } else if (countListCheck == 1) {
+            //se for somente 1
+
+            option01.setVisibility(View.GONE);
+            option02.setVisibility(View.VISIBLE);
+            option03.setVisibility(View.GONE);
+
+            nomeListITEM05_header01.setText(R.string.nomeList);
+
+            //Consultar nome da lista ultima lista finalizada
+            S_ConexaoDAO s_conexaoDAO = new S_ConexaoDAO(A_M05_ProductGrafic.this);
+            long ultimaLista = s_conexaoDAO.idUltimaListCheck();
+            String readListName = "ID: "+ultimaLista+" - "+s_conexaoDAO.readListName( ultimaLista );
+
+            //Consultar valor total da lista atual
+            double totalValor = Double.parseDouble( s_conexaoDAO.readListTL( ultimaLista ) );
+            totalValor = (Math.rint (totalValor * 100.0) / 100.0);
+            String totVal = "R$ "+totalValor;
+
+            //imprimir dados
+            nomeListITEM05_header01.setText(readListName);
+            valorListITEM05_header01.setText(totVal);
+
+            nomeListITEM05.setText(readListName);
+            totalValorListITEM05.setText(totVal);
+
+            //Carregar lista de produtos
+            resetStoreProducts_List( ultimaLista );
+        } else {
+            //não tiver nenhuma lista ou, algum erro
+
+            option01.setVisibility(View.VISIBLE);
+            option02.setVisibility(View.GONE);
+            option03.setVisibility(View.GONE);
+
+        }
 
     }
 
@@ -120,11 +223,26 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     protected void onResume() {
         super.onResume();
 
-        //Após retornar da editar/apagar produto, recarrega a lista
-        resetStoreProducts_ProductGrafic(getIdUltimaLista());
+        S_ConexaoDAO s_conexaoDAO1 = new S_ConexaoDAO(A_M05_ProductGrafic.this);
+        int countListCheck = s_conexaoDAO1.numListaCheck();
 
-        //Após retornar da editar/apagar produto, recarrega a lista
-        resetStoreLists(valorMax);
+        //recarrega a lista
+        if(countListCheck >= 2) {
+            //recarrega a lista
+            resetStoreProducts_List(getIdUltimaLista());
+
+            //carrega a grafico
+            resetStoreGrafic(valorMax);
+
+        } else if (countListCheck == 1) {
+            S_ConexaoDAO s_conexaoDAO = new S_ConexaoDAO(A_M05_ProductGrafic.this);
+            long ultimaLista = s_conexaoDAO.idUltimaListCheck();
+            resetStoreProducts_List(ultimaLista);
+        } else {
+            resetStoreProducts_List(0);
+            nomeListITEM05.setText(R.string.erro_lista);
+            totalValorListITEM05.setText(R.string.erro_lista);
+        }
 
     }
 
@@ -159,7 +277,7 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
                 finish();
                 break;
             case R.id.nav_menu04:
-                startActivity(new Intent(getBaseContext(), A_M04_ConfigActivity.class));
+                startActivity(new Intent(getBaseContext(), A_M04_AjudaActivity.class));
                 finish();
                 break;
             case R.id.nav_menu05:
@@ -192,7 +310,7 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     }
 
     //Lista Listas
-    void storeLists(){
+    void storeGrafic(){
         Cursor cursor = conexaoDAO_ListLista05.readListIsCheck();
         if(cursor.getCount() == 0) {
             no_data_ProductGrafic_SetList.setVisibility(View.VISIBLE);
@@ -211,7 +329,7 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     }
 
     //Metodo
-    void resetStoreLists(float valorMax05) {
+    void resetStoreGrafic(float valorMax05) {
         conexaoDAO_ListLista05 = new S_ConexaoDAO(A_M05_ProductGrafic.this);
         idListL05 = new ArrayList<>();
         nomeList05 = new ArrayList<>();
@@ -219,7 +337,7 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         checkList05 = new ArrayList<>();
         totalList05 = new ArrayList<>();
 
-        storeLists();
+        storeGrafic();
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         RecyclerView myList = (RecyclerView) findViewById(R.id.readProductListGrafico_l);
@@ -231,7 +349,7 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     }
 
     //Lista Produtos
-    void storeProducts_ListConsult(long idListaP2){
+    void storeProducts_List(long idListaP2){
         //idListL, nomeList, dataList, checkList,
         //idProduct, idListP, nomeProduct, quantProduct, medidaProduct, tipoProduct, valorProduct, checkProduct
 
@@ -262,7 +380,7 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     }
 
     //Reset storeProducts
-    void resetStoreProducts_ProductGrafic(long idListaP){
+    void resetStoreProducts_List(long idListaP){
         conexaoDAO_ProductGrafic = new S_ConexaoDAO(A_M05_ProductGrafic.this);
         idListL = new ArrayList<>();
         nomeList = new ArrayList<>();
@@ -278,7 +396,7 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         valorProduct = new ArrayList<>();
         checkProduct = new ArrayList<>();
 
-        storeProducts_ListConsult(idListaP);
+        storeProducts_List(idListaP);
 
         s_m03_productGrafic_adapter = new S_M03_ListExtrato_Adapter(A_M05_ProductGrafic.this,
                 idListL, nomeList, dataList, checkList, idProduct, idListP, nomeProduct, quantProduct,
