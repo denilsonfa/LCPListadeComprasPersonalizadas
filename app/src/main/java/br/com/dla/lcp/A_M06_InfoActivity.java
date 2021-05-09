@@ -108,9 +108,6 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
         option_site_txt.setVisibility(View.GONE);
         option_github_txt.setVisibility(View.GONE);
 
-        //definindo texto sobre a aplicação
-        txt_sobre.setText(R.string.tips_desc06_01);
-
         //Definir botões
         //menu
         option_sobre.setOnClickListener(new View.OnClickListener() {

@@ -75,6 +75,9 @@ public class S_ConexaoDAO {
     private static final String DATABASE_COUNT_PRODUCT_CHECK01      = S_Dados.getDatabaseCountProductCheck01();
     private static final String DATABASE_COUNT_PRODUCT_CHECK02      = S_Dados.getDatabaseCountProductCheck02();
 
+    private static final String DATABASE_COUNT_TOTAL_PRODUCT        = S_Dados.getDatabaseCountTotalProduct();
+    private static final String DATABASE_COUNT_TOTAL_LIST           = S_Dados.getDatabaseCountTotalList();
+
     //	---------------------	Metodo Construtor	---------------------	//
     public S_ConexaoDAO(Context context){
         conexao = new S_ConexaoBD(context);
@@ -485,6 +488,26 @@ public class S_ConexaoDAO {
         } else {
             return true;
         }
+
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read Count() - Total Product	-----***-----	//
+    public int countTotalProduct() {
+        String query = DATABASE_COUNT_TOTAL_PRODUCT;
+        SQLiteDatabase DATABASEList = conexao.getReadableDatabase();
+        Cursor cursor = DATABASEList.rawQuery(query, null);
+        return cursor.getCount();
+
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	Read Count() - Total List	-----***-----	//
+    public int countTotalList() {
+        String query = DATABASE_COUNT_TOTAL_LIST;
+        SQLiteDatabase DATABASEList = conexao.getReadableDatabase();
+        Cursor cursor = DATABASEList.rawQuery(query, null);
+        return cursor.getCount();
 
     }
     //	-------------------------------------------------------------------	//

@@ -11,13 +11,13 @@
     tools:context=".A_M04_AjudaActivity"
     android:background="#f0f0f0">
 
-<!--    <com.google.android.material.navigation.NavigationView-->
-<!--        android:id="@+id/nav_view04"-->
-<!--        android:layout_gravity="start"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        app:headerLayout="@layout/header_m04_config"-->
-<!--        app:menu="@menu/menu04_options"/>-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view04"
+        android:layout_gravity="start"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        app:headerLayout="@layout/header_m04_config"
+        app:menu="@menu/menu04_options"/>
 
     <LinearLayout
         android:id="@+id/configScreen"
@@ -64,38 +64,80 @@
 
             <LinearLayout style="@style/main_btnV">
 
+                <!-- INICIO -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:background="@color/textPreto08"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txtInicio"
+                        android:textColor="@color/textPreto04"
+                        android:fontFamily="@font/raleway_regular"
+                        android:paddingBottom="10dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="bottom"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:background="@color/textBranco01">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bebasneue"
+                        android:textAlignment="textStart"
+                        android:textStyle="bold"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="0dp"
+                        android:text="@string/help"
+                        android:textColor="@color/textPreto05"
+                        android:textSize="25sp" />
+
+                </LinearLayout>
+
                 <!-- OPIÇÂO 01 -->
                 <LinearLayout
-                    android:id="@+id/option_sobre"
+                    android:id="@+id/help01"
                     style="@style/main_btnH"
                     android:clickable="true"
                     android:focusable="true">
 
                     <ImageView
+                        android:id="@+id/img_help01"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="20dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:id="@+id/img_sobre"
-                        android:contentDescription="@string/main_menu06"
+                        android:contentDescription="@string/nada"
                         app:srcCompat="@drawable/ic_spinner_nor" />
 
-                    <LinearLayout style="@style/main_btnV">
-
-                        <TextView
-                            style="@style/main_btnTxt1"
-                            android:text="@string/main_menu06"
-                            android:textSize="20sp"/>
-
-                    </LinearLayout>
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/help01"
+                        android:textSize="16sp"/>
 
                 </LinearLayout>
 
                 <!-- TEXTO 01 -->
                 <LinearLayout
-                    android:id="@+id/option_sobre_txt"
+                    android:id="@+id/help01_txt"
                     android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -106,12 +148,320 @@
                     android:background="@color/textPreto08">
 
                     <TextView
-                        android:id="@+id/txt_sobre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/tips_desc06_01"
+                        android:text="@string/help01_txt"
                         android:textColor="@color/textPreto04"
                         android:fontFamily="@font/raleway_regular"/>
+
+                </LinearLayout>
+
+                <!-- OPIÇÂO 02 -->
+                <LinearLayout
+                    android:id="@+id/help02"
+                    style="@style/main_btnH"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_help02"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:contentDescription="@string/nada"
+                        app:srcCompat="@drawable/ic_spinner_nor" />
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/help02"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <!-- TEXTO 02 -->
+                <LinearLayout
+                    android:id="@+id/help02_txt"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:background="@color/textPreto08">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/help02_txt"
+                        android:textColor="@color/textPreto04"
+                        android:fontFamily="@font/raleway_regular"/>
+
+                </LinearLayout>
+
+                <!-- OPIÇÂO 03 -->
+                <LinearLayout
+                    android:id="@+id/help03"
+                    style="@style/main_btnH"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_help03"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:contentDescription="@string/nada"
+                        app:srcCompat="@drawable/ic_spinner_nor" />
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/help03"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <!-- TEXTO 03 -->
+                <LinearLayout
+                    android:id="@+id/help03_txt"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:background="@color/textPreto08">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/help03_txt"
+                        android:textColor="@color/textPreto04"
+                        android:fontFamily="@font/raleway_regular"/>
+
+                </LinearLayout>
+
+                <!-- OPIÇÂO 04 -->
+                <LinearLayout
+                    android:id="@+id/help04"
+                    style="@style/main_btnH"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_help04"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:contentDescription="@string/nada"
+                        app:srcCompat="@drawable/ic_spinner_nor" />
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/help04"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <!-- TEXTO 04 -->
+                <LinearLayout
+                    android:id="@+id/help04_txt"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:background="@color/textPreto08">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/help04_txt"
+                        android:textColor="@color/textPreto04"
+                        android:fontFamily="@font/raleway_regular"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="bottom"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:background="@color/textBranco01">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bebasneue"
+                        android:textAlignment="textStart"
+                        android:textStyle="bold"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="0dp"
+                        android:text="@string/ajust"
+                        android:textColor="@color/textPreto05"
+                        android:textSize="25sp" />
+
+                </LinearLayout>
+
+                <!-- AJUST 01 -->
+                <LinearLayout
+                    android:id="@+id/ajust01"
+                    style="@style/main_btnH"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_ajust01"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:contentDescription="@string/nada"
+                        app:srcCompat="@drawable/ic_spinner_nor" />
+
+                    <TextView
+                        style="@style/main_btnTxt1"
+                        android:text="@string/ajust01"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <!-- TEXTO 01 -->
+                <LinearLayout
+                    android:id="@+id/ajust01_txt"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:background="@color/textPreto08"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ajust01_txt"
+                        android:textColor="@color/textPreto04"
+                        android:fontFamily="@font/raleway_regular"
+                        android:paddingBottom="10dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/conutTotal"
+                        android:textColor="@color/textPreto04"
+                        android:fontFamily="@font/raleway_regular"
+                        android:paddingBottom="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_light"
+                            android:textStyle="bold"
+                            android:paddingEnd="5dp"
+                            android:paddingStart="0dp"
+                            android:text="@string/conutTotalList"
+                            android:textColor="@color/textPreto04" />
+
+                        <TextView
+                            android:id="@+id/countTotalList"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_light"
+                            android:textStyle="bold"
+                            android:text="@string/num0"
+                            android:textColor="@color/textPreto04"
+                            android:ellipsize="end"
+                            android:singleLine="true"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_light"
+                            android:textStyle="bold"
+                            android:paddingEnd="5dp"
+                            android:paddingStart="0dp"
+                            android:text="@string/conutTotalProduct"
+                            android:textColor="@color/textPreto04"/>
+
+                        <TextView
+                            android:id="@+id/countTotalProduct"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_light"
+                            android:textStyle="bold"
+                            android:text="@string/num0"
+                            android:textColor="@color/textPreto04"
+                            android:ellipsize="end"
+                            android:singleLine="true"/>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/ajust01_op01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ajust01_op01"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:fontFamily="@font/bebasneue"
+                        android:background="@drawable/stl_btn_vermelho"
+                        android:textColor="@color/textBranco01"
+                        android:textSize="18sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginTop="10dp"/>
+
+                    <Button
+                        android:id="@+id/ajust01_op02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ajust01_op02"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:fontFamily="@font/bebasneue"
+                        android:background="@drawable/stl_btn_vermelho"
+                        android:textColor="@color/textBranco01"
+                        android:textSize="18sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginTop="10dp"/>
 
                 </LinearLayout>
 

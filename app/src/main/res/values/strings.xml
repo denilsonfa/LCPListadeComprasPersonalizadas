@@ -16,7 +16,7 @@
     <string name="main_menu03">Conferir Extrato</string>
     <string name="main_desc_menu03">Veja o extratos e valores de suas compras.</string>
     <string name="main_menu04">Ajuda e Ajustes</string>
-    <string name="main_desc_menu04">Informações e configurações de seu aplicativo.</string>
+    <string name="main_desc_menu04">Informações de uso e alguns ajustes da aplicativo.</string>
     <string name="main_menu05">Grafico de Consumo</string>
     <string name="main_desc_menu05">Consulte o consumo de todas suas compras.</string>
     <string name="main_menu06">Sobre</string>
@@ -34,7 +34,7 @@
     <string name="tips_txt">Dica de Uso!</string>
 
     <string name="tips01">Seja bem-vindo!</string>
-    <string name="tips_desc01">Este é um app personalizado para elaboração de listas de compras, simples, prático e rápido. O Lista de Compras Personalizadas, é um aplicativo mobile para Android, e tem como principal e única função lhe auxiliar no processo de elaboração de sua lista de compras em cada mês.</string>
+    <string name="tips_desc01">Este é uma aplicação desenvolvida para a elaboração de listas de compras, simples, prático e rápido. O Lista de Compras Personalizadas, é um aplicativo mobile para Android, e tem como principal e única função lhe auxiliar no processo de elaboração de sua lista de compras em cada mês.</string>
     <string name="tips02">Crie sua Lista de Compras!</string>
     <string name="tips_desc02">Crie listas de compras facilmente adicionando os produtos que deseja, podendo remover, aumentar ou diminuir a quantidade, como você quiser, tudo simples e de modo organizado.</string>
     <string name="tips03">Consulte-as, onde você estiver!</string>
@@ -225,5 +225,49 @@
         <item>Higiene e Limpeza</item>
         <item>Outros</item>
     </string-array>
+
+    <!-- AJUDA E AJUSTES -->
+    <string name="txtInicio">
+        Saiba como usar todas as funções disponível no LCP para ter um maior rendimento de seu tempo durante suas compras no mercado. Aprenda tudo sobre como criar as listas, adicionar, editar, apagar produtos, consultar as listas, adicionando os valores e itens ao carrinho, além da consulta final da aplicação, o estrato e gráficos.
+        \n\nLeia tudo isso e um pouco mais nos tópicos abaixo:
+    </string>
+
+    <string name="help">Ajuda</string>
+    <string name="ajust">Ajustes</string>
+
+    <string name="help01">Criar e Editar Lista</string>
+    <string name="help02">Consultar Lista</string>
+    <string name="help03">Conferir Extrato</string>
+    <string name="help04">Grafico de Consumo</string>
+    <string name="ajust01">Limpar Registros</string>
+    <string name="ajust01_op01">Apagar listas</string>
+    <string name="ajust01_op02">Limpar dados</string>
+
+    <string name="conutTotal">Atualmente a aplicação esta armazenando um total de:</string>
+    <string name="conutTotalList">Listas Armazendas:</string>
+    <string name="conutTotalProduct">Produtos Armazenados:</string>
+
+    <string name="help01_txt">
+        Criar e Editar Lista
+    </string>
+    <string name="help02_txt">
+        Consultar Lista
+    </string>
+    <string name="help03_txt">
+        Conferir Extrato
+    </string>
+    <string name="help04_txt">
+        Grafico de Consumo
+    </string>
+    <string name="ajust01_txt">
+        Apague as listas, sendo elas consultadas ou não, ou limpe todos os dados da aplicação.
+    </string>
+
+    <string name="limparDados">Deseja limpar todos os dados?</string>
+    <string name="limparDados_confirm">Todos os dados foram apagados com sucesso!</string>
+    <string name="limparDadosObs">
+        Tem certeza que deseja apagar todas as listas e os produtos armazenadas neste dispositivo?
+        \nAo confirmar, estes dados serão apagados para sempre, e isso é muito tempo!
+    </string>
 
 </resources>

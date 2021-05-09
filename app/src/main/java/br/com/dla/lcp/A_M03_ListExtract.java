@@ -190,10 +190,8 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
 
                             }
                         });
-
                         //cria o AlertDialog
                         AlertDialog  alerta = builder.create();
-
                         //Exibe
                         alerta.show();
 
@@ -209,7 +207,6 @@ public class A_M03_ListExtract extends AppCompatActivity implements NavigationVi
 
                 //cria o AlertDialog
                 AlertDialog  alerta = builder.create();
-
                 //Exibe
                 alerta.show();
 

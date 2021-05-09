@@ -231,6 +231,15 @@ public class S_Dados implements Serializable {
             +String.format("%02d",hora)+":"
             +String.format("%02d",min);
 
+    //COUNT TOTAL
+    protected static final String DATABASE_COUNT_TOTAL_PRODUCT = "select "
+            +TP_ITEM01+" from "
+            +TP_NAME+";";
+
+    protected static final String DATABASE_COUNT_TOTAL_LIST = "select "
+            +TL_ITEM01+" from "
+            +TL_NAME+";";
+
     //	---------------------	Metodo Construtor	---------------------	//
     public S_Dados() {
     }
@@ -413,5 +422,8 @@ public class S_Dados implements Serializable {
     public static String getDatabaseTpDrop() {return DATABASE_TP_DROP;}
 
     public static String getWhereIdProduct() {return WHERE_IDPRODUCT;}
+
+    public static String getDatabaseCountTotalProduct() {return DATABASE_COUNT_TOTAL_PRODUCT;}
+    public static String getDatabaseCountTotalList() {return DATABASE_COUNT_TOTAL_LIST;}
     
 }
