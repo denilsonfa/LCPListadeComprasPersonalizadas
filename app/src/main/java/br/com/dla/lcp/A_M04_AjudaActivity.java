@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -194,19 +195,13 @@ public class A_M04_AjudaActivity extends AppCompatActivity implements Navigation
             }
         });
 
-        //TextView countTotalList, countTotalProduct;
-        S_ConexaoDAO sConexaoDAO = new S_ConexaoDAO(A_M04_AjudaActivity.this);
-
-        String countTotalListTxt = String.valueOf(sConexaoDAO.countTotalList());
-        String countTotalProductTxt = String.valueOf(sConexaoDAO.countTotalProduct());
-
-        countTotalList.setText(countTotalListTxt);
-        countTotalProduct.setText(countTotalProductTxt);
-
         //Button ajust01_op01, ajust01_op02;
         ajust01_op01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Intent intent = new Intent(A_M04_AjudaActivity.this, A_M04_AjudaActivity_DeleteList.class);
+                startActivity(intent);
 
             }
         });
@@ -233,9 +228,10 @@ public class A_M04_AjudaActivity extends AppCompatActivity implements Navigation
                 builder.setPositiveButton(R.string.sim, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
 
-                        S_ConexaoDAO conexaoDAO_ListProductCount = new S_ConexaoDAO(A_M04_AjudaActivity.this);
-                        conexaoDAO_ListProductCount.deleteListGeral();
+                        S_ConexaoDAO.deleteDATABASE(A_M04_AjudaActivity.this);
                         Toast.makeText(A_M04_AjudaActivity.this, R.string.limparDados_confirm, Toast.LENGTH_SHORT).show();
+
+                        ((Activity)A_M04_AjudaActivity.this).recreate();
 
                     }
                 });
@@ -260,6 +256,20 @@ public class A_M04_AjudaActivity extends AppCompatActivity implements Navigation
         } else {
             menu.findItem(R.id.nav_menu05).setVisible(false);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //TextView countTotalList, countTotalProduct;
+        S_ConexaoDAO sConexaoDAO = new S_ConexaoDAO(A_M04_AjudaActivity.this);
+
+        String countTotalListTxt = String.valueOf(sConexaoDAO.countTotalList());
+        String countTotalProductTxt = String.valueOf(sConexaoDAO.countTotalProduct());
+
+        countTotalList.setText(countTotalListTxt);
+        countTotalProduct.setText(countTotalProductTxt);
     }
 
     @SuppressLint("NonConstantResourceId")

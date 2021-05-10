@@ -11,26 +11,35 @@
     app:cardCornerRadius="0dp">
 
     <LinearLayout
-        android:id="@+id/selectionList"
+        android:id="@+id/selectionList04"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="5dp"
+        android:paddingBottom="0dp"
         android:paddingEnd="2dp"
-        android:paddingStart="2dp"
-        android:paddingTop="5dp"
+        android:paddingStart="0dp"
+        android:paddingTop="0dp"
         android:background="@drawable/stl_main_btn"
         android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/checkListITEM04_bar"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/textAzul05_t"
+            android:orientation="horizontal" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:contentDescription="@string/idListL">
 
             <TextView
-                android:id="@+id/idListITEM"
+                android:id="@+id/idListITEM04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minWidth="40dp"
@@ -52,10 +61,12 @@
             android:orientation="vertical"
             android:background="@drawable/stl_tire_text_border_l"
             android:paddingTop="0dp"
-            android:paddingBottom="5dp">
+            android:paddingBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
 
             <TextView
-                android:id="@+id/nomeListITEM"
+                android:id="@+id/nomeListITEM04"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bebasneue"
@@ -71,7 +82,7 @@
                 android:paddingEnd="10dp"/>
 
             <TextView
-                android:id="@+id/dataListITEM"
+                android:id="@+id/dataListITEM04"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_light"
@@ -84,24 +95,59 @@
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"/>
 
+            <TextView
+                android:id="@+id/checkListITEM04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/checkList"
+                android:textColor="@color/textPreto05"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:paddingTop="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/totalListITEM04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/lista_nFinalizada"
+                android:textAlignment="center"
+                android:textColor="@color/textBranco01"
+                android:background="@color/textAzul05"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_margin="5dp"/>
+
         </LinearLayout>
 
+
         <LinearLayout
-            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center_vertical">
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/stl_tire_text_border_l"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
 
-            <CheckBox
-                android:id="@+id/checkListITEM"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:buttonTint="@color/textPreto07"
-                android:layout_margin="10dp"
-                android:checked="false"
-                android:clickable="false"
-                android:fontFamily="@font/bebasneue"
-                android:textSize="18sp" />
+            <ImageView
+                android:id="@+id/deletProductITEM01"
+                android:layout_width="@dimen/img_listcreat_btn"
+                android:layout_height="@dimen/img_listcreat_btn"
+                android:contentDescription="@string/deletProduct"
+                android:padding="8dp"
+                app:srcCompat="@drawable/ic_item_delet"
+                android:background="@drawable/stl_item_color"/>
 
         </LinearLayout>
 

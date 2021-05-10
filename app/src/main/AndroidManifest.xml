@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- SplashScreen -->
         <activity
             android:name=".A_A_SplashScreenActivity"
             android:screenOrientation="portrait">
@@ -18,12 +20,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- OnBoarding -->
         <activity
             android:name=".A_A_OnBoardingActivity"
             android:screenOrientation="portrait" />
+
+        <!-- MainActivity -->
         <activity
             android:name=".A_A_MainActivity"
             android:screenOrientation="portrait" />
+
+        <!-- ListCreate -->
         <activity
             android:name=".A_M01_ListCreate"
             android:screenOrientation="portrait"
@@ -40,6 +48,8 @@
             android:name=".A_M01_ListCreate_Delet"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
+
+        <!-- ListConsult -->
         <activity
             android:name=".A_M02_ListConsult_ListUni"
             android:screenOrientation="portrait" />
@@ -54,18 +64,29 @@
             android:name=".A_M02_ListConsult_ListMult"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
+
+        <!-- ListExtract -->
         <activity
             android:name=".A_M03_ListExtract"
             android:screenOrientation="portrait" />
         <activity
             android:name=".A_M03_ListExtrato_SetList"
             android:screenOrientation="portrait" />
+
+        <!-- Ajuda e Ajustes -->
         <activity
             android:name=".A_M04_AjudaActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".A_M04_AjudaActivity_DeleteList"
+            android:screenOrientation="portrait" />
+
+        <!-- ProductGrafic -->
+        <activity
             android:name=".A_M05_ProductGrafic"
             android:screenOrientation="portrait" />
+
+        <!-- InfoActivity -->
         <activity
             android:name=".A_M06_InfoActivity"
             android:screenOrientation="portrait" />

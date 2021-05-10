@@ -492,6 +492,22 @@ public class S_ConexaoDAO {
     }
     //	-------------------------------------------------------------------	//
 
+    //	-----***-----	DELETE DATABASE - table lista	-----***-----	//
+    public Boolean deleteProductinList(String idListP){
+        SQLiteDatabase DATABASE = conexao.getWritableDatabase();
+
+        String TP_ITEM01ADD = TP_ITEM02+"=?";
+
+        long result = DATABASE.delete(TP_NAME, TP_ITEM01ADD, new String[]{idListP});
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+    //	-------------------------------------------------------------------	//
+
     //	-----***-----	Read Count() - Total Product	-----***-----	//
     public int countTotalProduct() {
         String query = DATABASE_COUNT_TOTAL_PRODUCT;
@@ -509,6 +525,13 @@ public class S_ConexaoDAO {
         Cursor cursor = DATABASEList.rawQuery(query, null);
         return cursor.getCount();
 
+    }
+    //	-------------------------------------------------------------------	//
+
+    //	-----***-----	DATABASE - DELETE	-----***-----	//
+    public static boolean deleteDATABASE(ContextWrapper context) {
+        File dbFile = context.getDatabasePath(DATABASE_NAME);
+        return dbFile.delete();
     }
     //	-------------------------------------------------------------------	//
 

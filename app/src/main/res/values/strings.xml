@@ -69,6 +69,7 @@
     <string name="nomeList">Nome da Lista</string>
     <string name="dataList">Data de Criação da Lista</string>
     <string name="checkList">Checar Lista</string>
+    <string name="totalList">Valor Total da Lista</string>
 
     <string name="idListC">ID Lista (Consulta)</string>
 
@@ -240,6 +241,8 @@
     <string name="help03">Conferir Extrato</string>
     <string name="help04">Grafico de Consumo</string>
     <string name="ajust01">Limpar Registros</string>
+    <string name="ajust01_alert01">Selecione a lista que deseja apagar:</string>
+    <string name="list_vazia_d">Nenhuma Lista foi encontrada.</string>
     <string name="ajust01_op01">Apagar listas</string>
     <string name="ajust01_op02">Limpar dados</string>
 
@@ -267,7 +270,18 @@
     <string name="limparDados_confirm">Todos os dados foram apagados com sucesso!</string>
     <string name="limparDadosObs">
         Tem certeza que deseja apagar todas as listas e os produtos armazenadas neste dispositivo?
-        \nAo confirmar, estes dados serão apagados para sempre, e isso é muito tempo!
+        \n\nAo confirmar, estes dados serão apagados para sempre, e isso é muito tempo!
     </string>
+    <string name="limparLista">Deseja apagar esta lista?</string>
+    <string name="limparLista_confirm">Todos os dados referente a lista foram apagados com sucesso!</string>
+    <string name="limparListaObs">
+        Tem certeza que deseja apagar a lista e os produtos armazenadas neste dispositivo?
+        \n\nAo confirmar, estes dados serão apagados para sempre, e isso é muito tempo!
+    </string>
+
+    <string name="lista_nFinalizada">Esta lista não foi finalizada!</string>
+    <string name="lista_nSemValor">Lista concluida, mas valor zerado!</string>
+    <string name="checkList_isOk">Lista finalizada</string>
+    <string name="checkList_isNot">Lista não finalizada</string>
 
 </resources>
