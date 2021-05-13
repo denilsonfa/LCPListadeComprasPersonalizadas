@@ -40,14 +40,14 @@
     <string name="tips03">Consulte-as, onde você estiver!</string>
     <string name="tips_desc03">O aplicativo não necessita de conexão a internet para você poder ter acesso as suas listas de compras, podendo assim cria-las e sair de casa despreocupado/a com ou sem internet disponível.</string>
     <string name="tips04">Tenha controle sobre seu consumo!</string>
-    <string name="tips_desc04">Nosso aplicativo conta com um comparador de preços que irá lhe informar se está pagando mais caro ou mais barato no total de sua compra, tendo base em suas compras anteriores, mostrando para você ao final de sua compra, quanto economizou ou não!</string>
+    <string name="tips_desc04">Através dos gráficos, você poderá comparar os preços de todas as compras, podendo saber se está pagando mais caro ou não no total de sua compra, tendo base em suas compras anteriores.</string>
     <string name="tips05">Facilite sua vida!</string>
     <string name="tips_desc05">Com o aplicativo, você poderá melhorar algo que parece simples e rotineiro na vida de nossos usuários. Onde, o tem como objetivo, facilitar e ter mais rapidez na hora de fazer as suas compras, sendo uma lista inteligente, organizada e comparadora o valor total das compras.</string>
     <string name="tips06">Lista de Compras Personalizadas</string>
     <string name="tips_desc06_01">
         Está aplicação, é resultado do fruto de muita dedicação e empenho dos desenvolvedores, sendo o Trabalho de conclusão de Curso de Desenvolvimento de Sistemas, da Escola Técnica Estadual (ETEC) do estado de São Paulo, da cidade de Cruzeiro. Partindo do problema de pesquisa em que consiste em:  “Como simplificar as listas de compras para a ida ao supermercado atualmente? ”
-    \n\nOnde assim o objetivo geral do trabalho, se apresentou em desenvolver uma aplicação mobile, cujo a sua funcionalidade possibilite o usuário a criar uma lista de compras para auxiliá-lo quando estiver no mercado adquirindo os seus itens de compra. Especificamente, substituir a lista de papel, esta que costuma dar mais trabalho ou até mesmo chegar a ser perdida, em horas que a sua consulta é imprescindível.
-    \n\nSendo assim, a ideia do aplicativo mobile, é facilitar a criação da lista de compras, podendo se organizar mais, auxiliando-o. Assim, com o desenvolvimento desta aplicação, os desenvolvedores puderam implementar os conhecimentos adquiridos durando o período acadêmico, além de adquirir novas experiências e técnicas. Além de que o usuário, ao utilizar esta aplicação irá perceber que em meio a dificuldades ocorridas durante as compras, uma simples aplicação irá estabelecer em sua rotina uma grande facilidade durante a utilização, além de teoricamente ajudá-lo a gerenciar suas economias.
+        \n\nOnde assim o objetivo geral do trabalho, se apresentou em desenvolver uma aplicação mobile, cujo a sua funcionalidade possibilite o usuário a criar uma lista de compras para auxiliá-lo quando estiver no mercado adquirindo os seus itens de compra. Especificamente, substituir a lista de papel, esta que costuma dar mais trabalho ou até mesmo chegar a ser perdida, em horas que a sua consulta é imprescindível.
+        \n\nSendo assim, a ideia do aplicativo mobile, é facilitar a criação da lista de compras, podendo se organizar mais, auxiliando-o. Assim, com o desenvolvimento desta aplicação, os desenvolvedores puderam implementar os conhecimentos adquiridos durando o período acadêmico, além de adquirir novas experiências e técnicas. Além de que o usuário, ao utilizar esta aplicação irá perceber que em meio a dificuldades ocorridas durante as compras, uma simples aplicação irá estabelecer em sua rotina uma grande facilidade durante a utilização, além de teoricamente ajudá-lo a gerenciar suas economias.
     </string>
 
 
@@ -230,7 +230,9 @@
     <!-- AJUDA E AJUSTES -->
     <string name="txtInicio">
         Saiba como usar todas as funções disponível no LCP para ter um maior rendimento de seu tempo durante suas compras no mercado. Aprenda tudo sobre como criar as listas, adicionar, editar, apagar produtos, consultar as listas, adicionando os valores e itens ao carrinho, além da consulta final da aplicação, o estrato e gráficos.
-        \n\nLeia tudo isso e um pouco mais nos tópicos abaixo:
+        \n\nA criação das listas de compras no LCP, são divididas em 3 estágios, sendo eles: 
+		\n“Criar e Editar Lista”, “Consultar Lista” e “Conferir Extrato”, além do “Gráfico de Consumo”, sendo um complemento para o estágio de conferir extrato.
+
     </string>
 
     <string name="help">Ajuda</string>
@@ -251,16 +253,26 @@
     <string name="conutTotalProduct">Produtos Armazenados:</string>
 
     <string name="help01_txt">
-        Criar e Editar Lista
+        Ao clicar nesta opção, você será direcionado para uma tela inicial para a seleção ou criação de listas, onde, caso não haja nenhuma lista selecionável, basta clicar em “criar nova lista”. Após a seleção ou criação de uma lista, você será direcionado novamente para uma tela onde poderá iniciar a adição dos produtos.
+        \n\nNela, deverá escrever o nome do produto, a quantidade, o tipo de medida (kg, Gramas, Litros, Embalagens entre outros) e por último selecionar a categoria do produto que irá adicionar (sendo alimentos, carnes e ovos, limpeza e higiene, entre outros) feito tudo isso basta clicar em “adicionar produto” e o produto será adicionado logo a baixo, podendo ser editado e excluído. Onde cada função o redirecionará para novas telas, para cada opção.
+        \n\nDevido cada informação do produto ser importante para o sistema, só é permitido a adição dos produtos caso todos os campos estejam preenchidos. Além de que, nesta mesa tela, está disponível o nome da lista que está sendo editada, assim como a data e hora da criação da mesma.
+        \n\nAo sair da tela de criação, a lista ficara salva para consulta a qualquer momento, tanto por esta mesma função, quanto para a adição dos valores dos produtos em “Consultar Lista”. Entretanto, por outro lado, caso a lista esteja vazia, sem nenhum produto, ao sair ela será excluída automaticamente.
+        \n\nNeste estágio, só podem ser editadas as listas ainda não finalizada, termo este que define se a lista foi concluída ou não, algo que é definido em “Consultar Lista”.
     </string>
     <string name="help02_txt">
-        Consultar Lista
+        Em consultar listas, você poderá ver todas as listas já criadas, sendo elas “não finalizadas”. Onde, assim como no primeiro estágio, ao clicar nesta opção, você será redirecionado para uma tela onde poderá selecionar uma lista ou criar uma nova. Com esta opção, você será redirecionado para o primeiro estágio (“Criar e Editar Lista”).
+        \n\nAo clicar em alguma lista, duas opções serão mostradas “edições unitárias” e “ múltiplas edições”, sendo essas duas opções, formas diferentes de editar a lista, onde enquanto uma segue um processo mais lento, item por item, para momentos mais tranquilos, outras segue um processo mais ágil, para momentos que exigem menos tempo.
+        \n\nNa opção “edições unitárias” ao clicar em editar produto, o usuário será direcionado para uma tela onde pode adicionar o valor de cada produto, desta forma o sistema irá calcular automaticamente o valor total, fazendo a multiplicação de valor pela quantidade. Além de poder definir se o produto está ou não no carrinho. Já na opção “múltiplas edições”, a mudança ocorre ao editar, aparecendo uma Pop up para entrar com o valor e definir se está ou não no carrinho.
+        \n\nSe definido que não está no carrinho, automaticamente o valor do produto é zerado. 
+        \n\nAo adicionar todos produtos, a lista será concluída automaticamente, estando indisponível nas opções “Criar e Editar Lista” e “Consultar Lista”, sendo acessível somente em “Conferir Extrato” e “Gráficos de Consumo”. Por outro lado, caso não tenha adicionado todos os produtos ao carrinho, o sistema automaticamente questiona se deseja manter a lista editável ou finalizar, mesmo faltando alguns itens para adicionar ao carrinho.
     </string>
     <string name="help03_txt">
-        Conferir Extrato
+        Assim, como nos estágios anteriores, ao clicar nesta função, você é redirecionado para uma tela onde poderá selecionar a lista que deseja consultar. Selecionando-a, você será direcionado para uma tela onde são exibidos todos os itens adicionados à lista, podendo consultar seu nome, quantidade, medida, categoria, valor e o total referente ao produto.
+        \n\nAlém de que abaixo da lista, encontra-se o valor total da lista. Podendo também, através de um botão localizado no canto superior direito, reativar a edição da lista, podendo ser redirecionado, tanto para a etapa “Criar e Editar Lista”, para adicionar novos produtos, quanto “Consultar Lista”, para a adição ou atualização dos valores dos produtos.
+        \n\nQuando a lista está neste estágio, ela está finalizada, sendo possível acessa-la somente nesta opção e em “Gráfico de Consumo”.
     </string>
     <string name="help04_txt">
-        Grafico de Consumo
+        Em gráfico de consumo o usuário poderá observar todo seu histórico de consumo em forma de gráficos simples e objetivos, lista por lista, podendo selecionar a lista que deseja visualizar. Desta forma, poderá analisar como andam os preços nos mercados além de poder ver se economizou.
     </string>
     <string name="ajust01_txt">
         Apague as listas, sendo elas consultadas ou não, ou limpe todos os dados da aplicação.

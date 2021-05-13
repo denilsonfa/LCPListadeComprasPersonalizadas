@@ -98,7 +98,7 @@ public class S_Dados implements Serializable {
             +TP_ITEM01+ " integer primary key autoincrement, "
             +TP_ITEM02+ " integer not null, "
             +TP_ITEM03+ " varchar(50) not null, "
-            +TP_ITEM04+ " mediumint not null, "
+            +TP_ITEM04+ " double not null, "
             +TP_ITEM05+ " varchar(15) not null, "
             +TP_ITEM06+ " varchar(30) not null, "
             +TP_ITEM07+ " double, "
