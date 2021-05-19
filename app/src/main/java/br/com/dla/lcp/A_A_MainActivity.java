@@ -18,6 +18,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 import java.util.ArrayList;
 
 
@@ -46,6 +52,9 @@ public class A_A_MainActivity extends AppCompatActivity {
     LinearLayout main_menu01, main_menu02, main_menu03, main_menu04, main_menu05, main_menu06, main_menu07, main_menu08;
     Animation fadein, fadeout;
 
+    //adView
+    AdView adViewBannerMain;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +62,21 @@ public class A_A_MainActivity extends AppCompatActivity {
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         getWindow().setStatusBarColor(Color.rgb(149,16,149));
         setContentView(R.layout.activity_a_main);
+
+        //Google AdMod
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
+
+        //adView
+        //CODIGO adMob (BANNER): ca-app-pub-7912320570829252/2049604107
+        //CODIGO para testes: ca-app-pub-3940256099942544/6300978111
+
+        adViewBannerMain = findViewById(R.id.adViewBannerMain);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adViewBannerMain.loadAd(adRequest);
+
 
         //Animação
         fadein = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadein);

@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "br.com.dla.lcp"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName '2.0'
+        versionCode 7
+        versionName '2.0.70'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,5 +41,7 @@ dependencies {
     //noinspection GradleCompatible,GradleCompatible
     implementation 'com.android.support:design:28.0.0'
     implementation 'co.uk.rushorm:rushandroid:1.2.0'
+
+    implementation 'com.google.android.gms:play-services-ads:20.1.0'
 
 }

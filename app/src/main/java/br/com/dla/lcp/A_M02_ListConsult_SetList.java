@@ -9,6 +9,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 import java.util.ArrayList;
 
 import androidx.annotation.Nullable;
@@ -30,6 +36,9 @@ public class A_M02_ListConsult_SetList extends AppCompatActivity {
 
     private Button addNewList02;
 
+    //adView
+    AdView adViewBanner02SetList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +46,20 @@ public class A_M02_ListConsult_SetList extends AppCompatActivity {
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         getWindow().setStatusBarColor(Color.rgb(14,91,182));
         setContentView(R.layout.activity_m02_listconsult_setlist);
+
+        //Google AdMod
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
+
+        //adView
+        //CODIGO adMob (BANNER): ca-app-pub-7912320570829252/9366084827
+        //CODIGO para testes: ca-app-pub-3940256099942544/6300978111
+
+        adViewBanner02SetList = findViewById(R.id.adViewBanner02SetList);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adViewBanner02SetList.loadAd(adRequest);
 
         //RecyclerView
         recyclerView_ListConsult_SetList = (RecyclerView) findViewById(R.id.readListIsNull_setList02);

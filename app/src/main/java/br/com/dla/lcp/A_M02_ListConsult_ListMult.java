@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.InputType;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -62,8 +70,6 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
 
     //private String idProductDADOS, idListPDADOS, nomeProductDADOS, quantProductDADOS, medidaProductDADOS, tipoProductDADOS;
     private String idListLDADOS, nomeListIDDADOS, dataListIDDADOS, checkListIDDADOS;
-
-    //PopUp EditProduct
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,7 +155,7 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
         builder.setMessage(R.string.sltList_obs02_editMult);
 
         input.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-        input.setFilters(new InputFilter[] { new InputFilter.LengthFilter(30) });
+        input.setFilters(new InputFilter[] { new InputFilter.LengthFilter(4) });
         input.setHint(R.string.valorProduct);
         input.setSingleLine();
 
@@ -237,6 +243,13 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
             Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
             finish();
 
+            Intent intent = new Intent(A_M02_ListConsult_ListMult.this, A_M03_ListExtract.class);
+            intent.putExtra("idListLID", String.valueOf(dados.getIdListL()));
+            intent.putExtra("nomeListID", String.valueOf(dados.getNomeList()));
+            intent.putExtra("dataListID", String.valueOf(dados.getDataList()));
+            intent.putExtra("checkListID", String.valueOf(dados.getCheckList()));
+            A_M02_ListConsult_ListMult.this.startActivity(intent);
+
         } else {
             //se não pergunta se deseja fechar
             AlertDialog.Builder builder = new AlertDialog.Builder(A_M02_ListConsult_ListMult.this);
@@ -251,6 +264,7 @@ public class A_M02_ListConsult_ListMult extends AppCompatActivity implements Nav
                     conexaoDAO_bd.updateListCheck( String.valueOf(dados.getIdListL()), false,0 );
                     Toast.makeText(A_M02_ListConsult_ListMult.this, R.string.list_save, Toast.LENGTH_SHORT).show();
                     finish();
+
                 }
             });
 

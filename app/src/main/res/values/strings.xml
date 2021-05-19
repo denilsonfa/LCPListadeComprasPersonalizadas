@@ -4,50 +4,68 @@
     <string name="app_name">LCP - Lista de Compras Personalizadas</string>
     <string name="app_name1">LCP</string>
     <string name="app_name2">Lista de Compras Personalizadas</string>
-    <string name="app_version">2.0</string>
     <string name="name_pt01">Lista de Compras</string>
     <string name="name_pt02">Personalizadas</string>
 
     <!--  Strings Main Menu  -->
-    <string name="main_menu01">Criar e Editar Lista</string>
+    <string name="main_menu01">Criar e Editar Listas</string>
     <string name="main_desc_menu01">Crie e Edite suas listas de compras.</string>
     <string name="main_menu02">Consultar Lista</string>
     <string name="main_desc_menu02">Faça a consulta de todas as listas já criadas.</string>
     <string name="main_menu03">Conferir Extrato</string>
-    <string name="main_desc_menu03">Veja o extratos e valores de suas compras.</string>
+    <string name="main_desc_menu03">Veja os extratos e valores de suas compras.</string>
     <string name="main_menu04">Ajuda e Ajustes</string>
-    <string name="main_desc_menu04">Informações de uso e alguns ajustes da aplicativo.</string>
-    <string name="main_menu05">Grafico de Consumo</string>
-    <string name="main_desc_menu05">Consulte o consumo de todas suas compras.</string>
+    <string name="main_desc_menu04">Informações de uso e alguns ajustes do aplicativo.</string>
+    <string name="main_menu05">Gráfico de Consumo</string>
+    <string name="main_desc_menu05">Consulte o consumo de todas as suas compras.</string>
     <string name="main_menu06">Sobre</string>
     <string name="main_desc_menu06">Informações gerais sobre o app e desenvolvedores.</string>
 
     <string name="main_menu07">Splash Screen</string>
     <string name="main_desc_menu07">Tela de controle gráfico que consiste em um carregamento inicial.</string>
     <string name="main_menu08">Onboarding</string>
-    <string name="main_desc_menu08">Tela que ajuda os usuários a entender como o aplicativo funcionava.</string>
+    <string name="main_desc_menu08">Tela de ajuda aos usuários que consiste em entender a funcionalidade da aplicação.</string>
 
-    <string name="main_menu09">Temporaria</string>
+    <string name="main_menu09">Temporária</string>
     <string name="main_desc_menu09">Tela elaborada para teste de viabilidade de funções da aplicação.</string>
 
     <!--  Strings Tips  -->
-    <string name="tips_txt">Dica de Uso!</string>
+    <string name="tips_txt">Dicas de Uso!</string>
 
     <string name="tips01">Seja bem-vindo!</string>
-    <string name="tips_desc01">Este é uma aplicação desenvolvida para a elaboração de listas de compras, simples, prático e rápido. O Lista de Compras Personalizadas, é um aplicativo mobile para Android, e tem como principal e única função lhe auxiliar no processo de elaboração de sua lista de compras em cada mês.</string>
+    <string name="tips_desc01">
+        Esta é uma aplicação desenvolvida para a elaboração de listas de compras, de um modo simples, prático e rápido.
+        \n\nO Lista de Compras Personalizadas, é um aplicativo mobile para Android que tem como sua principal e, única função, lhe auxiliar no processo de elaboração de sua lista de compras em cada mês.
+    </string>
+
     <string name="tips02">Crie sua Lista de Compras!</string>
-    <string name="tips_desc02">Crie listas de compras facilmente adicionando os produtos que deseja, podendo remover, aumentar ou diminuir a quantidade, como você quiser, tudo simples e de modo organizado.</string>
-    <string name="tips03">Consulte-as, onde você estiver!</string>
-    <string name="tips_desc03">O aplicativo não necessita de conexão a internet para você poder ter acesso as suas listas de compras, podendo assim cria-las e sair de casa despreocupado/a com ou sem internet disponível.</string>
+    <string name="tips_desc02">
+        Crie listas de compras facilmente adicionando os produtos desejados, podendo removê-los, aumentando ou diminuindo a quantiadade.
+        \n\nComo você quiser, tudo de maneira simples e organizada.
+    </string>
+
+    <string name="tips03">Consulte-as de onde você estiver!</string>
+    <string name="tips_desc03">
+        O aplicativo não necessita de conexão à internet para ter acesso às suas listas de compras, podendo assim cria-las e sair de casa despreocupado(a), com ou sem internet disponível.
+    </string>
+
     <string name="tips04">Tenha controle sobre seu consumo!</string>
-    <string name="tips_desc04">Através dos gráficos, você poderá comparar os preços de todas as compras, podendo saber se está pagando mais caro ou não no total de sua compra, tendo base em suas compras anteriores.</string>
+    <string name="tips_desc04">
+        Como o LCP (Lista de Compras Personalizadas) você poderá contar com um gráfico que irá lhe mostrar o valor total de todas as suas últimas compras.
+    </string>
+
     <string name="tips05">Facilite sua vida!</string>
-    <string name="tips_desc05">Com o aplicativo, você poderá melhorar algo que parece simples e rotineiro na vida de nossos usuários. Onde, o tem como objetivo, facilitar e ter mais rapidez na hora de fazer as suas compras, sendo uma lista inteligente, organizada e comparadora o valor total das compras.</string>
-    <string name="tips06">Lista de Compras Personalizadas</string>
+    <string name="tips_desc05">
+        Com o aplicativo, você poderá facilitar algo que parece simples e rotineiro na vida de nossos usuários.
+        \n\nOnde o objetivo principal é ter mais praticidade e rapidez na hora de fazerem suas compras, sendo uma lista inteligente, organizada e comparando o valor total das compras.
+    </string>
+
+    <string name="tips06">Lista de Compras Personalizadas!</string>
     <string name="tips_desc06_01">
-        Está aplicação, é resultado do fruto de muita dedicação e empenho dos desenvolvedores, sendo o Trabalho de conclusão de Curso de Desenvolvimento de Sistemas, da Escola Técnica Estadual (ETEC) do estado de São Paulo, da cidade de Cruzeiro. Partindo do problema de pesquisa em que consiste em:  “Como simplificar as listas de compras para a ida ao supermercado atualmente? ”
-        \n\nOnde assim o objetivo geral do trabalho, se apresentou em desenvolver uma aplicação mobile, cujo a sua funcionalidade possibilite o usuário a criar uma lista de compras para auxiliá-lo quando estiver no mercado adquirindo os seus itens de compra. Especificamente, substituir a lista de papel, esta que costuma dar mais trabalho ou até mesmo chegar a ser perdida, em horas que a sua consulta é imprescindível.
-        \n\nSendo assim, a ideia do aplicativo mobile, é facilitar a criação da lista de compras, podendo se organizar mais, auxiliando-o. Assim, com o desenvolvimento desta aplicação, os desenvolvedores puderam implementar os conhecimentos adquiridos durando o período acadêmico, além de adquirir novas experiências e técnicas. Além de que o usuário, ao utilizar esta aplicação irá perceber que em meio a dificuldades ocorridas durante as compras, uma simples aplicação irá estabelecer em sua rotina uma grande facilidade durante a utilização, além de teoricamente ajudá-lo a gerenciar suas economias.
+        Esta aplicação é resultado do fruto de muita dedicação e empenho dos desenvolvedores. Sendo o Trabalho de conclusão do Curso de Desenvolvimento de Sistemas, da Escola Técnica Estadual (ETEC) do estado de São Paulo, da cidade de Cruzeiro. Partindo do problema de pesquisa em que consiste em:  “Como simplificar as listas de compras para a ida ao supermercado atualmente? ”
+    \n\nOnde assim, o objetivo geral do trabalho se apresentou em desenvolver uma aplicação mobile, cujo sua funcionalidade possibilite ao usuário criar uma lista de compras, para auxiliá-los quando estiverem no mercado adquirindo seus itens de compra. Especificamente substituindo a lista de papel, esta que costuma dar mais trabalho ou, até mesmo, chega a ser perdida em horas que a sua consulta é imprescindível.
+    \n\nSendo assim, a ideia do aplicativo mobile é facilitar na criação de lista de compras, que irão lhe auxiliar. Assim, com o desenvolvimento desta aplicação, os desenvolvedores puderam implementar os conhecimentos adquiridos durando o período acadêmico, além de adquirir novas experiências e técnicas. Além de que o usuário, ao utilizar esta aplicação, perceberá que em meio a dificuldades ocorridas durante as compras, uma simples aplicação irá estabelecer em sua rotina uma grande facilidade durante a utilização, podendo também ajudá-lo a gerenciar suas economias.
+
     </string>
 
 
@@ -61,7 +79,6 @@
     <string name="tipoProduct">Categoria</string>
     <string name="valorProduct">Valor do Produto</string>
     <string name="totalProduct">Valor Total</string>
-
 
     <string name="valorProductEdit">Valor do Produto: </string>
 
@@ -77,7 +94,7 @@
     <string name="add">Adicionar</string>
     <string name="addProduct">Adicionar Produto</string>
     <string name="editProduct">Editar Produto</string>
-    <string name="editProductMult">Multipla edição de Produtos</string>
+    <string name="editProductMult">Múltipla edição de Produtos</string>
     <string name="editedProduct">Produto editado com sucesso!</string>
     <string name="editedProduct_addValor">Valor do produto adicionado com sucesso!</string>
     <string name="erro_product">Erro ao editar o produto!</string>
@@ -86,38 +103,36 @@
     <string name="deletProduct">Apagar Produto</string>
     <string name="erro_lista">Erro carregar lista!</string>
     <string name="addList">Adicionar Lista</string>
-    <string name="addList1">Criar nova Lista</string>
+    <string name="addList1">Criar Lista</string>
     <string name="valor">Valor:</string>
     <string name="total">Total:</string>
     <string name="valorTotal">Total:</string>
     <string name="valorTotalList">Valor total de todos os produtos desta Lista:</string>
 
-
     <string name="sltList_obs02_incart">Está no carrinho</string>
     <string name="sltList_obs02_nocart">Não está no carrinho</string>
-
     <string name="sltList_alert01">Selecione uma lista ou crie uma nova:</string>
     <string name="sltList_alert02">Selecione uma lista para consultar:</string>
     <string name="sltList_alert03">Selecione uma lista para ver o extrato:</string>
     <string name="sltList_obs01">* Só podem ser editadas listas não consultadas.</string>
-    <string name="sltList_obs02">* Faça a consulta das listas aqui.</string>
-    <string name="sltList_obs02_new">Deseja criar uma lista nova?</string>
+    <string name="sltList_obs02">* Faça a consulta de suas listas aqui.</string>
+    <string name="sltList_obs02_new">Deseja criar uma nova lista?</string>
     <string name="sltList_obs02_cart">O produto foi adicionado ao carrinho?</string>
     <string name="sltList_obs02_cart2A">O produto ainda não foi adicionado ao carrinho!</string>
     <string name="sltList_obs02_cart2S">O produto ainda não foi adicionado ao carrinho. Clique aqui para confirmar!</string>
-    <string name="sltList_obs02_cart2N">O produto já esta no carrinho!</string>
-    <string name="sltList_obs02_obs">Adicionado todos os produtos ao carrinho, a lista será concluida.</string>
-    <string name="sltProduct02_editTipo">Selecione qual tipo de edição:</string>
-    <string name="sltProduct02_editTipoObs">Selecione o tipo de edição, para adicionar o valor aos produtos e finalizar a lista, este que mais se enquadra com o momento atual!</string>
-    <string name="sltProduct02_editTipoUni">Edições Unitarias</string>
-    <string name="sltProduct02_editTipoMult">Multiplas Edições</string>
-    <string name="sltList_obs03">* Só serãm exibidas lista consultadas.</string>
+    <string name="sltList_obs02_cart2N">O produto já está no carrinho!</string>
+    <string name="sltList_obs02_obs">Adicionado todos os produtos ao carrinho, a lista será concluída.</string>
+    <string name="sltProduct02_editTipo">Selecione qual o tipo de edição:</string>
+    <string name="sltProduct02_editTipoObs">Selecione o tipo de edição para adicionar o valor aos produtos e finalizar a lista, este que mais se enquadra com o momento atual!</string>
+    <string name="sltProduct02_editTipoUni">Edições Unitárias</string>
+    <string name="sltProduct02_editTipoMult">Múltiplas Edições</string>
+    <string name="sltList_obs03">* Só serão exibidas listas consultadas.</string>
     <string name="sltProduct01_deletObs">Apagar produto selecionado:</string>
     <string name="sltProduct02_editObs">Editar produto selecionado:</string>
-    <string name="sltProduct02_exitList">A lista já foi concluida?</string>
+    <string name="sltProduct02_exitList">A lista já foi concluída?</string>
     <string name="sltProduct02_exitListObs">
-        Alguns itens não foram adicionado ao carrinho!
-        \nVocê deseja finalizar a lista mesmo assim? Ou não? Para poder edita-la novamente.
+        Alguns itens não foram adicionados ao carrinho!
+        \nVocê deseja finalizar a lista mesmo assim? Para poder editá-la novamente.
     </string>
     <string name="sltList_obs02_editMult">Adicione o valor do produto e defina se foi ou não adicionado ao carrinho!</string>
 
@@ -125,10 +140,10 @@
     <string name="sltProduct03_reEdit">Editar Lista?</string>
     <string name="sltProduct03_reEditObs">
         Você poderá editar os produtos com a opção (Criar e Editar Lista) ou editar os valores com a opção (Consultar Lista)?
-        \n\nAssim a lista será editavel até que seja concluida novamente.
+        \n\nAssim a lista será editável até que seja concluída novamente.
     </string>
 
-    <string name="header_title01">1º Lista finalizada:</string>
+    <string name="header_title01">1ª Lista finalizada:</string>
 
     <string name="addedProduct">Produto Adicionado!</string>
     <string name="noaddedProduct">Erro ao adicionar Produto!</string>
@@ -144,7 +159,7 @@
 
     <!--  String Outros  -->
     <string name="continuar">Continuar</string>
-    <string name="proximo">Proximo ≫</string>
+    <string name="proximo">Próximo ≫</string>
     <string name="anterio">≪ Anterior</string>
     <string name="cancelar">Cancelar</string>
     <string name="cancel">Operação cancelada!</string>
@@ -152,11 +167,11 @@
     <!--  MENUS  -->
     <string name="inicio">Iniciar</string>
     <string name="sair">Sair</string>
-    <string name="menu_inicio">Inicio</string>
+    <string name="menu_inicio">Início</string>
     <string name="sim">SIM</string>
     <string name="nao">NÃO</string>
     <string name="nada"> </string>
-    <string name="aces_fast">Acesso Rapido</string>
+    <string name="aces_fast">Acesso Rápido</string>
     <string name="ico_dw_open">Abrir Menu de Navegação</string>
     <string name="ico_dw_close">Fechar Menu de Navegação</string>
     <string name="dev">Desenvolvedores</string>
@@ -165,7 +180,7 @@
     <string name="github">GitHub</string>
     <string name="doc_txt">Ler documentação do TCC.</string>
     <string name="site_txt">Visitar site da aplicação.</string>
-    <string name="github_txt">Visitar repositorio da aplicação no GitHub.</string>
+    <string name="github_txt">Visitar repositório da aplicação no GitHub.</string>
 
     <!--  DESENVOLVEDORES DO LCP - TCC 2020-2021 -->
     <string name="dev01">Denilson Fabiano de Araujo</string>
@@ -178,7 +193,7 @@
     <string name="num0">00</string>
     <string name="num1">ID: 000</string>
     <string name="num2">R$ 0.00</string>
-    <string name="num3">00 x R$ 0.00</string>
+    <string name="num3">00 × R$ 0.00</string>
     <string name="num4">100 %</string>
     <string name="num5">ID: 00 | R$ 0.00</string>
     <string name="num6">R$ 000.00</string>
@@ -229,8 +244,8 @@
 
     <!-- AJUDA E AJUSTES -->
     <string name="txtInicio">
-        Saiba como usar todas as funções disponível no LCP para ter um maior rendimento de seu tempo durante suas compras no mercado. Aprenda tudo sobre como criar as listas, adicionar, editar, apagar produtos, consultar as listas, adicionando os valores e itens ao carrinho, além da consulta final da aplicação, o estrato e gráficos.
-        \n\nA criação das listas de compras no LCP, são divididas em 3 estágios, sendo eles: 
+        Saiba como usar todas as funções disponíveis no LCP para ter um maior rendimento de seu tempo durante suas compras no mercado. Aprenda tudo sobre como criar as listas, adicionar, editar, apagar produtos e consultar as listas, adicionando os valores e itens ao carrinho. Além da consulta final da aplicação, o extrato e gráficos.
+        \n\nA criação das listas de compras no LCP são divididas em 3 estágios, sendo eles:
 		\n“Criar e Editar Lista”, “Consultar Lista” e “Conferir Extrato”, além do “Gráfico de Consumo”, sendo um complemento para o estágio de conferir extrato.
 
     </string>
@@ -241,38 +256,38 @@
     <string name="help01">Criar e Editar Lista</string>
     <string name="help02">Consultar Lista</string>
     <string name="help03">Conferir Extrato</string>
-    <string name="help04">Grafico de Consumo</string>
+    <string name="help04">Gráfico de Consumo</string>
     <string name="ajust01">Limpar Registros</string>
     <string name="ajust01_alert01">Selecione a lista que deseja apagar:</string>
     <string name="list_vazia_d">Nenhuma Lista foi encontrada.</string>
     <string name="ajust01_op01">Apagar listas</string>
     <string name="ajust01_op02">Limpar dados</string>
 
-    <string name="conutTotal">Atualmente a aplicação esta armazenando um total de:</string>
-    <string name="conutTotalList">Listas Armazendas:</string>
+    <string name="conutTotal">Atualmente a aplicação está armazenando um total de:</string>
+    <string name="conutTotalList">Listas Armazenadas:</string>
     <string name="conutTotalProduct">Produtos Armazenados:</string>
 
     <string name="help01_txt">
-        Ao clicar nesta opção, você será direcionado para uma tela inicial para a seleção ou criação de listas, onde, caso não haja nenhuma lista selecionável, basta clicar em “criar nova lista”. Após a seleção ou criação de uma lista, você será direcionado novamente para uma tela onde poderá iniciar a adição dos produtos.
-        \n\nNela, deverá escrever o nome do produto, a quantidade, o tipo de medida (kg, Gramas, Litros, Embalagens entre outros) e por último selecionar a categoria do produto que irá adicionar (sendo alimentos, carnes e ovos, limpeza e higiene, entre outros) feito tudo isso basta clicar em “adicionar produto” e o produto será adicionado logo a baixo, podendo ser editado e excluído. Onde cada função o redirecionará para novas telas, para cada opção.
-        \n\nDevido cada informação do produto ser importante para o sistema, só é permitido a adição dos produtos caso todos os campos estejam preenchidos. Além de que, nesta mesa tela, está disponível o nome da lista que está sendo editada, assim como a data e hora da criação da mesma.
-        \n\nAo sair da tela de criação, a lista ficara salva para consulta a qualquer momento, tanto por esta mesma função, quanto para a adição dos valores dos produtos em “Consultar Lista”. Entretanto, por outro lado, caso a lista esteja vazia, sem nenhum produto, ao sair ela será excluída automaticamente.
-        \n\nNeste estágio, só podem ser editadas as listas ainda não finalizada, termo este que define se a lista foi concluída ou não, algo que é definido em “Consultar Lista”.
+        Ao clicar nesta opção, você será redirecionado para uma tela inicial para a seleção ou criação de listas, onde, caso não haja nenhuma lista selecionável, basta clicar em “criar nova lista”. Após a seleção ou criação de uma lista, você será redirecionado para uma tela onde poderá iniciar a adição dos produtos.
+        \n\nNela, você deverá escrever o nome do produto, a quantidade, o tipo de medida (kg, Gramas, Litros, Embalagens, entre outros) e por último selecionar a categoria do produto que irá adicionar (sendo alimentos, carnes e ovos, limpeza e higiene, entre outros) após terem passado por essas etapas, basta clicar em “adicionar produto” e o produto será adicionado logo abaixo, podendo ser editado e excluído. Onde cada função o redirecionará para novas telas para cada opção.
+        \n\nDevido à informação do produto ser importante para o sistema, só é permitido a adição dos produtos caso todos os campos estejam preenchidos. Além de que, nesta mesma tela, estará disponível o nome da lista que está sendo editada, assim como a data e hora da criação da mesma.
+        \n\nAo sair da tela de criação, a lista ficará salva para consulta a qualquer momento, tanto por esta mesma função, quanto para a adição dos valores dos produtos em “Consultar Lista”. Entretanto, por outro lado, caso a lista esteja vazia, ao sair ela será excluída automaticamente.
+        \n\nNeste estágio, só poderão ser editadas as listas ainda não finalizadas, termo este que define se a lista foi concluída ou não, algo que é definido em “Consultar Lista”.
     </string>
     <string name="help02_txt">
         Em consultar listas, você poderá ver todas as listas já criadas, sendo elas “não finalizadas”. Onde, assim como no primeiro estágio, ao clicar nesta opção, você será redirecionado para uma tela onde poderá selecionar uma lista ou criar uma nova. Com esta opção, você será redirecionado para o primeiro estágio (“Criar e Editar Lista”).
-        \n\nAo clicar em alguma lista, duas opções serão mostradas “edições unitárias” e “ múltiplas edições”, sendo essas duas opções, formas diferentes de editar a lista, onde enquanto uma segue um processo mais lento, item por item, para momentos mais tranquilos, outras segue um processo mais ágil, para momentos que exigem menos tempo.
-        \n\nNa opção “edições unitárias” ao clicar em editar produto, o usuário será direcionado para uma tela onde pode adicionar o valor de cada produto, desta forma o sistema irá calcular automaticamente o valor total, fazendo a multiplicação de valor pela quantidade. Além de poder definir se o produto está ou não no carrinho. Já na opção “múltiplas edições”, a mudança ocorre ao editar, aparecendo uma Pop up para entrar com o valor e definir se está ou não no carrinho.
-        \n\nSe definido que não está no carrinho, automaticamente o valor do produto é zerado. 
-        \n\nAo adicionar todos produtos, a lista será concluída automaticamente, estando indisponível nas opções “Criar e Editar Lista” e “Consultar Lista”, sendo acessível somente em “Conferir Extrato” e “Gráficos de Consumo”. Por outro lado, caso não tenha adicionado todos os produtos ao carrinho, o sistema automaticamente questiona se deseja manter a lista editável ou finalizar, mesmo faltando alguns itens para adicionar ao carrinho.
+        \n\nAo clicar em alguma lista, duas opções serão mostradas: “edições unitárias” e “múltiplas edições”. Sendo, essas duas opções, formas diferentes de editar sua lista, onde enquanto uma segue um processo mais lento, item por item, para momentos mais tranquilos, a outra segue um processo mais ágil, para momentos que exigem menos tempo.
+        \n\nNa opção “edições unitárias” ao clicar em editar produto, o usuário será redirecionado para uma tela onde poderá adicionar o valor de cada produto, desta forma o sistema irá calcular automaticamente o valor total, fazendo a multiplicação de valor pela quantidade. Além de poder definir se o produto está ou não no carrinho. Já na opção “múltiplas edições”, a mudança ocorre ao editar, aparecendo uma pop-up para entrar com o valor e definir se está ou não no carrinho.
+        \n\nSe definido que não está no carrinho, automaticamente o valor do produto é zerado.
+        \n\nAo adicionar todos os produtos, a lista será concluída automaticamente, estando indisponível nas opções “Criar e Editar Lista” e “Consultar Lista”, sendo acessível somente em “Conferir Extrato” e “Gráficos de Consumo”. Por outro lado, caso não tenha adicionado todos os produtos ao carrinho, o sistema automaticamente questionará se deseja manter a lista editável ou finalizar, mesmo que haja itens faltando para adicionar ao carrinho.
     </string>
     <string name="help03_txt">
-        Assim, como nos estágios anteriores, ao clicar nesta função, você é redirecionado para uma tela onde poderá selecionar a lista que deseja consultar. Selecionando-a, você será direcionado para uma tela onde são exibidos todos os itens adicionados à lista, podendo consultar seu nome, quantidade, medida, categoria, valor e o total referente ao produto.
-        \n\nAlém de que abaixo da lista, encontra-se o valor total da lista. Podendo também, através de um botão localizado no canto superior direito, reativar a edição da lista, podendo ser redirecionado, tanto para a etapa “Criar e Editar Lista”, para adicionar novos produtos, quanto “Consultar Lista”, para a adição ou atualização dos valores dos produtos.
-        \n\nQuando a lista está neste estágio, ela está finalizada, sendo possível acessa-la somente nesta opção e em “Gráfico de Consumo”.
+        Assim, como nos estágios anteriores, ao clicar nesta função, você é redirecionado para uma tela onde poderá selecionar a lista que deseja consultar. Selecionando-a, você será redirecionado para uma tela onde são exibidos todos os itens adicionados à lista, podendo consultar seu nome, quantidade, medida, categoria, valor e o total referente ao produto.
+        \n\nAlém de que abaixo de cada lista, encontra-se o valor total. Podendo também, através de um botão localizado no canto superior direito, reativar a edição da lista, sendo redirecionado, tanto para a etapa “Criar e Editar Lista”, para adicionar novos produtos, quanto “Consultar Lista”, para a adição ou atualização dos valores dos produtos.
+        \n\nQuando a lista está neste estágio, ela está finalizada, sendo possível acessá-la somente nesta opção e em “Gráfico de Consumo”.
     </string>
     <string name="help04_txt">
-        Em gráfico de consumo o usuário poderá observar todo seu histórico de consumo em forma de gráficos simples e objetivos, lista por lista, podendo selecionar a lista que deseja visualizar. Desta forma, poderá analisar como andam os preços nos mercados além de poder ver se economizou.
+        Em gráfico de consumo, o usuário poderá observar todo seu histórico de consumo em forma de gráficos simples e objetivos, lista por lista, podendo selecionar a lista que deseja visualizar. Desta forma, podendo analisar como andam os preços nos mercados, além verem se economizou ou não em suas compras.
     </string>
     <string name="ajust01_txt">
         Apague as listas, sendo elas consultadas ou não, ou limpe todos os dados da aplicação.
@@ -281,19 +296,21 @@
     <string name="limparDados">Deseja limpar todos os dados?</string>
     <string name="limparDados_confirm">Todos os dados foram apagados com sucesso!</string>
     <string name="limparDadosObs">
-        Tem certeza que deseja apagar todas as listas e os produtos armazenadas neste dispositivo?
+        Tem certeza de que deseja apagar todas as listas e os produtos armazenados neste dispositivo?
         \n\nAo confirmar, estes dados serão apagados para sempre, e isso é muito tempo!
     </string>
     <string name="limparLista">Deseja apagar esta lista?</string>
     <string name="limparLista_confirm">Todos os dados referente a lista foram apagados com sucesso!</string>
     <string name="limparListaObs">
-        Tem certeza que deseja apagar a lista e os produtos armazenadas neste dispositivo?
+        Tem certeza de que deseja apagar a lista e os produtos armazenados neste dispositivo?
         \n\nAo confirmar, estes dados serão apagados para sempre, e isso é muito tempo!
     </string>
 
     <string name="lista_nFinalizada">Esta lista não foi finalizada!</string>
-    <string name="lista_nSemValor">Lista concluida, mas valor zerado!</string>
+    <string name="lista_nSemValor">Lista concluída, mas valor zerado!</string>
     <string name="checkList_isOk">Lista finalizada</string>
     <string name="checkList_isNot">Lista não finalizada</string>
+
+    <string name="close">X</string>
 
 </resources>

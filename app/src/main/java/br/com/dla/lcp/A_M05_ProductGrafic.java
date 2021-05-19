@@ -15,11 +15,16 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -56,6 +61,9 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
     private TextView nomeListITEM05_header01, valorListITEM05_header01;
     private LinearLayout option01, option02, option03;
 
+    //adView
+    private InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +71,28 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         getWindow().setStatusBarColor(Color.rgb(149,16,149));
         setContentView(R.layout.activity_m05_product_grafic);
+
+        //adView
+        //CODIGO adMob (BANNER): ca-app-pub-7912320570829252/1020212016
+        //CODIGO para testes: ca-app-pub-3940256099942544/1033173712
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        InterstitialAd.load(this,"ca-app-pub-7912320570829252/1020212016", adRequest, new InterstitialAdLoadCallback() {
+            @Override
+            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                // The mInterstitialAd reference will be null until
+                // an ad is loaded.
+                mInterstitialAd = interstitialAd;
+                Log.i("TAG", "onAdLoaded");
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                // Handle the error
+                Log.i("TAG", loadAdError.getMessage());
+                mInterstitialAd = null;
+            }
+        });
 
         //Activity = Menu
         drawerLayout05 =findViewById(R.id.drawer_layout05);
@@ -254,6 +284,14 @@ public class A_M05_ProductGrafic extends AppCompatActivity implements Navigation
             drawerLayout05.closeDrawer(GravityCompat.START);
         } else {
             //Toast.makeText(this, R.string.list_concluida, Toast.LENGTH_SHORT).show();
+
+            //adView
+            if (mInterstitialAd != null) {
+                mInterstitialAd.show(A_M05_ProductGrafic.this);
+            } else {
+                Log.d("TAG", "The interstitial ad wasn't ready yet.");
+            }
+
             super.onBackPressed();
         }
         isDestroyed();

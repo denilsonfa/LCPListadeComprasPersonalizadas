@@ -245,18 +245,20 @@
     </ScrollView>
 
     <LinearLayout
-        android:visibility="gone"
-        android:id="@+id/adView"
+        android:visibility="visible"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:background="@color/textPreto04">
 
-        <TextView
-            style="@style/main_btnTxt1"
-            android:layout_height="match_parent"
-            android:text="@string/AdView"
-            android:textAlignment="center"
-            android:textColor="@color/textBranco01" />
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adViewBannerMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-7912320570829252/2049604107"/>
+
     </LinearLayout>
 
 </LinearLayout>

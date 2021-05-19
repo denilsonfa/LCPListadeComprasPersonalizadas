@@ -123,6 +123,23 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/textPreto04">
+
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adViewBanner03SetList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-7912320570829252/8487638492"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

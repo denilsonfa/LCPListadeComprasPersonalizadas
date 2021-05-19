@@ -34,9 +34,12 @@
     <color name="textPreto02_t">#9222</color>
     <color name="textPreto03">#444</color>
     <color name="textPreto04">#676767</color>
-    <color name="textPreto05">#888</color>
+    <color name="textPreto05">#676767</color>
+<!--    <color name="textPreto05">#888</color>-->
     <color name="textPreto05_t">#9888</color>
-    <color name="textPreto06">#AAA</color>
+    <color name="textPreto06">#777</color>
+    <color name="textPreto06_0">#777</color>
+<!--    <color name="textPreto06">#AAA</color>-->
     <color name="textPreto07">#CCC</color>
     <color name="textPreto08">#DDD</color>
     <color name="textPreto09">#FFF</color>
