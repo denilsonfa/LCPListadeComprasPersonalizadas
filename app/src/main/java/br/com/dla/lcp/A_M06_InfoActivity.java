@@ -169,7 +169,7 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
         option_doc_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                chamar("https://www.lcp.eteccruzeiro.dev.br/doc");
+                chamar("https://www.lcp.eteccruzeiro.dev.br/doc.html");
             }
         });
 
