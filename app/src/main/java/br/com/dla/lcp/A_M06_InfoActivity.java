@@ -35,9 +35,9 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
     NavigationView navigationView06;
     Toolbar toolbar06;
 
-    ImageView imgLogo, img_sobre, img_dev, img_doc, img_site, img_github;
-    LinearLayout option_sobre, option_dev, option_doc, option_site, option_github;
-    LinearLayout option_sobre_txt, option_dev_txt, option_doc_txt, option_site_txt, option_github_txt;
+    ImageView imgLogo, img_sobre, img_dev, img_doc, img_site, img_github, img_instagram, img_termos;
+    LinearLayout option_sobre, option_dev, option_doc, option_site, option_github, option_instagram, option_termos;
+    LinearLayout option_sobre_txt, option_dev_txt, option_doc_txt, option_site_txt, option_github_txt, option_instagram_txt, option_termos_txt;
     TextView hello, txtLogo01, txtLogo02, txt_sobre;
 
     Animation fadein, fadeout;
@@ -80,6 +80,8 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
         img_doc = findViewById(R.id.img_doc);
         img_site = findViewById(R.id.img_site);
         img_github = findViewById(R.id.img_github);
+        img_instagram = findViewById(R.id.img_instagram);
+        img_termos = findViewById(R.id.img_termos);
 
         //LinearLayout: option_sobre, option_dev, option_doc, option_site, option_github;
         option_sobre = findViewById(R.id.option_sobre);
@@ -87,6 +89,8 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
         option_doc = findViewById(R.id.option_doc);
         option_site = findViewById(R.id.option_site);
         option_github = findViewById(R.id.option_github);
+        option_instagram = findViewById(R.id.option_instagram);
+        option_termos = findViewById(R.id.option_termos);
 
         //LinearLayout: option_sobre_txt, option_dev_txt, option_doc_txt, option_site_txt, EasterEggDevDL, option_site_github;
         option_sobre_txt = findViewById(R.id.option_sobre_txt);
@@ -94,6 +98,8 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
         option_doc_txt = findViewById(R.id.option_doc_txt);
         option_site_txt = findViewById(R.id.option_site_txt);
         option_github_txt = findViewById(R.id.option_site_github);
+        option_instagram_txt = findViewById(R.id.option_instagram_txt);
+        option_termos_txt = findViewById(R.id.option_termos_txt);
 
         //TextView: EasterEggDevDL, txtLogo01, txtLogo02, txt_sobre;
         hello = findViewById(R.id.hello);
@@ -107,6 +113,8 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
         option_doc_txt.setVisibility(View.GONE);
         option_site_txt.setVisibility(View.GONE);
         option_github_txt.setVisibility(View.GONE);
+        option_instagram_txt.setVisibility(View.GONE);
+        option_termos_txt.setVisibility(View.GONE);
 
         //Definir botões
         //menu
@@ -165,18 +173,40 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
             }
         });
 
+        option_instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(option_instagram_txt.getVisibility() == View.GONE){
+                    option_instagram_txt.setVisibility(View.VISIBLE);
+                } else {
+                    option_instagram_txt.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        option_termos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(option_termos_txt.getVisibility() == View.GONE){
+                    option_termos_txt.setVisibility(View.VISIBLE);
+                } else {
+                    option_termos_txt.setVisibility(View.GONE);
+                }
+            }
+        });
+
         //Textos clicaveis
         option_doc_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                chamar("https://www.lcp.eteccruzeiro.dev.br/doc.html");
+                chamar("https://lcp.eteccruzeiro.dev.br/doc.html");
             }
         });
 
         option_site_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                chamar("https://www.lcp.eteccruzeiro.dev.br/");
+                chamar("https://lcp.eteccruzeiro.dev.br/");
             }
         });
 
@@ -184,6 +214,20 @@ public class A_M06_InfoActivity extends AppCompatActivity implements NavigationV
             @Override
             public void onClick(View view) {
                 chamar("https://github.com/denilsonfa/LCPListadeComprasPersonalizadas");
+            }
+        });
+
+        option_instagram_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chamar("https://instagram.com/lcp.app/");
+            }
+        });
+
+        option_termos_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chamar("https://lcp.eteccruzeiro.dev.br/termos.html");
             }
         });
 

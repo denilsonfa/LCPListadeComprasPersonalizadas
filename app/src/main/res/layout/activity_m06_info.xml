@@ -294,7 +294,7 @@
 
                 </LinearLayout>
 
-                <!-- TEXTO 05 -->
+                <!-- TEXTO 04 -->
                 <LinearLayout
                     android:id="@+id/option_site_github"
                     android:visibility="gone"
@@ -306,6 +306,96 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/github_txt"
+                        android:textColor="@color/textPreto04"
+                        android:fontFamily="@font/raleway_regular"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"/>
+
+                </LinearLayout>
+
+                <!-- OPIÇÂO 06 -->
+                <LinearLayout
+                    android:id="@+id/option_instagram"
+                    style="@style/main_btnH"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_instagram"
+                        style="@style/main_btnIMag"
+                        android:contentDescription="@string/instagram"
+                        app:srcCompat="@drawable/ic_item_instagram" />
+
+                    <LinearLayout style="@style/main_btnV">
+
+                        <TextView
+                            style="@style/main_btnTxt1"
+                            android:text="@string/instagram"
+                            android:textSize="20sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- TEXTO 06 -->
+                <LinearLayout
+                    android:id="@+id/option_instagram_txt"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/textPreto08">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/instagram_txt"
+                        android:textColor="@color/textPreto04"
+                        android:fontFamily="@font/raleway_regular"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"/>
+
+                </LinearLayout>
+
+                <!-- OPIÇÂO 07 -->
+                <LinearLayout
+                    android:id="@+id/option_termos"
+                    style="@style/main_btnH"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/img_termos"
+                        style="@style/main_btnIMag"
+                        android:contentDescription="@string/termos"
+                        app:srcCompat="@drawable/ic_item_termos" />
+
+                    <LinearLayout style="@style/main_btnV">
+
+                        <TextView
+                            style="@style/main_btnTxt1"
+                            android:text="@string/termos"
+                            android:textSize="20sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- TEXTO 07 -->
+                <LinearLayout
+                    android:id="@+id/option_termos_txt"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/textPreto08">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/termos_txt"
                         android:textColor="@color/textPreto04"
                         android:fontFamily="@font/raleway_regular"
                         android:paddingStart="20dp"

@@ -178,9 +178,13 @@
     <string name="doc">Documentação</string>
     <string name="site">Site</string>
     <string name="github">GitHub</string>
-    <string name="doc_txt">Ler documentação do TCC.</string>
-    <string name="site_txt">Visitar site da aplicação.</string>
-    <string name="github_txt">Visitar repositório da aplicação no GitHub.</string>
+    <string name="instagram">Instagram</string>
+    <string name="termos">Termos de Uso</string>
+    <string name="doc_txt">Acessar a Documentação do LCP.</string>
+    <string name="site_txt">Acessar site da aplicação.</string>
+    <string name="github_txt">Acessar repositório da aplicação no GitHub.</string>
+    <string name="instagram_txt">Acessar o instagram do LCP.</string>
+    <string name="termos_txt">Acessar o Termos de Uso do LCP.</string>
 
     <!--  DESENVOLVEDORES DO LCP - TCC 2020-2021 -->
     <string name="dev01">Denilson Fabiano de Araujo</string>
