@@ -2,15 +2,15 @@
 # LCP - Lista de Compras Personalizadas (APLICATIVO ANDROID)
 ##### Projeto: LCPListadeComprasPersonalizadas
 ###### Criado por: Denilson Araujo
+
+![GitHub followers](https://img.shields.io/github/followers/denilsonfa?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/denilsonfa/LCPListadeComprasPersonalizadas?style=for-the-badge) 
+
+[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/denilsonfa) [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/denilson-araujo-85a29019a/)
 #
 ```
         versionCode 10
         versionName '2.0.95'
 ```
-
-![GitHub followers](https://img.shields.io/github/followers/denilsonfa?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/denilsonfa/LCPListadeComprasPersonalizadas?style=for-the-badge) 
-
-[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/denilsonfa) [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/denilson-araujo-85a29019a/)
 #
 ### SOBRE
 ###### Repositorio referenta a aplicação android *LCP - Lista de Compras Personalizadas*
