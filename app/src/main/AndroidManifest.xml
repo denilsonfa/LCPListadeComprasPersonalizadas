@@ -98,6 +98,8 @@
             android:name=".A_M06_InfoActivity"
             android:screenOrientation="portrait" />
 
+        <!-- Calculadora -->
+
     </application>
 
 </manifest>
