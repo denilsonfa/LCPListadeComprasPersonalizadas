@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "480945174086",
+    "project_id": "lcp---lista-de-compras-persona",
+    "storage_bucket": "lcp---lista-de-compras-persona.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480945174086:android:d745b66c40e658683cfc47",
+        "android_client_info": {
+          "package_name": "br.com.dla.lcp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480945174086-rl4h2i8lqijjkf69026go0do6vr7nd69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAJyuqcbexTDI2C8vQNX-zzFSDc0imnaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480945174086-rl4h2i8lqijjkf69026go0do6vr7nd69.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
