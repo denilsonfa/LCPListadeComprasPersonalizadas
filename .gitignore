@@ -1,6 +1,7 @@
 *.iml
 .gradle
 /local.properties
+.idea
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -12,3 +13,12 @@
 /captures
 .externalNativeBuild
 .cxx
+
+/app/google-services.json
+.project
+.settings/org.eclipse.buildship.core.prefs
+app/.classpath
+app/.settings/org.eclipse.buildship.core.prefs
+
+/app/google-services.json
+/app/src/main/AndroidManifest.xml
