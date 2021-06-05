@@ -1,7 +1,7 @@
 
 # LCP - Lista de Compras Personalizadas (APLICATIVO ANDROID)
 ##### Projeto: LCPListadeComprasPersonalizadas
-###### Criado por: Denilson Araujo
+###### Criado por: Denilson Araujo (conta dev)
 
 ![GitHub followers](https://img.shields.io/github/followers/denilsonfa?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/denilsonfa/LCPListadeComprasPersonalizadas?style=for-the-badge) 
 
