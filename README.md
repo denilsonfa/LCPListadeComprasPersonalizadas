@@ -14,11 +14,8 @@
 #
 ### SOBRE
 ###### Repositorio referenta a aplicação android *LCP - Lista de Compras Android*
-#
 ###### Está aplicação, é resultado do fruto de muita dedicação e empenho dos desenvolvedores, sendo o Trabalho de conclusão de Curso de Desenvolvimento de Sistemas, da Escola Técnica Estadual (ETEC) do estado de São Paulo, da cidade de Cruzeiro. Partindo do problema de pesquisa em que consiste em: “Como simplificar as listas de compras para a ida ao supermercado atualmente? ”
-#
 ###### Onde assim o objetivo geral do trabalho, se apresentou em desenvolver uma aplicação mobile, cujo a sua funcionalidade possibilite o usuário a criar uma lista de compras para auxiliá-lo quando estiver no mercado adquirindo os seus itens de compra. Especificamente, substituir a lista de papel, esta que costuma dar mais trabalho ou até mesmo chegar a ser perdida, em horas que a sua consulta é imprescindível.
-#
 ###### Sendo assim, a ideia do aplicativo mobile, é facilitar a criação da lista de compras, podendo se organizar mais, auxiliando-o. Assim, com o desenvolvimento desta aplicação, os desenvolvedores puderam implementar os conhecimentos adquiridos durando o período acadêmico, além de adquirir novas experiências e técnicas. Além de que o usuário, ao utilizar esta aplicação irá perceber que em meio a dificuldades ocorridas durante as compras, uma simples aplicação irá estabelecer em sua rotina uma grande facilidade durante a utilização, além de teoricamente ajudá-lo a gerenciar suas economias.
 #
 ### EQUIPE LCP:
@@ -30,7 +27,7 @@
 #
 ### ALGUNS LINKS:
 - ###### [Visite o site do LCP](https://lcp.eteccruzeiro.dev.br/)
-- ###### [Acesse o Repositorio do site](https://www.treinaweb.com.br/blog/author/fagner-pinheiro/)
+- ###### [Acesse o Repositorio do site](https://github.com/denilsonfa/LCPListadeComprasPersonalizadasSite)
 - ###### [Documentação do TCC](https://lcp.eteccruzeiro.dev.br/doc.html)
 - ###### [Termos de Uso da aplicação](https://lcp.eteccruzeiro.dev.br/termos.html)
 - ###### [Aplicação no Google Play](https://play.google.com/store/apps/details?id=br.com.dla.lcp)
